@@ -8,6 +8,7 @@
 #include "graph.h"
 #include "unordered_map"
 
+int graphColoringTestSuite();
 
 template<typename T>
 void graphColoring(Vertex<T>* v,int& biggestColor,std::vector<bool>&usedColors) {
