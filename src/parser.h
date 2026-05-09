@@ -11,6 +11,4 @@
 #include <algorithm>
 #include "dataStructs.h"
 
-#include "writeAssignments.h"
-
 params parse(string path1, string path2);
