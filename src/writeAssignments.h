@@ -5,5 +5,5 @@
 
 using namespace std;
 
-void write(const result &res, string outputPath);
+void write(const result &res);
 
