@@ -48,7 +48,7 @@ struct result { //final result of the algorithm
 
 struct order { //struct for storing the order of webs
     int index;
-    web web;
+    web w;
 };
 
 bool interfere(web a, web b);
