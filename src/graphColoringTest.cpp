@@ -389,3 +389,9 @@ int graphColoringTestSuite() {
     printf("\n--- Testes concluidos ---\n");
     return 0;
 }
+
+
+int main() {
+    graphColoringTestSuite();
+    return 0;
+}
