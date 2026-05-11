@@ -26,6 +26,7 @@
 *.mod
 *.smod
 
+.idea/
 # Compiled Static libraries
 *.lai
 *.la
@@ -39,3 +40,5 @@
 
 # debug information files
 *.dwo
+
+CMakeLists.txt
