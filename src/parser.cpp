@@ -192,6 +192,11 @@ void parse2(string path, params &params){
                 alg.val = 0;
                 hasAlg = true; //check
                 hasVal = true; //check
+            } else if (line == "free") {
+                alg.type = free_;
+                alg.val = 0;
+                hasAlg = true; //check
+                hasVal = true; //check
             } else {
                 stringstream valStream(line);
                 getline(valStream, line, ',');

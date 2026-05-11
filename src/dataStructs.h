@@ -13,7 +13,8 @@ using namespace std;
 enum alg_type {
     basic,
     splitting,
-    spilling
+    spilling,
+    free_
 };
 
 struct algorithm { //struct for parser to store information about the second input file
