@@ -1,26 +1,21 @@
 #include "dataStructs.h"
 
-bool interfere(web a, web b) {
-    
-    set<int> aLines(a.lines.begin(), a.lines.end());
-    set<int> bLines(b.lines.begin(), b.lines.end());
-    set<int> aStart(a.start.begin(), a.start.end());
-    set<int> aEnd(a.end.begin(), a.end.end());
-    set<int> bStart(b.start.begin(), b.start.end());
-    set<int> bEnd(b.end.begin(), b.end.end());
-    
-    for (int line : aLines) {
+bool interfere(web a, web b){//NOTE: only works if web vectors are ordered
+    vector<int> intersection;
+    set_intersection(a.lines.begin(), a.lines.end(), b.lines.begin(), b.lines.end(), back_inserter(intersection));
+    if(intersection.size()==0)return false;
 
-        if (bLines.count(line)) {
+    for (int i :intersection){
 
-            if ((aStart.count(line) && bEnd.count(line)) ||
-                (aEnd.count(line) && bStart.count(line))) {
-                continue;
-            }
+        auto startA =find(a.start.begin(),a.start.end(),i);
+        auto startB =find(b.start.begin(),b.start.end(),i);
+        auto endA =find(a.end.begin(),a.end.end(),i);
+        auto endB =find(b.end.begin(),b.end.end(),i);
 
+        if(!((startA!=a.start.end() && endB!=b.end.end()) ||
+         (startB!=b.start.end() && endA!=a.end.end()))){
             return true;
         }
     }
-    
     return false;
 }
