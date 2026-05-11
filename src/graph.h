@@ -9,7 +9,9 @@
 #include <queue>
 #include <limits>
 #include <algorithm>
-//#include  "MutablePriorityQueue.h"
+
+#include "MutablePriorityQueue.h"
+
 
 template <class T>
 class Edge;
@@ -49,7 +51,7 @@ public:
     bool removeEdge(T in);
     void removeOutgoingEdges();
 
-    //friend class MutablePriorityQueue<Vertex>;
+    friend class MutablePriorityQueue<Vertex>;
 protected:
     T info;                // info node
     std::vector<Edge<T> *> adj;  // outgoing edges
