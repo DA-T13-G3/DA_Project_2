@@ -71,10 +71,9 @@ int graphColoring(Graph<T>* g) {
 
 template<typename T>
 int graphColoringBasic(Graph<T>* g,unsigned int N) {
-    bool graph_empty=false;
     std::vector<Vertex<T>*>stack;
     for (auto v:g->getVertexSet()) {
-        v.setVisited(false);
+        v->setVisited(false);
         v->setIndegree(v->getAdj().size());
     }
     int n_nodes=g->getVertexSet().size();
@@ -111,9 +110,6 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
         v->setNum(-1);
     }
 
-    for (auto &v:g->getVertexSet()) {
-        v->setNum(-1);
-    }
 
 
     unsigned int biggestColor=0;
@@ -129,9 +125,8 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
             }
         }
 
-        unsigned int i=0;
-        for (bool b:usedColors) {
-            if (!b) {
+        for ( unsigned int i=0;i<N;i++) {
+            if (!usedColors[i]) {
                 v->setNum(i);
                 biggestColor=std::max(i,biggestColor);
                 break;
