@@ -27,6 +27,10 @@ struct web { //struct for storing information about each web
     vector<int> start;
     vector<int> end;
     vector<int> lines;
+
+    bool operator==(const web& other) const {
+        return (var_name == other.var_name && lines == other.lines);
+    }
 };
 
 
@@ -45,6 +49,7 @@ struct assignment { //webs that dont interfere with eachother
 struct result { //final result of the algorithm
     vector<web> webs;
     vector<assignment> assignments;
+    vector<web> spilledWebs;
     int regs;
     bool possible;
 };
@@ -53,6 +58,8 @@ struct order { //struct for storing the order of webs
     int index;
     web w;
 };
+
+
 
 bool interfere(web a, web b);
 

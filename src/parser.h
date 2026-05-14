@@ -1,3 +1,6 @@
+#ifndef DA_PROJECT_2_PARSER_H
+#define DA_PROJECT_2_PARSER_H
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -12,3 +15,5 @@
 #include "dataStructs.h"
 
 params parse(string path1, string path2);
+
+#endif

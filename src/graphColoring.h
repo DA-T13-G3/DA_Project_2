@@ -53,7 +53,7 @@ int graphColoring(Graph<T>* g) {
     if (usedColors.size()>0) {
         biggestColor=1;
         for (auto &v:g->getVertexSet()) {
-            v->setVisited(false);
+            //v->setVisited(false);
             v->setNum(-1);
         }
 

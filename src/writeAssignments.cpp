@@ -1,25 +1,25 @@
 #include "writeAssignments.h"
+#include <fstream>
+#include <set>
 
 using namespace std;
 
 void write(const result &res) {
     ofstream output("../output/output.txt");
     
-    if (!output.good()) {
-        return;
-    }
+    if (!output.good()) return;
 
     output << "# Total number of webs followed by the listing of the program points of each one" << endl;
     output << "# program points in each web are sorted in ascending order" << endl;
     
-    output << "webs: " << res.webs.size() << endl;
-    for (int i = 0; i < res.webs.size(); i++) {
+    int totalWebs = (int)res.webs.size() + (int)res.spilledWebs.size();
+    output << "webs: " << totalWebs << endl;
 
-        output << "web" << i << ": ";
-        
-        set<int> allLines(res.webs[i].lines.begin(), res.webs[i].lines.end());
-        set<int> startSet(res.webs[i].start.begin(), res.webs[i].start.end());
-        set<int> endSet(res.webs[i].end.begin(), res.webs[i].end.end());
+    auto writeWebLine = [&](const web& w, int index) {
+        output << "web" << index << ": ";
+        set<int> allLines(w.lines.begin(), w.lines.end());
+        set<int> startSet(w.start.begin(), w.start.end());
+        set<int> endSet(w.end.begin(), w.end.end());
         
         bool first = true;
         for (int line : allLines) {
@@ -30,23 +30,40 @@ void write(const result &res) {
             first = false;
         }
         output << endl;
+    };
+
+    for (int i = 0; i < (int)res.webs.size(); i++) {
+        writeWebLine(res.webs[i], i);
+    }
+
+    for (int i = 0; i < (int)res.spilledWebs.size(); i++) {
+        writeWebLine(res.spilledWebs[i], i + (int)res.webs.size());
     }
     
     output << "# Total number of registers used, followed by assignment to webs" << endl;
-
-    output << "registers: " << res.regs << endl;
+    if (res.possible){
+        output << "registers: " << res.regs << endl;
+    } else {
+        output << "registers: 0" << endl;
+    }
+    
     
     if (!res.possible) {
-        for (int i = 0; i < res.webs.size(); i++) {
+
+        for (int i = 0; i < (int)res.webs.size(); i++) {
             output << "M: web" << i << endl;
         }
+
     } else {
-        for (int i = 0; i < res.assignments.size(); i++) {
-            for (int j = 0; j < res.assignments[i].webs.size(); j++) {
+
+        for (int i = 0; i < (int)res.assignments.size(); i++) {
+
+            for (const auto& aWeb : res.assignments[i].webs) {
+
                 output << "r" << i << ": web";
-                for (int k = 0; k < res.webs.size(); k++) {
-                    if (res.webs[k].var_name == res.assignments[i].webs[j].var_name &&
-                        res.webs[k].lines == res.assignments[i].webs[j].lines) {
+
+                for (int k = 0; k < (int)res.webs.size(); k++) {
+                    if (res.webs[k].var_name == aWeb.var_name && res.webs[k].lines == aWeb.lines) {
                         output << k;
                         break;
                     }
@@ -55,8 +72,10 @@ void write(const result &res) {
             }
         }
     }
+
+    for (int i = 0; i < (int)res.spilledWebs.size(); i++){
+        output << "M(spilled): web" << i + (int)res.webs.size() << endl;
+    }
     
     output.close();
-
-
 }
