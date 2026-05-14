@@ -88,6 +88,7 @@ Include dependency graph for createGraph.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1d2a75240c8e4e9df54c6e98f4aed68d" id="r_a1d2a75240c8e4e9df54c6e98f4aed68d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="structweb.html">web</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="createGraph_8cpp.html#a1d2a75240c8e4e9df54c6e98f4aed68d">create</a> (<a class="el" href="structparams.html">params</a> info)</td></tr>
+<tr class="memdesc:a1d2a75240c8e4e9df54c6e98f4aed68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the graph from the set of webs.  <br /></td></tr>
 <tr class="separator:a1d2a75240c8e4e9df54c6e98f4aed68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -106,6 +107,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Builds the graph from the set of webs. </p>
+<p>This function constructs a graph where each web corresponds to a vertex. For every pair of webs, an interference edge is added if their live ranges overlap according to '<a class="el" href="dataStructs_8cpp.html#a3f5dffb50eb977e07687c21b4f4130d8">interfere()</a>'. The resulting graph is the input for the register allocation algorithms.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Global parameters containing the list of webs to insert in the graph.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A Graph&lt;web&gt; object representing the full interference graph. </dd></dl>
 
 </div>
 </div>
