@@ -27,6 +27,7 @@
 *.smod
 
 .idea/
+.vscode/
 # Compiled Static libraries
 *.lai
 *.la
