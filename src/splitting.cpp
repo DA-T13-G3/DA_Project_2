@@ -123,13 +123,13 @@ int splitting(Graph<web> *g, params&info){
             v->setNum(-1);
         }
 
-        numColors=graphColoring(g);
-        if(numColors<=info.regs){
+        numColors=graphColoringBasic(g,info.regs);
+        if(numColors<=info.regs && numColors!=-1){
             return numColors;
         }
 
         if(i!=info.alg.val)split(g,info);
     }
-
+    if(numColors>info.regs)return -1;
     return numColors;
 }
