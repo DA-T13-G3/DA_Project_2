@@ -102,14 +102,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structalgorithm.html">algorithm</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the algorithm configuration parsed from the second input file.  <a href="structalgorithm.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html">web</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single live web of a variable.  <a href="structweb.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structparams.html">params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global parameters produced by the parser.  <a href="structparams.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassignment.html">assignment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of webs that do not interfere with each other.  <a href="structassignment.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structresult.html">result</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final result of the register allocation algorithm.  <a href="structresult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structorder.html">order</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,11 +126,13 @@ Enumerations</h2></td></tr>
 , <a class="el" href="dataStructs_8h.html#a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05">spilling</a>
 , <a class="el" href="dataStructs_8h.html#a97844550821cdaf0272cfa8db3a2e207a49bac7a7222c4b50a308704e96546a5d">free_</a>
  }</td></tr>
+<tr class="memdesc:a97844550821cdaf0272cfa8db3a2e207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of register allocation algorithms.  <a href="dataStructs_8h.html#a97844550821cdaf0272cfa8db3a2e207">More...</a><br /></td></tr>
 <tr class="separator:a97844550821cdaf0272cfa8db3a2e207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3f5dffb50eb977e07687c21b4f4130d8" id="r_a3f5dffb50eb977e07687c21b4f4130d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dataStructs_8h.html#a3f5dffb50eb977e07687c21b4f4130d8">interfere</a> (<a class="el" href="structweb.html">web</a> <a class="el" href="classEdge.html">a</a>, <a class="el" href="structweb.html">web</a> <a class="el" href="classEdge.html">b</a>)</td></tr>
+<tr class="memdesc:a3f5dffb50eb977e07687c21b4f4130d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two webs interfere.  <br /></td></tr>
 <tr class="separator:a3f5dffb50eb977e07687c21b4f4130d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -140,6 +147,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Types of register allocation algorithms. </p>
+<ul>
+<li>basic: Greedy graph coloring without modifications to the graph.</li>
+<li>splitting: Iterative web splitting to reduce interference.</li>
+<li>spilling: Web spilling (removal) when registers aren't enough.</li>
+<li>free: Variant free for experimentation.</li>
+</ul>
+<p>These values correspond directly to the "algorithm:" field in the second input file(). </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7" name="a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7"></a>basic&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5" name="a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5"></a>splitting&#160;</td><td class="fielddoc"></td></tr>
@@ -175,6 +191,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Determines whether two webs interfere. </p>
+<p>Two webs interfere if their live ranges overlap at any program point. The function assumes that lines, start, and end vectors are sorted.</p>
+<p>If the only shared line is one where:</p><ul>
+<li>web A ends (due to a read), and</li>
+<li>web B begins (due to a write), then the webs do not interfere.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>True if the webs interfere, false otherwise. </dd></dl>
 
 </div>
 </div>

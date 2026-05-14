@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a single live web of a variable.  
+ <a href="structweb.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dataStructs_8h_source.html">dataStructs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -89,7 +92,17 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a867b62405c392c30ae6e5eb1a799af76" id="r_a867b62405c392c30ae6e5eb1a799af76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">vector</a>&lt; <a class="el" href="classEdge.html">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html#a867b62405c392c30ae6e5eb1a799af76">lines</a></td></tr>
 <tr class="separator:a867b62405c392c30ae6e5eb1a799af76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a single live web of a variable. </p>
+<p>A web is the combination of one or more live ranges belonging to the same variable. The parser initially creates one web per live-range line in the input file. After parsing, <a class="el" href="parser_8cpp.html#ac1c18255324c0c59380f092569c4a9b7">mergeWebs()</a> merges all overlapping live ranges of the same variable into a single web.</p>
+<p>Fields:</p><ul>
+<li>var_name: name of the variable.</li>
+<li>start: program lines where the web begins (lines ending with '+').</li>
+<li>end: program lines where the web ends (lines ending with '-').</li>
+<li>lines: all program points where the variable is live.</li>
+</ul>
+<p>All vectors are sorted after merging, and the <a class="el" href="dataStructs_8cpp.html#a3f5dffb50eb977e07687c21b4f4130d8" title="Determines whether two webs interfere.">interfere()</a> function assumes this ordering. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a02eee1275b09c4dee29d6681fd4dc52d" name="a02eee1275b09c4dee29d6681fd4dc52d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02eee1275b09c4dee29d6681fd4dc52d">&#9670;&#160;</a></span>end</h2>
 

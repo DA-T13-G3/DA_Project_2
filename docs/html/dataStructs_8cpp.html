@@ -88,6 +88,7 @@ Include dependency graph for dataStructs.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3f5dffb50eb977e07687c21b4f4130d8" id="r_a3f5dffb50eb977e07687c21b4f4130d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dataStructs_8cpp.html#a3f5dffb50eb977e07687c21b4f4130d8">interfere</a> (<a class="el" href="structweb.html">web</a> <a class="el" href="classEdge.html">a</a>, <a class="el" href="structweb.html">web</a> <a class="el" href="classEdge.html">b</a>)</td></tr>
+<tr class="memdesc:a3f5dffb50eb977e07687c21b4f4130d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two webs interfere.  <br /></td></tr>
 <tr class="separator:a3f5dffb50eb977e07687c21b4f4130d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -116,6 +117,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Determines whether two webs interfere. </p>
+<p>Two webs interfere if their live ranges overlap at any program point. The function assumes that lines, start, and end vectors are sorted.</p>
+<p>If the only shared line is one where:</p><ul>
+<li>web A ends (due to a read), and</li>
+<li>web B begins (due to a write), then the webs do not interfere.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>True if the webs interfere, false otherwise. </dd></dl>
 
 </div>
 </div>

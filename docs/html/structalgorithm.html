@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Stores the algorithm configuration parsed from the second input file.  
+ <a href="structalgorithm.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dataStructs_8h_source.html">dataStructs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -85,7 +88,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a7795ec980d36e0af62f640a7fb39353d" id="r_a7795ec980d36e0af62f640a7fb39353d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structalgorithm.html#a7795ec980d36e0af62f640a7fb39353d">val</a></td></tr>
 <tr class="separator:a7795ec980d36e0af62f640a7fb39353d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stores the algorithm configuration parsed from the second input file. </p>
+<p>The parser fills:</p><ul>
+<li>type: which algorithm variant to use,</li>
+<li>val: an integer parameter (max splits or max spills).</li>
+</ul>
+<p>For "basic" and "free", val = 0. For "splitting" and "spilling", val is read from the input file. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a05de2abf197f17ee493f89719c43f9ff" name="a05de2abf197f17ee493f89719c43f9ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05de2abf197f17ee493f89719c43f9ff">&#9670;&#160;</a></span>type</h2>
 

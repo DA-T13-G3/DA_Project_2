@@ -76,6 +76,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Final result of the register allocation algorithm.  
+ <a href="structresult.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dataStructs_8h_source.html">dataStructs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -89,7 +92,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:adfd6a5c1cd9e4299731e118bbb2c79f9" id="r_adfd6a5c1cd9e4299731e118bbb2c79f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structresult.html#adfd6a5c1cd9e4299731e118bbb2c79f9">possible</a></td></tr>
 <tr class="separator:adfd6a5c1cd9e4299731e118bbb2c79f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Final result of the register allocation algorithm. </p>
+<p>Contains:</p><ul>
+<li>webs: the final list of webs (possibly modified by splitting).</li>
+<li>assignments: groups of webs that share the same register.</li>
+<li>regs: number of registers actually used.</li>
+<li>possible: false if allocation failed (all webs must be spilled). </li>
+</ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6e87b9a6b06eac084df5756e1efeecf2" name="a6e87b9a6b06eac084df5756e1efeecf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e87b9a6b06eac084df5756e1efeecf2">&#9670;&#160;</a></span>assignments</h2>
 

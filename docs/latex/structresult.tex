@@ -2,6 +2,11 @@
 \hypertarget{structresult}{}\label{structresult}\index{result@{result}}
 
 
+Final result of the register allocation algorithm.  
+
+
+
+
 {\ttfamily \#include $<$data\+Structs.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
@@ -16,6 +21,17 @@
 \mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9}{possible}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Final result of the register allocation algorithm. 
+
+Contains\+:
+\begin{DoxyItemize}
+\item webs\+: the final list of webs (possibly modified by splitting).
+\item assignments\+: groups of webs that share the same register.
+\item regs\+: number of registers actually used.
+\item possible\+: false if allocation failed (all webs must be spilled). 
+\end{DoxyItemize}
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{structresult_a6e87b9a6b06eac084df5756e1efeecf2}\label{structresult_a6e87b9a6b06eac084df5756e1efeecf2} 

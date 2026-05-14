@@ -14,15 +14,15 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structalgorithm}{algorithm}}
-\item 
+\begin{DoxyCompactList}\small\item\em Stores the algorithm configuration parsed from the second input file. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structweb}{web}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a single live web of a variable. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structparams}{params}}
-\item 
+\begin{DoxyCompactList}\small\item\em Global parameters produced by the parser. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structassignment}{assignment}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a set of webs that do not interfere with each other. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structresult}{result}}
-\item 
+\begin{DoxyCompactList}\small\item\em Final result of the register allocation algorithm. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structorder}{order}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
@@ -33,12 +33,12 @@ enum \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\+\_\
 , \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05}{spilling}}
 , \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a49bac7a7222c4b50a308704e96546a5d}{free\+\_\+}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Types of register allocation algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{dataStructs_8h_a3f5dffb50eb977e07687c21b4f4130d8}{interfere}} (\mbox{\hyperlink{structweb}{web}} \mbox{\hyperlink{classEdge}{a}}, \mbox{\hyperlink{structweb}{web}} \mbox{\hyperlink{classEdge}{b}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines whether two webs interfere. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -48,7 +48,19 @@ enum \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\+\_\
 \doxysubsubsection{\texorpdfstring{alg\_type}{alg\_type}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{enum}} \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\+\_\+type}}}
 
-\begin{DoxyEnumFields}{Enumerator}
+
+
+Types of register allocation algorithms. 
+
+
+\begin{DoxyItemize}
+\item basic\+: Greedy graph coloring without modifications to the graph.
+\item splitting\+: Iterative web splitting to reduce interference.
+\item spilling\+: Web spilling (removal) when registers aren\textquotesingle{}t enough.
+\item free\+: Variant free for experimentation.
+\end{DoxyItemize}
+
+These values correspond directly to the "{}algorithm\+:"{} field in the second input file(). \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{basic@{basic}!dataStructs.h@{dataStructs.h}}\index{dataStructs.h@{dataStructs.h}!basic@{basic}}}\Hypertarget{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7}\label{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7} 
 basic&\\
 \hline
@@ -75,3 +87,18 @@ free\+\_\+&\\
 \doxysubsubsection{\texorpdfstring{interfere()}{interfere()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} interfere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweb}{web}}}]{a,  }\item[{\mbox{\hyperlink{structweb}{web}}}]{b }\end{DoxyParamCaption})}
 
+
+
+Determines whether two webs interfere. 
+
+Two webs interfere if their live ranges overlap at any program point. The function assumes that lines, start, and end vectors are sorted.
+
+If the only shared line is one where\+:
+\begin{DoxyItemize}
+\item web A ends (due to a read), and
+\item web B begins (due to a write), then the webs do not interfere.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the webs interfere, false otherwise. 
+\end{DoxyReturn}
