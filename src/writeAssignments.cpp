@@ -52,7 +52,7 @@ void write(const result &res) {
     if (!res.possible) {
 
         for (int i = 0; i < (int)res.webs.size(); i++) {
-            output << "M: web" << i << endl;
+            output << "M: web" << res.webs[i].id << endl;
         }
 
     } else {
@@ -75,7 +75,7 @@ void write(const result &res) {
     }
 
     for (int i = 0; i < (int)res.spilledWebs.size(); i++){
-        output << "M(spilled): web" << i + (int)res.webs.size() << endl;
+        output << "M(spilled): web" << res.spilledWebs[i].id << endl;
     }
     
     output.close();

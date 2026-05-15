@@ -6,10 +6,11 @@ void split(Graph<web> *g, params&info){
     Vertex<web>*maxVertex = nullptr;
 
     for (auto v : g->getVertexSet()){
+        auto w = v->getInfo();
         bool allAreStartOrEnd = true;
-        for (int line : v->getInfo().lines) {
-            bool isStart = find(v->getInfo().start.begin(),v->getInfo().start.end(),line) != v->getInfo().start.end();
-            bool isEnd = find(v->getInfo().end.begin(),v->getInfo().end.end(),line) != v->getInfo().end.end();
+        for (int line : w.lines) {
+            bool isStart = std::find(w.start.begin(),w.start.end(),line) != w.start.end();
+            bool isEnd = std::find(w.end.begin(),w.end.end(),line) != w.end.end();
 
             if (!isStart && !isEnd) {
                 allAreStartOrEnd = false;
@@ -17,8 +18,8 @@ void split(Graph<web> *g, params&info){
             }
         }
 
-    if (allAreStartOrEnd)
-        continue;
+        if (allAreStartOrEnd)
+            continue;
 
         int degree=v->getAdj().size();
 
@@ -44,14 +45,14 @@ void split(Graph<web> *g, params&info){
 
     int value = splitWeb.lines.size() / 2;
     while(1){
-        auto start =find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[value]);
-        auto end =find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[value]);
+        auto start =std::find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[value]);
+        auto end =std::find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[value]);
         if (start==splitWeb.start.end() && end==splitWeb.end.end()){
             for(int i=0; i<splitWeb.lines.size();i++){
                 if(i<value){
                     web1.lines.push_back(splitWeb.lines[i]);
-                    auto start =find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[i]);
-                    auto end =find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[i]);
+                    auto start =std::find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[i]);
+                    auto end =std::find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[i]);
                     if(start!=splitWeb.start.end()){
                         web1.start.push_back(splitWeb.lines[i]);
                     }
@@ -61,8 +62,8 @@ void split(Graph<web> *g, params&info){
                 }
                 else if(i>value){
                     web2.lines.push_back(splitWeb.lines[i]);
-                    auto start =find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[i]);
-                    auto end =find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[i]);
+                    auto start =std::find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[i]);
+                    auto end =std::find(splitWeb.end.begin(),splitWeb.end.end(),splitWeb.lines[i]);
                     if(start!=splitWeb.start.end()){
                         web2.start.push_back(splitWeb.lines[i]);
                     }
