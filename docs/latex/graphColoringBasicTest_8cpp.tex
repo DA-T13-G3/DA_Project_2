@@ -1,0 +1,200 @@
+\doxysection{src/graph\+Coloring\+Basic\+Test.cpp File Reference}
+\hypertarget{graphColoringBasicTest_8cpp}{}\label{graphColoringBasicTest_8cpp}\index{src/graphColoringBasicTest.cpp@{src/graphColoringBasicTest.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}graph.\+h"{}}\newline
+{\ttfamily \#include "{}graph\+Coloring.\+h"{}}\newline
+Include dependency graph for graph\+Coloring\+Basic\+Test.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_af739565789b9597e292bfdddedde8ffc}{run\+Test}} (\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{test\+Num}}, std\+::string \mbox{\hyperlink{classEdge}{name}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{expected}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{actual}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_accef0b8388bd881d6b4305d23329f5f0}{add\+Undirected\+Edge}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \&\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{T}} \mbox{\hyperlink{classEdge}{u}}, \mbox{\hyperlink{classEdge}{T}} \mbox{\hyperlink{classEdge}{v}})
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a567d76175a8cd3da98750a4af2d6e526}{test01\+\_\+\+Empty\+Graph}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_ae792b7b9ebd71d737da33eaeec75dd46}{test02\+\_\+\+Single\+Node}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a8c2e39f629157717164598335e45b856}{test03\+\_\+\+Single\+Node\+Zero\+Colors}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a0dc3e4ec2589f49826e26fd3d6eaafe0}{test04\+\_\+\+Disconnected\+Nodes}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a9a0c7fbbcb2d668447eef913fd1ae1ee}{test05\+\_\+\+Path\+Graph}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a1971dd065331a29e81d1d0f8cd5dbf32}{test06\+\_\+\+Star\+Graph}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a464b7839d00ebd368991563fa2e67b62}{test07\+\_\+\+Binary\+Tree}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a3e3ae2360fbca1a14625009b5e34a97f}{test08\+\_\+\+Even\+Cycle\+\_\+\+Spill}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a7ba1126a66ed32d323057655a7f49ae1}{test09\+\_\+\+Even\+Cycle\+\_\+\+Success}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_adfa91b64d37c6c736bfac7a40d16f8c2}{test10\+\_\+\+Triangle\+\_\+\+Spill}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a72d0c5a593b06a1f083a98d0501dd257}{test11\+\_\+\+Triangle\+\_\+\+Success}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a98948935e8955bf8e7568b3d730766fc}{test12\+\_\+\+Pentagon}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a72a7cc8ccf9bba5b6bf242f6986ba418}{test13\+\_\+\+Tetrahedron\+\_\+\+Spill}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a4b7f34ad89f7877a4c5e72e0c75499f7}{test14\+\_\+\+Tetrahedron\+\_\+\+Success}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a9a85871e5d59728459b4a7850925a9b3}{test15\+\_\+\+Pentacle}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a91b6ca8933b4bda6adfb2de40712d068}{test16\+\_\+\+Fan\+Graph}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a0df0d37cdfe34139f78609a1ef4dbfa7}{test17\+\_\+\+Wheel\+Graph\+\_\+\+Spill}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a9d23dc97646fc5f8a5155e4e7c3a0fa4}{test18\+\_\+\+Wheel\+Graph\+\_\+\+Success}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_a0f267cd03e33d42230260db7050365a9}{test19\+\_\+\+Disconnected\+Mixed}} ()
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_af92cba9de6645c8c524c4994f79c0f4c}{test20\+\_\+\+Bipartite\+Heuristic\+Limitation}} ()
+\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoringBasicTest_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{graphColoringBasicTest_8cpp_accef0b8388bd881d6b4305d23329f5f0}\label{graphColoringBasicTest_8cpp_accef0b8388bd881d6b4305d23329f5f0} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!addUndirectedEdge@{addUndirectedEdge}}
+\index{addUndirectedEdge@{addUndirectedEdge}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{addUndirectedEdge()}{addUndirectedEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} add\+Undirected\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \&}]{g,  }\item[{\mbox{\hyperlink{classEdge}{T}}}]{u,  }\item[{\mbox{\hyperlink{classEdge}{T}}}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{graphColoringBasicTest_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!main@{main}}
+\index{main@{main}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_af739565789b9597e292bfdddedde8ffc}\label{graphColoringBasicTest_8cpp_af739565789b9597e292bfdddedde8ffc} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!runTest@{runTest}}
+\index{runTest@{runTest}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} run\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{int}}}]{test\+Num,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{expected,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{actual }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a567d76175a8cd3da98750a4af2d6e526}\label{graphColoringBasicTest_8cpp_a567d76175a8cd3da98750a4af2d6e526} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test01\_EmptyGraph@{test01\_EmptyGraph}}
+\index{test01\_EmptyGraph@{test01\_EmptyGraph}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test01\_EmptyGraph()}{test01\_EmptyGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test01\+\_\+\+Empty\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_ae792b7b9ebd71d737da33eaeec75dd46}\label{graphColoringBasicTest_8cpp_ae792b7b9ebd71d737da33eaeec75dd46} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test02\_SingleNode@{test02\_SingleNode}}
+\index{test02\_SingleNode@{test02\_SingleNode}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test02\_SingleNode()}{test02\_SingleNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test02\+\_\+\+Single\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a8c2e39f629157717164598335e45b856}\label{graphColoringBasicTest_8cpp_a8c2e39f629157717164598335e45b856} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test03\_SingleNodeZeroColors@{test03\_SingleNodeZeroColors}}
+\index{test03\_SingleNodeZeroColors@{test03\_SingleNodeZeroColors}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test03\_SingleNodeZeroColors()}{test03\_SingleNodeZeroColors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test03\+\_\+\+Single\+Node\+Zero\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a0dc3e4ec2589f49826e26fd3d6eaafe0}\label{graphColoringBasicTest_8cpp_a0dc3e4ec2589f49826e26fd3d6eaafe0} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test04\_DisconnectedNodes@{test04\_DisconnectedNodes}}
+\index{test04\_DisconnectedNodes@{test04\_DisconnectedNodes}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test04\_DisconnectedNodes()}{test04\_DisconnectedNodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test04\+\_\+\+Disconnected\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a9a0c7fbbcb2d668447eef913fd1ae1ee}\label{graphColoringBasicTest_8cpp_a9a0c7fbbcb2d668447eef913fd1ae1ee} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test05\_PathGraph@{test05\_PathGraph}}
+\index{test05\_PathGraph@{test05\_PathGraph}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test05\_PathGraph()}{test05\_PathGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test05\+\_\+\+Path\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a1971dd065331a29e81d1d0f8cd5dbf32}\label{graphColoringBasicTest_8cpp_a1971dd065331a29e81d1d0f8cd5dbf32} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test06\_StarGraph@{test06\_StarGraph}}
+\index{test06\_StarGraph@{test06\_StarGraph}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test06\_StarGraph()}{test06\_StarGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test06\+\_\+\+Star\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a464b7839d00ebd368991563fa2e67b62}\label{graphColoringBasicTest_8cpp_a464b7839d00ebd368991563fa2e67b62} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test07\_BinaryTree@{test07\_BinaryTree}}
+\index{test07\_BinaryTree@{test07\_BinaryTree}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test07\_BinaryTree()}{test07\_BinaryTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test07\+\_\+\+Binary\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a3e3ae2360fbca1a14625009b5e34a97f}\label{graphColoringBasicTest_8cpp_a3e3ae2360fbca1a14625009b5e34a97f} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test08\_EvenCycle\_Spill@{test08\_EvenCycle\_Spill}}
+\index{test08\_EvenCycle\_Spill@{test08\_EvenCycle\_Spill}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test08\_EvenCycle\_Spill()}{test08\_EvenCycle\_Spill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test08\+\_\+\+Even\+Cycle\+\_\+\+Spill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a7ba1126a66ed32d323057655a7f49ae1}\label{graphColoringBasicTest_8cpp_a7ba1126a66ed32d323057655a7f49ae1} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test09\_EvenCycle\_Success@{test09\_EvenCycle\_Success}}
+\index{test09\_EvenCycle\_Success@{test09\_EvenCycle\_Success}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test09\_EvenCycle\_Success()}{test09\_EvenCycle\_Success()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test09\+\_\+\+Even\+Cycle\+\_\+\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_adfa91b64d37c6c736bfac7a40d16f8c2}\label{graphColoringBasicTest_8cpp_adfa91b64d37c6c736bfac7a40d16f8c2} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test10\_Triangle\_Spill@{test10\_Triangle\_Spill}}
+\index{test10\_Triangle\_Spill@{test10\_Triangle\_Spill}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test10\_Triangle\_Spill()}{test10\_Triangle\_Spill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test10\+\_\+\+Triangle\+\_\+\+Spill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a72d0c5a593b06a1f083a98d0501dd257}\label{graphColoringBasicTest_8cpp_a72d0c5a593b06a1f083a98d0501dd257} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test11\_Triangle\_Success@{test11\_Triangle\_Success}}
+\index{test11\_Triangle\_Success@{test11\_Triangle\_Success}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test11\_Triangle\_Success()}{test11\_Triangle\_Success()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test11\+\_\+\+Triangle\+\_\+\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a98948935e8955bf8e7568b3d730766fc}\label{graphColoringBasicTest_8cpp_a98948935e8955bf8e7568b3d730766fc} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test12\_Pentagon@{test12\_Pentagon}}
+\index{test12\_Pentagon@{test12\_Pentagon}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test12\_Pentagon()}{test12\_Pentagon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test12\+\_\+\+Pentagon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a72a7cc8ccf9bba5b6bf242f6986ba418}\label{graphColoringBasicTest_8cpp_a72a7cc8ccf9bba5b6bf242f6986ba418} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test13\_Tetrahedron\_Spill@{test13\_Tetrahedron\_Spill}}
+\index{test13\_Tetrahedron\_Spill@{test13\_Tetrahedron\_Spill}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test13\_Tetrahedron\_Spill()}{test13\_Tetrahedron\_Spill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test13\+\_\+\+Tetrahedron\+\_\+\+Spill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a4b7f34ad89f7877a4c5e72e0c75499f7}\label{graphColoringBasicTest_8cpp_a4b7f34ad89f7877a4c5e72e0c75499f7} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test14\_Tetrahedron\_Success@{test14\_Tetrahedron\_Success}}
+\index{test14\_Tetrahedron\_Success@{test14\_Tetrahedron\_Success}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test14\_Tetrahedron\_Success()}{test14\_Tetrahedron\_Success()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test14\+\_\+\+Tetrahedron\+\_\+\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a9a85871e5d59728459b4a7850925a9b3}\label{graphColoringBasicTest_8cpp_a9a85871e5d59728459b4a7850925a9b3} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test15\_Pentacle@{test15\_Pentacle}}
+\index{test15\_Pentacle@{test15\_Pentacle}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test15\_Pentacle()}{test15\_Pentacle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test15\+\_\+\+Pentacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a91b6ca8933b4bda6adfb2de40712d068}\label{graphColoringBasicTest_8cpp_a91b6ca8933b4bda6adfb2de40712d068} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test16\_FanGraph@{test16\_FanGraph}}
+\index{test16\_FanGraph@{test16\_FanGraph}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test16\_FanGraph()}{test16\_FanGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test16\+\_\+\+Fan\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a0df0d37cdfe34139f78609a1ef4dbfa7}\label{graphColoringBasicTest_8cpp_a0df0d37cdfe34139f78609a1ef4dbfa7} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test17\_WheelGraph\_Spill@{test17\_WheelGraph\_Spill}}
+\index{test17\_WheelGraph\_Spill@{test17\_WheelGraph\_Spill}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test17\_WheelGraph\_Spill()}{test17\_WheelGraph\_Spill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test17\+\_\+\+Wheel\+Graph\+\_\+\+Spill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a9d23dc97646fc5f8a5155e4e7c3a0fa4}\label{graphColoringBasicTest_8cpp_a9d23dc97646fc5f8a5155e4e7c3a0fa4} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test18\_WheelGraph\_Success@{test18\_WheelGraph\_Success}}
+\index{test18\_WheelGraph\_Success@{test18\_WheelGraph\_Success}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test18\_WheelGraph\_Success()}{test18\_WheelGraph\_Success()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test18\+\_\+\+Wheel\+Graph\+\_\+\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_a0f267cd03e33d42230260db7050365a9}\label{graphColoringBasicTest_8cpp_a0f267cd03e33d42230260db7050365a9} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test19\_DisconnectedMixed@{test19\_DisconnectedMixed}}
+\index{test19\_DisconnectedMixed@{test19\_DisconnectedMixed}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test19\_DisconnectedMixed()}{test19\_DisconnectedMixed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test19\+\_\+\+Disconnected\+Mixed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoringBasicTest_8cpp_af92cba9de6645c8c524c4994f79c0f4c}\label{graphColoringBasicTest_8cpp_af92cba9de6645c8c524c4994f79c0f4c} 
+\index{graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}!test20\_BipartiteHeuristicLimitation@{test20\_BipartiteHeuristicLimitation}}
+\index{test20\_BipartiteHeuristicLimitation@{test20\_BipartiteHeuristicLimitation}!graphColoringBasicTest.cpp@{graphColoringBasicTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test20\_BipartiteHeuristicLimitation()}{test20\_BipartiteHeuristicLimitation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} test20\+\_\+\+Bipartite\+Heuristic\+Limitation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
