@@ -1,5 +1,5 @@
 # THIS TEST FILE CAN BE EDITED IN ANY WAY
 # comment line
-registers: 10
+registers: 5
 # algorithm variants: basic, splitting and spilling each with a numeric parameter
-algorithm: spilling, 0
+algorithm: spilling, 40
