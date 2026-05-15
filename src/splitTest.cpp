@@ -13,7 +13,7 @@ g++  splitTest.cpp parser.cpp  createGraph.cpp  dataStructs.cpp  buildResult.cpp
 ./splitTest
  */
 int main() {
-    params info = parse("../input/ranges/splitRange.txt", "../input/registers/registersCustom.txt");
+    params info = parse("../input/ranges/splitRange.txt", "../input/registers/registersSplit.txt");
     Graph<web> graph = create(info);
     Graph<web>* g = &graph;
     struct result res;

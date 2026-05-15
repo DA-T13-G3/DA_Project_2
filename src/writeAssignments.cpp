@@ -47,7 +47,8 @@ void write(const result &res) {
         output << "registers: 0" << endl;
     }
     
-    printf("%d",res.possible);
+    //printf("%d",res.possible);
+
     if (!res.possible) {
 
         for (int i = 0; i < (int)res.webs.size(); i++) {
@@ -64,7 +65,7 @@ void write(const result &res) {
 
                 for (int k = 0; k < (int)res.webs.size(); k++) {
                     if (res.webs[k].var_name == aWeb.var_name && res.webs[k].lines == aWeb.lines) {
-                        output << k;
+                        output << res.webs[k].id;
                         break;
                     }
                 }
