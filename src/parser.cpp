@@ -202,7 +202,7 @@ void parse2(string path, params &params){
                 getline(valStream, line, ',');
                 line = trim(line);
                 if (line == "splitting"){
-                    alg.type = splitting;
+                    alg.type = splitting_;
                     hasAlg = true; //check
                 } else if (line == "spilling"){
                     alg.type = spilling;

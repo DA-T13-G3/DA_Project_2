@@ -10,6 +10,46 @@
 
 int graphColoringTestSuite();
 
+#include <iostream>
+
+// Add this where your 'web' struct is defined
+
+
+/**
+ * @brief Utility function to print all vertices, their states, and their neighbors.
+ * * @tparam T The data type stored within the vertex (e.g., your 'web' struct).
+ * @param g Pointer to the Graph object to be printed.
+ */
+template<typename T>
+void printGraphDetails(Graph<T>* g) {
+    std::cout << "=== Graph Details ===\n";
+
+    if (g->getVertexSet().empty()) {
+        std::cout << "Graph is empty.\n";
+        return;
+    }
+
+    for (auto v : g->getVertexSet()) {
+        std::cout << "Node [" << v->getInfo().id << "]:\n";
+        std::cout << "  - Color (Num): " << v->getNum() << "\n";
+        std::cout << "  - Indegree:    " << v->getIndegree() << "\n";
+
+        // In your project, visited == true means it was spilled
+        std::cout << "  - Spilled:     " << (v->isVisited() ? "YES" : "NO") << "\n";
+        std::cout << "  - Neighbors:   ";
+
+        if (v->getAdj().empty()) {
+            std::cout << "None";
+        } else {
+            for (auto e : v->getAdj()) {
+                std::cout << "[" << e->getDest()->getInfo().id << "] ";
+            }
+        }
+        std::cout << "\n\n";
+    }
+    std::cout << "=====================\n";
+}
+
 
 int graphColoringBasicTestSuite();
 
@@ -151,29 +191,44 @@ int graphColoringFree(Graph<T>* g, unsigned int N) {
 template<typename T>
 int graphColoringBasic(Graph<T>* g,unsigned int N) {
     std::vector<Vertex<T>*>stack;
+
+    //printGraphDetails(g);
+
+    int n_nodes=0;
     for (auto v:g->getVertexSet()) {
-        v->setVisited(false);
-        v->setIndegree(v->getAdj().size());
+        v->setIndegree(0);
+        if (!v->isVisited()) {
+            n_nodes++;
+            v->setProcessing(false);
+            for (auto e:v->getAdj()) {
+            Vertex<T>* w=e->getDest();
+            if (!e->getDest()->isVisited()) {
+                v->setIndegree(v->getIndegree()+1);
+            }
+        }
+
+        }
     }
-    int n_nodes=g->getVertexSet().size();
     bool all_remaining_nodes_degree_eq_gt_N=true;
     while (n_nodes>0) {
         for (auto v:g->getVertexSet()) {
-            if (!v->isVisited()) {
+            if (!v->isProcessing() && !v->isVisited()) {
                 if (v->getIndegree()<N) {
                     n_nodes--;
                     stack.push_back(v);
-                    v->setVisited(true);
+                    v->setProcessing(true);
                     for (auto e:v->getAdj()) {
                         Vertex<T>* w=e->getDest();
-                        w->setIndegree(w->getIndegree()-1);
+                        if (!w->isProcessing() && !w->isVisited()) {
+                            w->setIndegree(w->getIndegree()-1);
+                        }
                     }
                 }
             }
         }
         all_remaining_nodes_degree_eq_gt_N=true;
         for (auto v:g->getVertexSet()) {
-            if (!v->isVisited()) {
+            if (!v->isProcessing() && !v->isVisited()) {
                 if (v->getIndegree()<N) {
                     all_remaining_nodes_degree_eq_gt_N=false;
                 }
@@ -185,8 +240,10 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
     }
 
     for (auto &v:g->getVertexSet()) {
-        v->setVisited(false);
-        v->setNum(-1);
+        if (!v->isVisited()) {
+            v->setProcessing(false);
+            v->setNum(-1);
+        }
     }
 
 
@@ -199,7 +256,7 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
         stack.pop_back();
         for (auto e:v->getAdj()) {
             Vertex<T>*w=e->getDest();
-            if (w->getNum()!=-1) {
+            if (w->getNum()!=-1 && !w->isVisited() ) {
                 usedColors[w->getNum()]=true;
             }
         }

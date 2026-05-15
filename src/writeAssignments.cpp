@@ -16,7 +16,7 @@ void write(const result &res) {
     output << "webs: " << totalWebs << endl;
 
     auto writeWebLine = [&](const web& w, int index) {
-        output << "web" << index << ": ";
+        output << "web" << w.id << ": ";
         set<int> allLines(w.lines.begin(), w.lines.end());
         set<int> startSet(w.start.begin(), w.start.end());
         set<int> endSet(w.end.begin(), w.end.end());
@@ -47,7 +47,7 @@ void write(const result &res) {
         output << "registers: 0" << endl;
     }
     
-    
+    printf("%d",res.possible);
     if (!res.possible) {
 
         for (int i = 0; i < (int)res.webs.size(); i++) {

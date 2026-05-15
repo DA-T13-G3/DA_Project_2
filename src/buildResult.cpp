@@ -11,7 +11,7 @@ struct result build(Graph<web>* g, params info) {
         web currentWeb = v->getInfo();
         int color = v->getNum();
 
-        if (color == -1) {
+        if (v->isVisited()) { //color==-1
             res.spilledWebs.push_back(currentWeb);
         } else {
             res.webs.push_back(currentWeb);
@@ -31,6 +31,6 @@ struct result build(Graph<web>* g, params info) {
         res.assignments.push_back(asgn);
     }
 
-    res.possible = (res.regs <= info.regs);
+    res.possible = (res.regs <= info.regs && res.regs!=0);
     return res;
 }

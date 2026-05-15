@@ -22,7 +22,7 @@ using namespace std;
  */
 enum alg_type {
     basic,
-    splitting,
+    splitting_,
     spilling,
     free_
 };
