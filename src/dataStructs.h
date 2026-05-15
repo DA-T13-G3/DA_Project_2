@@ -27,6 +27,7 @@ struct web { //struct for storing information about each web
     vector<int> start;
     vector<int> end;
     vector<int> lines;
+    string id;
 };
 
 

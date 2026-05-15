@@ -35,8 +35,13 @@ void split(Graph<web> *g, params&info){
 
     //split the web in 2
     web splitWeb=maxVertex->getInfo(),web1,web2;
+    
     web1.var_name=splitWeb.var_name;
+    web1.id=splitWeb.id+".0";
+
     web2.var_name=splitWeb.var_name;
+    web2.id=splitWeb.id+".1";
+
     int value = splitWeb.lines.size() / 2;
     while(1){
         auto start =find(splitWeb.start.begin(),splitWeb.start.end(),splitWeb.lines[value]);
