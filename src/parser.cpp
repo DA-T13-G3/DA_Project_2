@@ -224,12 +224,19 @@ void parse2(string path, params &params){
     params.regs = regs;
 }
 
+void addID(params &params) {
+    for (int i = 0; i < params.webs.size(); i++) {
+        params.webs[i].id =to_string(i);
+    }
+}
+
 params parse (string path1, string path2){
     params params;
     params.valid = true;
     parse1(path1, params);
     parse2(path2, params);
     mergeWebs(params);
+    addID(params);
     return params;
 }
 

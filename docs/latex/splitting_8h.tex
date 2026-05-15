@@ -1,0 +1,63 @@
+\doxysection{src/splitting.h File Reference}
+\hypertarget{splitting_8h}{}\label{splitting_8h}\index{src/splitting.h@{src/splitting.h}}
+{\ttfamily \#include "{}data\+Structs.\+h"{}}\newline
+{\ttfamily \#include "{}graph\+Coloring.\+h"{}}\newline
+Include dependency graph for splitting.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{splitting_8h_abfa40819f7e4912eef5946521fd9083e}{split}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{structparams}{params}} \&info)
+\begin{DoxyCompactList}\small\item\em Splits a web into two smaller webs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{splitting_8h_a15c931191093cc02a28a9a8ca9943ce3}{splitting}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{structparams}{params}} \&info)
+\begin{DoxyCompactList}\small\item\em Attempts to color the graph using iterative web splitting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{splitting_8h_abfa40819f7e4912eef5946521fd9083e}\label{splitting_8h_abfa40819f7e4912eef5946521fd9083e} 
+\index{splitting.h@{splitting.h}!split@{split}}
+\index{split@{split}!splitting.h@{splitting.h}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{structparams}{params}} \&}]{info }\end{DoxyParamCaption})}
+
+
+
+Splits a web into two smaller webs. 
+
+This function selects a web in the graph (the one with the highest degree) and divides it into two new webs. The original web is removed from the graph, and the two derived webs are inserted with updated edges. The vector webs in params is also updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph of webs. \\
+\hline
+{\em info} & Global parameters, including the list of webs and algorithm settings. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{splitting_8h_a15c931191093cc02a28a9a8ca9943ce3}\label{splitting_8h_a15c931191093cc02a28a9a8ca9943ce3} 
+\index{splitting.h@{splitting.h}!splitting@{splitting}}
+\index{splitting@{splitting}!splitting.h@{splitting.h}}
+\doxysubsubsection{\texorpdfstring{splitting()}{splitting()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} splitting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{structparams}{params}} \&}]{info }\end{DoxyParamCaption})}
+
+
+
+Attempts to color the graph using iterative web splitting. 
+
+This function repeatedly tries to color the graph using the basic greedy coloring algorithm. If coloring fails and the maximum number of allowed splits has not been reached, one web is split (via \doxylink{splitting_8h_abfa40819f7e4912eef5946521fd9083e}{split()}) and the graph is recolored. The process continues until either\+:
+\begin{DoxyItemize}
+\item the graph becomes colorable with the available registers, or
+\item the maximum number of splits is reached.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph of webs. \\
+\hline
+{\em info} & Global parameters, including register count and algorithm settings.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of colors used if successful, or -\/1 if allocation is impossible. 
+\end{DoxyReturn}

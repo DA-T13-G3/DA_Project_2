@@ -1,0 +1,34 @@
+\doxysection{src/data\+Structs.cpp File Reference}
+\hypertarget{dataStructs_8cpp}{}\label{dataStructs_8cpp}\index{src/dataStructs.cpp@{src/dataStructs.cpp}}
+{\ttfamily \#include "{}data\+Structs.\+h"{}}\newline
+Include dependency graph for data\+Structs.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere}} (\mbox{\hyperlink{structweb}{web}} \mbox{\hyperlink{classEdge}{a}}, \mbox{\hyperlink{structweb}{web}} \mbox{\hyperlink{classEdge}{b}})
+\begin{DoxyCompactList}\small\item\em Determines whether two webs interfere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}\label{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8} 
+\index{dataStructs.cpp@{dataStructs.cpp}!interfere@{interfere}}
+\index{interfere@{interfere}!dataStructs.cpp@{dataStructs.cpp}}
+\doxysubsubsection{\texorpdfstring{interfere()}{interfere()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} interfere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweb}{web}}}]{a,  }\item[{\mbox{\hyperlink{structweb}{web}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Determines whether two webs interfere. 
+
+Two webs interfere if their live ranges overlap at any program point. The function assumes that lines, start, and end vectors are sorted.
+
+If the only shared line is one where\+:
+\begin{DoxyItemize}
+\item web A ends (due to a read), and
+\item web B begins (due to a write), then the webs do not interfere.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+True if the webs interfere, false otherwise. 
+\end{DoxyReturn}
