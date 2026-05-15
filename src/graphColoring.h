@@ -38,7 +38,7 @@ int graphColoringBasicTestSuite();
  *                   vector clean after the past recursive calls).
  */
 template<typename T>
-void graphColoringFree(Vertex<T>* v,int& biggestColor,std::vector<bool>&usedColors) {
+void graphColoringFreeAux(Vertex<T>* v,int& biggestColor,std::vector<bool>&usedColors) {
     v->setVisited(true);
     for (int i=0;i<biggestColor;i++) {
         usedColors[i] = false;
@@ -72,7 +72,7 @@ void graphColoringFree(Vertex<T>* v,int& biggestColor,std::vector<bool>&usedColo
         Vertex<T>*w=e->getDest();
         if (!w->isVisited()) {
             w->setVisited(true);
-            graphColoringFree(w,biggestColor,usedColors);
+            graphColoringFreeAux(w,biggestColor,usedColors);
         }
     }
 }
@@ -100,7 +100,7 @@ void graphColoringFree(Vertex<T>* v,int& biggestColor,std::vector<bool>&usedColo
  *         If the graph is empty, it returns 0.
  */
 template<typename T>
-int graphColoringFree(Graph<T>* g) {
+int graphColoringFree(Graph<T>* g, unsigned int N) {
     int biggestColor=0;
     std::vector<bool>usedColors(0,false);
     for (int i=0;i<usedColors.size();i++) {
@@ -109,13 +109,13 @@ int graphColoringFree(Graph<T>* g) {
     if (g->getVertexSet().size()>0) {
         biggestColor=0;
         for (auto &v:g->getVertexSet()) {
-            v->setVisited(false);
+            //v->setVisited(false);
             v->setNum(-1);
         }
 
         for (int k=0;k<g->getVertexSet().size();k++) {
             if (!g->getVertexSet()[k]->isVisited()){
-                graphColoringFree(g->getVertexSet()[k],biggestColor,usedColors);
+                graphColoringFreeAux(g->getVertexSet()[k],biggestColor,usedColors);
             }
         }
     }
