@@ -7,8 +7,9 @@
 #include "buildResult.h"
 #include <algorithm>
 #include <limits>
+#include <functional>
 
 
-struct result spill(Graph<web>* g, params info);
+struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)> coloring);
 
 #endif

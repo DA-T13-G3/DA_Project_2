@@ -40,10 +40,11 @@ bool incrementGrid(vector<int>& grid, int spilled){
     return !moved;
 }
 
-bool attempt(Graph<web>* g, params info, vector<Vertex<web> *> candidates, int spilled){
+bool attempt(Graph<web>* g, params info, vector<Vertex<web> *> candidates, function<int(Graph<web>* g, int)> coloring, int spilled){
     if (spilled == 0){
         for (auto &v : g->getVertexSet()) v->setVisited(false);
-        return graphColoring(g) <= info.regs;
+        
+        return coloring(g, info.regs) <= info.regs;
     }
 
     // If we need to spill more than we have candidates, it's impossible in this subset
@@ -60,16 +61,16 @@ bool attempt(Graph<web>* g, params info, vector<Vertex<web> *> candidates, int s
             }
         }
 
-        if (graphColoring(g) <= info.regs) return true;
+        if (coloring(g, info.regs) <= info.regs) return true;
     }
 
     return false;    
 }
 
-void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, int spilled){
+void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, function<int(Graph<web>* g, int)> coloring, int spilled){
     if (spilled == 0){
         for (auto &v : g->getVertexSet()) v->setVisited(false);
-        graphColoring(g);
+        coloring(g, info.regs);
         return;
     }
 
@@ -84,7 +85,7 @@ void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, in
             if (grid[i] == 1) candidates[i]->setVisited(true);
         }
 
-        int newNum = graphColoring(g);
+        int newNum = coloring(g, info.regs);
         if (newNum < bestNum){
             bestNum = newNum;
             bestOrder = grid;
@@ -95,10 +96,16 @@ void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, in
     for (int i = 0; i < (int)bestOrder.size(); i++){
         if (bestOrder[i] == 1) candidates[i]->setVisited(true);
     }
-    graphColoring(g);
+    coloring(g, info.regs);
 }
 
-struct result spill(Graph<web>* g, params info){
+struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)> coloring){
+
+    if (graphColoringBasic(g, info.regs) != -1){
+        struct result res = build(g, info);
+        return res;
+    }
+
     vector<Vertex<web> *> vSet = g->getVertexSet();
     sort(vSet.begin(), vSet.end(), cmp);
 
@@ -113,18 +120,18 @@ struct result spill(Graph<web>* g, params info){
     vector<int> allSpills(maxPossible + 1);
     for (int i = 0; i < (int)allSpills.size(); i++) allSpills[i] = i;
 
-    auto it = std::lower_bound(allSpills.begin(), allSpills.end(), true,
+    auto it = lower_bound(allSpills.begin(), allSpills.end(), true,
         [&](int spilled, bool target) {
-            return !attempt(g, info, candidates, spilled);
+            return !attempt(g, info, candidates, coloring, spilled);
         }
     );
 
     int trueSpills = (it != allSpills.end()) ? *it : -1;
 
     if (trueSpills != -1){
-        finalSpill(g, info, candidates, trueSpills);
+        finalSpill(g, info, candidates, coloring, trueSpills);
     } else {
-        finalSpill(g, info, candidates, 0);
+        finalSpill(g, info, candidates, coloring, 0);
     }
 
     struct result res = build(g, info);

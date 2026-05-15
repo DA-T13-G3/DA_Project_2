@@ -6,12 +6,12 @@
 #include "writeAssignments.h"
 
 int main() {
-    params info = parse("../input/ranges/rangesCustom.txt", "../input/registers/registersCustom.txt");
+    params info = parse("../input/ranges/ranges6.txt", "../input/registers/registersCustom.txt");
     Graph<web> graph = create(info);
     Graph<web>* g = &graph;
     struct result res;
     if (info.alg.type == spilling){
-        res = spill(g, info);
+        res = spill(g, info, graphColoringFree<web>);
     }
 
     write(res);

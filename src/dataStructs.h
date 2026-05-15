@@ -117,11 +117,6 @@ struct order { //struct for storing the order of webs
     int index;
     web w;
 };
-<<<<<<< HEAD
-
-
-
-=======
 /**
  * @brief Determines whether two webs interfere.
  *
@@ -135,7 +130,6 @@ struct order { //struct for storing the order of webs
  *
  * @return True if the webs interfere, false otherwise.
  */
->>>>>>> main
 bool interfere(web a, web b);
 
 #endif
