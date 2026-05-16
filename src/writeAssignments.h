@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void write(const result &res);
+void write(const result &res,const string& outputFile="../output/output.txt");
 
 #endif
 
