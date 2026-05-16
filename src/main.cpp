@@ -23,7 +23,7 @@ int main(int argc, char*argv[]) {
             }
             string output_path = menu.getOutput();
             if (allocationTool(p, output_path) != 0) {
-                printf("Something went wrong with th register allocation.");
+                printf("Something went wrong with the register allocation.");
             }
         }
         
