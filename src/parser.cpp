@@ -12,7 +12,18 @@ string trim(const std::string& s) {
     return s.substr(first, (last - first + 1));
 }
 
-int myStoi(string s, params &params){
+int myStoi1(string s, params1 &params){
+    int i;
+    try {
+        i = stoi(s);
+        return i;
+    } catch (...) {
+        params.valid = false;
+        return -1;
+    }
+}
+
+int myStoi2(string s, params2 &params){
     int i;
     try {
         i = stoi(s);
@@ -115,7 +126,7 @@ void mergeWebs(params &params) {
     params.webs = finalWebs;
 }
 
-void parse1(string path1, params &params) {
+void parse1(string path1, params1 &params) {
     vector<web> webs;
 
     ifstream filestream(path1);
@@ -146,10 +157,10 @@ void parse1(string path1, params &params) {
             if (value.size() > 1){
                 if (value.back() == '+'){
                     value.pop_back();
-                    w.start.push_back(myStoi(value, params));
+                    w.start.push_back(myStoi1(value, params));
                 } else if (value.back() == '-'){
                     value.pop_back();
-                    w.end.push_back(myStoi(value, params));
+                    w.end.push_back(myStoi1(value, params));
                 }
             }
             w.lines.push_back(stoi(value));
@@ -160,13 +171,13 @@ void parse1(string path1, params &params) {
     params.webs = webs;
 }
 
-void parse2(string path, params &params){
+void parse2(string path2, params2 &params){
     bool hasRegs = false;
     bool hasAlg = false;
     bool hasVal = false;
     int regs = 0;
     algorithm alg;
-    ifstream filestream(path);
+    ifstream filestream(path2);
     string line;
 
     if (!filestream.good()){
@@ -182,7 +193,7 @@ void parse2(string path, params &params){
         if (line == "registers"){
             getline(lineStream, line);
             line = trim(line);
-            regs = myStoi(line, params);
+            regs = myStoi2(line, params);
             hasRegs = true; //check
         } else if (line == "algorithm"){
             getline(lineStream, line);
@@ -210,7 +221,7 @@ void parse2(string path, params &params){
                 }
                 getline(valStream, line);
                 line = trim(line);
-                alg.val = myStoi(line, params);
+                alg.val = myStoi2(line, params);
                 hasVal = true; //check
             }
         }
@@ -230,11 +241,29 @@ void addID(params &params) {
     }
 }
 
+params parse (params1 &params1, params2 &params2){
+    params params;
+    params.webs = params1.webs;
+    params.alg = params2.alg;
+    params.regs = params2.regs;
+    params.valid = params1.valid && params2.valid;
+    mergeWebs(params);
+    addID(params);
+    return params;
+}
+
+
 params parse (string path1, string path2){
     params params;
+    params1 params1;
+    params2 params2;
     params.valid = true;
-    parse1(path1, params);
-    parse2(path2, params);
+    parse1(path1, params1);
+    parse2(path2, params2);
+    params.webs = params1.webs;
+    params.alg = params2.alg;
+    params.regs = params2.regs;
+    params.valid = params1.valid && params2.valid;
     mergeWebs(params);
     addID(params);
     return params;

@@ -15,7 +15,9 @@ int main(int argc, char*argv[]) {
         allocationTool(argv[2],argv[3],argv[4]);
     }
     else if (argc ==1) {
-        //Menu
+        Menu menu;
+        menu.run();
+        
     }
     else {
 

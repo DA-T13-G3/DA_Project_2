@@ -13,6 +13,8 @@
 #include "writeAssignments.h"
 #include "splitting.h"
 
+#include "menu.h"
+
 
 int allocationTool(const string& rangeInputFile,const string&registerInputFile, const string& outputFile);
 int allocationTool( params& info, const string& outputFile);
