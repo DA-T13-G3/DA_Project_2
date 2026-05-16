@@ -289,6 +289,31 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
 
 }
 
+/**
+ * @brief Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic.
+ * The time complexity is O(|V|^2) and the space complexity is O(|V|).
+ *
+ * @details This algorithm attempts to color an undirected graph using a maximum of N colors.
+ * Unlike the basic approach, this function guarantees completion by spilling nodes when the
+ * graph becomes uncolorable.
+ * The algorithm is divided into two phases:
+ * * - Phase 1 (Simplification & Spilling): Iteratively removes nodes with a degree less than N
+ * and pushes them onto a stack. If the graph gets blocked (all remaining active nodes have
+ * a degree >= N), the algorithm selects the node with the highest current degree, marks it
+ * as spilled (visited), and removes it from the active graph to break the deadlock.
+ * * - Phase 2 (Coloring): Pops nodes from the stack and assigns the lowest available
+ * color (0-indexed) that is not currently used by its already-colored neighbors.
+ *
+ * @tparam T The data type stored within the vertex (e.g., int, std::string, web).
+ *
+ * @param g Pointer to the Graph object to be colored. The graph must have
+ * bidirectional (undirected) edges for the degree calculation to work correctly.
+ * @param N The maximum number of allowed colors (the register limit).
+ *
+ * @return Returns the total number of colors successfully used to color the non-spilled graph.
+ * The number of used colors will not exceed N. Spilled nodes can be identified
+ * after execution by checking if their marked as visited.
+ */
 template<typename T>
 int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N) {
     std::vector<Vertex<T>*>stack;
