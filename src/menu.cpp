@@ -51,7 +51,7 @@ void Menu::print_c(const string &str) {
 
 }
 
-void Menu::run() {
+bool Menu::run() {
 
     string line;
     int input;
@@ -62,10 +62,10 @@ void Menu::run() {
         printn_c(bar);
         printn_c("Register Allocation Tool");
         printn_c(bar);
-        printf((error).c_str());
+        printf("%s", error.c_str());
 
 
-        printn_c("menu");
+        printn_c("Menu");
         nl();
         printn_c("1-Load data (live ranges)        ");
         nl();
@@ -75,9 +75,11 @@ void Menu::run() {
         nl();
         printn_c("4-View register parameters       ");
         nl();
-        printn_c("5-Do the registers' allocation   ");
+        printn_c("5-Choose output directory        ");
         nl();
-        printn_c("0-Exit                          ");
+        printn_c("6-Do the registers' allocation   ");
+        nl();
+        printn_c("0-Exit                           ");
         nl();
         print_c("Select one of the following options (write a number):");
         try {
@@ -105,20 +107,36 @@ void Menu::run() {
                 exit=true;
                 break;
             case 1:
-               // load_data();
+                load_data_ranges();
                 break;
             case 2:
-               // list_of_submissions();
+                load_data_algorithm();
                 break;
             case 3:
-               // list_of_reviewers();
+                print_liveRanges();
                 break;
             case 4:
-              //  current_parameters();
+                print_algorithm();
                 break;
             case 5:
-              //
-               // list_of_assignments();
+                select_output();
+                break;
+            case 6:
+                if (no_params1 && no_params2){
+                    printf("Live ranges and register parameters missing/invalid.");
+                } else if (no_params1){
+                    printf("Live ranges missing/invalid.");
+                } else if (no_params2){
+                    printf("Register parameters missing/invalid.");
+                } else {
+                    if (no_output){
+                        printf("Output path missing/invalid.");
+                    } else {
+                        params_data = parse(params1_data, params2_data);
+                        return true;
+                    }
+                    
+                }
                 break;
             case 7:
 
@@ -127,11 +145,12 @@ void Menu::run() {
 
 
     }
+    return false;
 
 }
 
 
-void Menu::load_data() {
+void Menu::load_data_ranges() {
 
     string input;
     string error="\n";
@@ -140,11 +159,11 @@ void Menu::load_data() {
         clear_terminal();
 
         printn_c(bar);
-        printn_c("Load data");
+        printn_c("Load live ranges");
         printn_c(bar);
-        printf((error).c_str());
+        printf("%s", error.c_str());
 
-        printf(repeat("\n",12).c_str());
+        printf("%s", repeat("\n",12).c_str());
         print_c("Write the input filepath (or press 0 to go back to menu):");
 
         try {
@@ -152,7 +171,7 @@ void Menu::load_data() {
         }
         catch (...) {
             error="Error: Please enter a valid input\n";
-
+            continue;
         }
         if (input=="0") {
             exit=true;
@@ -160,90 +179,195 @@ void Menu::load_data() {
         }
         try {
             if (input!="") {
-              //  cur_params=parse(input);
-                no_data=false;
+                params1 p1;
+                parse1(input, p1);
+                if (!p1.valid){
+                    throw runtime_error("Error: parsing failed\n");
+                }
+                params1_data=p1;
+                no_params1=false;
+                exit = true;
             }
+        }
+        catch (const runtime_error& e) {
+            error=e.what();
         }
         catch (...) {
-            error="Error: parsing failed\n";
+            error="Error: An unexpected error occurred.\n";
         }
-
-
     }
-
-
-
-}
-/*
-string print_submission(const submission& s) {
-    string res;
-    res="Submission:  Id="+(to_string(s.id))+" / Title="+s.title +" / Authors="+s.name+"\n";
-    res=res +"\t\t Email="+s.email+" / Primary Domain="+to_string(s.primary)+" / Secondary Domain="+to_string(s.secondary);
-    return res;
 }
 
-string print_reviewer(const reviewer& r) {
-    string res;
-    res="Reviewer:  Id="+(to_string(r.id))+" / Name="+r.name +" Email="+r.email+"\n";
-    res=res +"\t\t / Primary Domain="+to_string(r.primary)+" / Secondary Domain="+to_string(r.secondary);
-    return res;
-}
+void Menu::load_data_algorithm() {
 
-void Menu::list_of_submissions() {
-    list_view_page("Submission List ",cur_params.submissions,print_submission);
-}
+    string input;
+    string error="\n";
+    bool exit=false;
+    while (!exit) {
+        clear_terminal();
 
-void Menu::list_of_reviewers() {
-    list_view_page("Reviewer List ",cur_params.reviewers,print_reviewer);
-}
+        printn_c(bar);
+        printn_c("Load algorithm data");
+        printn_c(bar);
+        printf("%s", error.c_str());
 
-void Menu::current_parameters() {
+        printf("%s", repeat("\n",12).c_str());
+        print_c("Write the input filepath (or press 0 to go back to menu):");
 
-    vector<string> params={
-        "#Parameters",
-    "MinReviewsPerSubmission = "+to_string(cur_params.MinReviewsPerSubmission) ,
-    "MaxReviewsPerReviewer = "+to_string(cur_params.MaxReviewsPerReviewer),
-    "PrimaryReviewerExpertise = "+to_string(cur_params.PrimaryReviewerExpertise),
-    "SecondaryReviewerExpertise = "+to_string(cur_params.SecondaryReviewerExpertise),
-    "PrimarySubmissionDomain = "+to_string(cur_params.PrimarySubmissionDomain),
-    "SecondarySubmissionDomain = "+to_string(cur_params.SecondarySubmissionDomain),
-    "#Control",
-    "GenerateAssignments = "+to_string(cur_params.GenerateAssignments),
-    "RiskAnalysis = "+to_string(cur_params.RiskAnalysis),
-    "OutputFileName = "+cur_params.OutputFileName
-    };
-
-    basic_view_page("Current Parameters", [&](){
-        if (!no_data) {
-            for (const string& s :params) {
-                printf(("\t\t"+s+"\n\n").c_str());
+        try {
+            getline(std::cin,input);
+        }
+        catch (...) {
+            error="Error: Please enter a valid input\n";
+            continue;
+        }
+        if (input=="0") {
+            exit=true;
+            break;
+        }
+        try {
+            if (input!="") {
+                params2 p2;
+                parse2(input, p2);
+                if (!p2.valid){
+                    throw runtime_error("Error: parsing failed\n");
+                }
+                params2_data=p2;
+                no_params2=false;
+                exit = true;
             }
         }
+        catch (const runtime_error& e) {
+            error=e.what();
+        }
+        catch (...) {
+            error="Error: An unexpected error occurred.\n";
+        }
     }
-    );
-
 }
 
+string print_range(const web& w){
+    string output;
+    set<int> startSet(w.start.begin(), w.start.end());
+    set<int> endSet(w.end.begin(), w.end.end());
+    bool first = true;
+    for (int line : w.lines) {
+        if (!first) output += ",";
+        output += to_string(line);
+        if (startSet.count(line)) output += "+";
+        if (endSet.count(line)) output += "-";
+        first = false;
+    }
+    return output;
+}
 
+void Menu::print_liveRanges(){
+    if (!params1_data.valid){
+        printf("Invalid Live ranges.");
+        return;
+    }
+    basic_view_page("Live Ranges", [&](){
+        int i = 0;
+        for (auto w : params1_data.webs){
+            printf("live range %s: %s\n", to_string(i).c_str(), print_range(w).c_str());
+            i++;
+        }
+    });
+    
+}
 
-void Menu::list_of_assignments() {
+void Menu::print_algorithm(){
+    if (!params2_data.valid){
+        printf("Invalid Register parameters.");
+        return;
+    }
+    basic_view_page("Register parameters", [&](){
+        printf("Registers: %d\n\n", params2_data.regs);
+    
+        string alg_name;
+        switch (params2_data.alg.type){
+            case basic:
+                alg_name = "basic";
+                break;
+            case spilling:
+                alg_name = "spilling";
+                break;
+            case splitting_:
+                alg_name = "splitting";
+                break;
+            case free_:
+                alg_name = "free";
+                break;
+            default:
+                alg_name = "Unknown algorithm type";
+                break;
+        }
+        printf("Algorithm type: %s; Algorithm value: %d\n", alg_name.c_str(), params2_data.alg.val);
+    });
+    
+}
 
-    basic_view_page("Assignments", [&](){
-        if (!no_data) {
-            assignment_command(cur_params,cur_params.OutputFileName);
-            FILE * file=fopen(cur_params.OutputFileName.c_str(),"r");
-            char* line;
-            size_t size=0;
-            while (getline(&line,&size,file)!=-1) {
-                printf(line);
+void Menu::select_output(){
+    string input;
+    string error="\n";
+    bool exit=false;
+    while (!exit) {
+        clear_terminal();
+
+        printn_c(bar);
+        printn_c("Choose output file");
+        printn_c(bar);
+        if (output_path == ""){
+            printf("Current output file: {None}\n");
+        } else {
+            printf("Current output file: %s\n", output_path.c_str());
+        }
+        printf("%s", error.c_str());
+        
+
+        printf("%s", repeat("\n",12).c_str());
+        print_c("Write the relative output filepath and file name (or press 0 to go back to menu):");
+
+        try {
+            getline(std::cin,input);
+        }
+        catch (...) {
+            error="Error: Please enter a valid input\n";
+            continue;
+        }
+        if (input=="0") {
+            exit=true;
+            break;
+        }
+        try {
+            if (input!="") {
+
+                ofstream output(input);
+                if (!output.good()) {
+                    throw runtime_error("Error: Unable to locate/create file\n");
+                } else {
+                    output.close();
+                    output_path = input;
+                    no_output = false;
+                    exit = true;
+                }
+
             }
         }
-
+        catch (const runtime_error& e) {
+            error=e.what();
+        }
+        catch (...) {
+            error = "Error: An unexpected error occurred.\n";
+        }
     }
-    );
+}
 
-}*/
-
-
+params Menu::getParams(){
+    return params_data;
+}
+string Menu::getOutput(){
+    return output_path;
+}
 
 

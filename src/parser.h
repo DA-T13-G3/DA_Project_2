@@ -14,6 +14,12 @@
 #include <algorithm>
 #include "dataStructs.h"
 
-params parse(string path1, string path2);
+void parse1(string path1, params1 &params);
+
+void parse2(string path2, params2 &params);
+
+params parse(params1 &params1, params2 &params2);
+
+params parse (const string& path1, const string& path2);
 
 #endif

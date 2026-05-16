@@ -21,17 +21,26 @@ string repeat(const string &str, int n) ;
 class  Menu {
     int screen_width=100;
     string bar= repeat("-",screen_width-1)+"\n";
+    params1 params1_data;
+    params2 params2_data;
+    params params_data;
+    string output_path = "";
 
-    bool no_data=true;
+    bool no_params1=true;
+    bool no_params2=true;
+    bool no_output = true;
 public:
 
-    void run();
-    void load_data();
-    void list_of_submissions();
-    void list_of_reviewers();
-    void current_parameters();
+    bool run();
+    void load_data_ranges();
+    void load_data_algorithm();
+    void print_liveRanges();
+    void print_algorithm();
+    void select_output();
 
-    void list_of_assignments();
+    params getParams();
+    string getOutput();
+
     template<typename Func>
     void basic_view_page(const string& title,Func print_data) ;
 
@@ -54,16 +63,14 @@ void Menu::basic_view_page(const string& title,Func print_data) {
     string line;
     int input;
     string error="\n";
-    if (no_data) {
-        error="No data available. Go to menu and Load Data (option: 1)";
-    }
+
     bool exit=false;
     while (!exit) {
         clear_terminal();
         printn_c(bar);
         printn_c(title);
         printn_c(bar);
-        printf((error).c_str());
+        printf("%s", error.c_str());
         nl();
 
         print_data();

@@ -85,8 +85,37 @@ struct params { //has all information from the input files after being parsed
     algorithm alg;
     int regs;
 
-    bool valid;
+    bool valid = false;
 };
+
+/**
+ * @brief Global parameters produced by the parser corresponding only to the live ranges input file.
+ *
+ * This structure contains all information extracted from the live ranges input file:
+ *
+ * - webs: list of all merged webs.
+ * - valid: set to false if any parsing error occurs.
+ */
+struct params1 { //struct for storing the parameters of the first input file
+    vector<web> webs;
+    bool valid = false;
+};
+
+/**
+ * @brief Global parameters produced by the parser corresponding only to the registers input file.
+ *
+ * This structure contains all information extracted from the registers input file:
+ *
+ * - alg:  algorithm type and parameter.
+ * - regs: number of available registers.
+ * - valid: set to false if any parsing error occurs.
+ */
+struct params2 { //struct for storing the parameters of the second input file
+    algorithm alg;
+    int regs;
+    bool valid = false;
+};
+
 /**
  * @brief Represents a set of webs that do not interfere with each other.
  *
