@@ -1,5 +1,6 @@
 #ifndef DA_PROJECT_2_SPLITTING_H
 #define DA_PROJECT_2_SPLITTING_H
+#include <algorithm>
 #include "dataStructs.h"
 #include "graphColoring.h"
 /**
