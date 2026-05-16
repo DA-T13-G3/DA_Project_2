@@ -21,6 +21,28 @@ int graphColoringTestSuite();
  * @param g Pointer to the Graph object to be printed.
  */
 template<typename T>
+void printVertexDetails(Vertex<T>* v) {
+    std::cout << "Node [" << v->getInfo().id << "]:\n";
+    std::cout << "  - Color (Num): " << v->getNum() << "\n";
+    std::cout << "  - Indegree:    " << v->getIndegree() << "\n";
+
+    // In your project, visited == true means it was spilled
+    std::cout << "  - Spilled:     " << (v->isVisited() ? "YES" : "NO") << "\n";
+
+    std::cout << "  - Processed:     " << (v->isProcessing() ? "YES" : "NO") << "\n";
+    std::cout << "  - Neighbors:   ";
+
+    if (v->getAdj().empty()) {
+        std::cout << "None";
+    } else {
+        for (auto e : v->getAdj()) {
+            std::cout << "[" << e->getDest()->getInfo().id << "] ";
+        }
+    }
+    std::cout << "\n\n";
+}
+
+template<typename T>
 void printGraphDetails(Graph<T>* g) {
     std::cout << "=== Graph Details ===\n";
 
@@ -30,22 +52,7 @@ void printGraphDetails(Graph<T>* g) {
     }
 
     for (auto v : g->getVertexSet()) {
-        std::cout << "Node [" << v->getInfo().id << "]:\n";
-        std::cout << "  - Color (Num): " << v->getNum() << "\n";
-        std::cout << "  - Indegree:    " << v->getIndegree() << "\n";
-
-        // In your project, visited == true means it was spilled
-        std::cout << "  - Spilled:     " << (v->isVisited() ? "YES" : "NO") << "\n";
-        std::cout << "  - Neighbors:   ";
-
-        if (v->getAdj().empty()) {
-            std::cout << "None";
-        } else {
-            for (auto e : v->getAdj()) {
-                std::cout << "[" << e->getDest()->getInfo().id << "] ";
-            }
-        }
-        std::cout << "\n\n";
+       printVertexDetails(v);
     }
     std::cout << "=====================\n";
 }
@@ -220,7 +227,9 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
                     for (auto e:v->getAdj()) {
                         Vertex<T>* w=e->getDest();
                         if (!w->isProcessing() && !w->isVisited()) {
-                            w->setIndegree(w->getIndegree()-1);
+                            if (w->getIndegree()>0) { // prevent underflow
+                                w->setIndegree(w->getIndegree()-1);
+                            }
                         }
                     }
                 }
@@ -235,8 +244,125 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
             }
         }
         if (n_nodes!=0 && all_remaining_nodes_degree_eq_gt_N) {
-            return -1;
+            return N+1;
         }
+    }
+
+    for (auto &v:g->getVertexSet()) {
+        if (!v->isVisited()) {
+            v->setProcessing(false);
+            v->setNum(-1);
+        }
+    }
+
+
+
+    int biggestColor=-1;
+    std::vector<bool>usedColors(N,0);
+
+    while (!stack.empty()) {
+        Vertex<T>* v=stack.back();
+        stack.pop_back();
+        for (auto e:v->getAdj()) {
+            Vertex<T>*w=e->getDest();
+            if (w->getNum()!=-1 && !w->isVisited() ) {
+                if (w->getNum()<(int)N) {
+                    usedColors[w->getNum()]=true;
+                }
+            }
+        }
+
+        for ( int i=0;i<N;i++) {
+            if (!usedColors[i]) {
+                v->setNum(i);
+                biggestColor=std::max(i,biggestColor);
+                break;
+            }
+        }
+        for ( unsigned int i=0;i<N;i++) {
+            usedColors[i] = false;
+        }
+    }
+
+    return biggestColor+1;
+
+
+}
+
+template<typename T>
+int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N) {
+    std::vector<Vertex<T>*>stack;
+
+
+    vector<Vertex<T>*> allNodes=g->getVertexSet();;
+
+    int n_nodes=0;
+    for (auto v:allNodes) {
+
+        n_nodes++;
+        v->setVisited(false);
+        v->setProcessing(false);
+        v->setIndegree(v->getAdj().size());
+    }
+
+
+
+    bool all_remaining_nodes_degree_eq_gt_N=true;
+    while (n_nodes>0) {
+        for (auto v:allNodes) {
+            if (!v->isProcessing() && !v->isVisited()) {
+                if (v->getIndegree()<N) {
+                    n_nodes--;
+                    stack.push_back(v);
+                    v->setProcessing(true);
+                    for (auto e:v->getAdj()) {
+                        Vertex<T>* w=e->getDest();
+                        if (!w->isProcessing() && !w->isVisited()) {
+                            w->setIndegree(w->getIndegree()-1);
+                        }
+                    }
+                }
+            }
+        }
+        all_remaining_nodes_degree_eq_gt_N=true;
+        for (auto v:allNodes) {
+            if (!v->isProcessing() && !v->isVisited()) {
+                if (v->getIndegree()<N) {
+                    all_remaining_nodes_degree_eq_gt_N=false;
+                }
+            }
+        }
+        if (n_nodes!=0 && all_remaining_nodes_degree_eq_gt_N) {
+
+          //  printGraphDetails(g);
+            Vertex<T>* nodeToSpill=nullptr;
+            int cur_indegree=-1;
+            for (auto v:allNodes) {
+
+                if (!v->isProcessing() && !v->isVisited()) {
+                //    printVertexDetails(v);
+                  //  printf("cur_indegree:%d ||v->getIndegree(): %d || cur_indegree < (v->getIndegree()). %d \n",cur_indegree,v->getIndegree(), cur_indegree < (int)(v->getIndegree()));
+                    if (cur_indegree < (int)(v->getIndegree())) {
+                        nodeToSpill=v;
+                        cur_indegree=v->getIndegree();
+
+                    }
+                }
+            }
+
+            if (nodeToSpill!=nullptr) {
+                nodeToSpill->setVisited(true);
+                n_nodes--;
+                for (auto e:nodeToSpill->getAdj()) {
+                    auto w=e->getDest();
+                    if (!w->isProcessing() && !w->isVisited()) {
+                        w->setIndegree(w->getIndegree()-1);
+                    }
+                }
+            }
+
+        }
+
     }
 
     for (auto &v:g->getVertexSet()) {

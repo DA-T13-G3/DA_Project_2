@@ -1,6 +1,6 @@
 #include "buildResult.h"
 
-struct result build(Graph<web>* g, params info) { 
+struct result build(Graph<web>* g,const params& info) {
     struct result res;
     res.regs = 0;
     res.possible = false;

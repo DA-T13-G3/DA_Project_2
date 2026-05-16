@@ -4,8 +4,8 @@
 
 using namespace std;
 
-void write(const result &res) {
-    ofstream output("../output/output.txt");
+void write(const result &res, const string& outputFile) {
+    ofstream output(outputFile);
     
     if (!output.good()) return;
 

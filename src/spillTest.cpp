@@ -15,7 +15,7 @@ int main() {
     Graph<web>* g = &graph;
     struct result res;
     if (info.alg.type == spilling){
-        res = spill(g, info, graphColoringBasic<web>);
+        res = spill(g, info, graphColoringFree<web>);
     }
 
     write(res);
