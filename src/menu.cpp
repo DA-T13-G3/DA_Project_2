@@ -60,7 +60,7 @@ void Menu::run() {
     while (!exit) {
         clear_terminal();
         printn_c(bar);
-        printn_c("Assignment Tool");
+        printn_c("Register Allocation Tool");
         printn_c(bar);
         printf((error).c_str());
 
