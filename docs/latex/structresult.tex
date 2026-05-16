@@ -1,0 +1,65 @@
+\doxysection{result Struct Reference}
+\hypertarget{structresult}{}\label{structresult}\index{result@{result}}
+
+
+Final result of the register allocation algorithm.  
+
+
+
+
+{\ttfamily \#include $<$data\+Structs.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \mbox{\hyperlink{structresult_a5719c21aa4c153a637821b9b8d884334}{webs}}
+\item 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{structassignment}{assignment}} $>$ \mbox{\hyperlink{structresult_a6e87b9a6b06eac084df5756e1efeecf2}{assignments}}
+\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{structresult_ab9e89d8ca1650c07555d3d198813b43b}{regs}}
+\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9}{possible}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Final result of the register allocation algorithm. 
+
+Contains\+:
+\begin{DoxyItemize}
+\item webs\+: the final list of webs (possibly modified by splitting).
+\item assignments\+: groups of webs that share the same register.
+\item regs\+: number of registers actually used.
+\item possible\+: false if allocation failed (all webs must be spilled). 
+\end{DoxyItemize}
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structresult_a6e87b9a6b06eac084df5756e1efeecf2}\label{structresult_a6e87b9a6b06eac084df5756e1efeecf2} 
+\index{result@{result}!assignments@{assignments}}
+\index{assignments@{assignments}!result@{result}}
+\doxysubsubsection{\texorpdfstring{assignments}{assignments}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{structassignment}{assignment}}$>$ result\+::assignments}
+
+\Hypertarget{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9}\label{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9} 
+\index{result@{result}!possible@{possible}}
+\index{possible@{possible}!result@{result}}
+\doxysubsubsection{\texorpdfstring{possible}{possible}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} result\+::possible}
+
+\Hypertarget{structresult_ab9e89d8ca1650c07555d3d198813b43b}\label{structresult_ab9e89d8ca1650c07555d3d198813b43b} 
+\index{result@{result}!regs@{regs}}
+\index{regs@{regs}!result@{result}}
+\doxysubsubsection{\texorpdfstring{regs}{regs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} result\+::regs}
+
+\Hypertarget{structresult_a5719c21aa4c153a637821b9b8d884334}\label{structresult_a5719c21aa4c153a637821b9b8d884334} 
+\index{result@{result}!webs@{webs}}
+\index{webs@{webs}!result@{result}}
+\doxysubsubsection{\texorpdfstring{webs}{webs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{structweb}{web}}$>$ result\+::webs}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{dataStructs_8h}{data\+Structs.\+h}}\end{DoxyCompactItemize}

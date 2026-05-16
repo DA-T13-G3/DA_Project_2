@@ -19,7 +19,7 @@ void test1() {
         g.addEdge(i, 0, 0);
     }
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  1 (Estrela/Bipartido)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -35,7 +35,7 @@ void test2() {
     g.addEdge(3, 4, 0); g.addEdge(4, 3, 0);
     g.addEdge(4, 0, 0); g.addEdge(0, 4, 0);
     int expected = 3;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  2 (Ciclo Impar)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -47,7 +47,7 @@ void test3() {
     }
     // Nenhuma aresta adicionada
     int expected = 1;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  3 (Totalmente Solto)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -62,7 +62,7 @@ void test4() {
     // Componente 2
     g.addEdge(2, 3, 0); g.addEdge(3, 2, 0);
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  4 (Comp. Separados)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -81,7 +81,7 @@ void test5() {
         }
     }
     int expected = 4;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  5 (Grafo Completo)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -96,7 +96,7 @@ void test6() {
     g.addEdge(3, 0, 0); g.addEdge(0, 3, 0);
 
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  6 (Ciclo Par)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -116,7 +116,7 @@ void test7() {
     g.addEdge(2, 6, 0); g.addEdge(6, 2, 0);
 
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  7 (Arvore)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -137,7 +137,7 @@ void test8() {
     g.addEdge(5, 1, 0); g.addEdge(1, 5, 0);
 
     int expected = 4;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  8 (Grafo Roda)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -156,7 +156,7 @@ void test9() {
     g.addEdge(2, 5, 0); g.addEdge(5, 2, 0); g.addEdge(5, 8, 0); g.addEdge(8, 5, 0);
 
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test  9 (Grelha 3x3)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -171,7 +171,7 @@ void test10() {
     }
 
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 10 (Caminho/Linha)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -194,7 +194,7 @@ void test11() {
     g.addEdge(4, 9, 0); g.addEdge(9, 4, 0);
 
     int expected = 3;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 11 (Grafo Petersen)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -204,7 +204,7 @@ void test12() {
     g.addVertex(0);
 
     int expected = 1;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 12 (So 1 Vertice)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -218,7 +218,7 @@ void test13() {
         }
     }
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 13 (Bipartido K_3,3)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -240,7 +240,7 @@ void test14() {
     g.addEdge(2, 5, 0); g.addEdge(5, 2, 0);
 
     int expected = 3;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 14 (Prisma Triangular)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -256,7 +256,7 @@ void test15() {
         }
     }
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 15 (Grafo Coroa)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -279,7 +279,7 @@ void test16() {
         g.addEdge(10, i, 0); g.addEdge(i, 10, 0);
     }
     int expected = 4;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 16 (Grafo Grotzsch)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -294,7 +294,7 @@ void test17() {
         g.addEdge(i, i+4, 0); g.addEdge(i+4, i, 0);
     }
     int expected = 3;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 17 (Escada Mobius)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -311,7 +311,7 @@ void test18() {
         g.addEdge(i, next, 0); g.addEdge(next, i, 0);
     }
     int expected = 2;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 18 (Engrenagem)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -331,7 +331,7 @@ void test19() {
         }
     }
     int expected = 3;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 19 (Turan T(10,3))", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 
@@ -358,7 +358,7 @@ void test20() {
     }
 
     int expected = 4;
-    int result = graphColoring(&g);
+    int result = graphColoringFree(&g);
     printf("%-30s - Esperado: %d | Resultado: %-2d   [%s]\n", "Test 20 (Multicomponente)", expected, result, result == expected ? "TEST PASSED" : "TEST FAILED");
 }
 

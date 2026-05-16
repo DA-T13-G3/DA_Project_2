@@ -1,3 +1,6 @@
+#ifndef DA_PROJECT_2_WRITEASSIGNMENTS_H
+#define DA_PROJECT_2_WRITEASSIGNMENTS_H
+
 #include "dataStructs.h"
 #include <vector>
 #include <fstream>
@@ -6,4 +9,6 @@
 using namespace std;
 
 void write(const result &res);
+
+#endif
 

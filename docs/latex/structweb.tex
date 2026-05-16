@@ -1,0 +1,69 @@
+\doxysection{web Struct Reference}
+\hypertarget{structweb}{}\label{structweb}\index{web@{web}}
+
+
+Represents a single live web of a variable.  
+
+
+
+
+{\ttfamily \#include $<$data\+Structs.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{structweb_aae1381e6198593bfe82a70489c5da8be}{var\+\_\+name}}
+\item 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{structweb_ae12c9c3b1a342c53d722a0589edc58f4}{start}}
+\item 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{structweb_a02eee1275b09c4dee29d6681fd4dc52d}{end}}
+\item 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single live web of a variable. 
+
+A web is the combination of one or more live ranges belonging to the same variable. The parser initially creates one web per live-\/range line in the input file. After parsing, \doxylink{parser_8cpp_ac1c18255324c0c59380f092569c4a9b7}{merge\+Webs()} merges all overlapping live ranges of the same variable into a single web.
+
+Fields\+:
+\begin{DoxyItemize}
+\item var\+\_\+name\+: name of the variable.
+\item start\+: program lines where the web begins (lines ending with \textquotesingle{}+\textquotesingle{}).
+\item end\+: program lines where the web ends (lines ending with \textquotesingle{}-\/\textquotesingle{}).
+\item lines\+: all program points where the variable is live.
+\end{DoxyItemize}
+
+All vectors are sorted after merging, and the \doxylink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere()} function assumes this ordering. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structweb_a02eee1275b09c4dee29d6681fd4dc52d}\label{structweb_a02eee1275b09c4dee29d6681fd4dc52d} 
+\index{web@{web}!end@{end}}
+\index{end@{end}!web@{web}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{classEdge}{int}}$>$ web\+::end}
+
+\Hypertarget{structweb_a867b62405c392c30ae6e5eb1a799af76}\label{structweb_a867b62405c392c30ae6e5eb1a799af76} 
+\index{web@{web}!lines@{lines}}
+\index{lines@{lines}!web@{web}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{classEdge}{int}}$>$ web\+::lines}
+
+\Hypertarget{structweb_ae12c9c3b1a342c53d722a0589edc58f4}\label{structweb_ae12c9c3b1a342c53d722a0589edc58f4} 
+\index{web@{web}!start@{start}}
+\index{start@{start}!web@{web}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{classEdge}{int}}$>$ web\+::start}
+
+\Hypertarget{structweb_aae1381e6198593bfe82a70489c5da8be}\label{structweb_aae1381e6198593bfe82a70489c5da8be} 
+\index{web@{web}!var\_name@{var\_name}}
+\index{var\_name@{var\_name}!web@{web}}
+\doxysubsubsection{\texorpdfstring{var\_name}{var\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} web\+::var\+\_\+name}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{dataStructs_8h}{data\+Structs.\+h}}\end{DoxyCompactItemize}

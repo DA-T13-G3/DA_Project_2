@@ -1,0 +1,36 @@
+\doxysection{src/create\+Graph.h File Reference}
+\hypertarget{createGraph_8h}{}\label{createGraph_8h}\index{src/createGraph.h@{src/createGraph.h}}
+{\ttfamily \#include "{}data\+Structs.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for create\+Graph.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \mbox{\hyperlink{createGraph_8h_a1d2a75240c8e4e9df54c6e98f4aed68d}{create}} (\mbox{\hyperlink{structparams}{params}} info)
+\begin{DoxyCompactList}\small\item\em Builds the graph from the set of webs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{createGraph_8h_a1d2a75240c8e4e9df54c6e98f4aed68d}\label{createGraph_8h_a1d2a75240c8e4e9df54c6e98f4aed68d} 
+\index{createGraph.h@{createGraph.h}!create@{create}}
+\index{create@{create}!createGraph.h@{createGraph.h}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparams}{params}}}]{info }\end{DoxyParamCaption})}
+
+
+
+Builds the graph from the set of webs. 
+
+This function constructs a graph where each web corresponds to a vertex. For every pair of webs, an interference edge is added if their live ranges overlap according to \textquotesingle{}\doxylink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere()}\textquotesingle{}. The resulting graph is the input for the register allocation algorithms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & Global parameters containing the list of webs to insert in the graph.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Graph$<$web$>$ object representing the full interference graph. 
+\end{DoxyReturn}
