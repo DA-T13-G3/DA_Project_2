@@ -267,8 +267,10 @@ void Menu::print_liveRanges(){
         return;
     }
     basic_view_page("Live Ranges", [&](){
+        int i = 0;
         for (auto w : params1_data.webs){
-            printf("web%s: %s\n", w.id.c_str(), print_range(w).c_str());
+            printf("live range %s: %s\n", to_string(i).c_str(), print_range(w).c_str());
+            i++;
         }
     });
     
