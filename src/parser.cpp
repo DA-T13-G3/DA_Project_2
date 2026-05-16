@@ -127,6 +127,7 @@ void mergeWebs(params &params) {
 }
 
 void parse1(string path1, params1 &params) {
+    params.valid = true;
     vector<web> webs;
 
     ifstream filestream(path1);
@@ -163,7 +164,7 @@ void parse1(string path1, params1 &params) {
                     w.end.push_back(myStoi1(value, params));
                 }
             }
-            w.lines.push_back(stoi(value));
+            w.lines.push_back(myStoi1(value, params));
         }
         webs.push_back(w);
 
@@ -172,6 +173,7 @@ void parse1(string path1, params1 &params) {
 }
 
 void parse2(string path2, params2 &params){
+    params.valid = true;
     bool hasRegs = false;
     bool hasAlg = false;
     bool hasVal = false;
@@ -253,11 +255,13 @@ params parse (params1 &params1, params2 &params2){
 }
 
 
-params parse (string path1, string path2){
+params parse (const string& path1, const string& path2){
     params params;
     params1 params1;
     params2 params2;
     params.valid = true;
+    params1.valid = true;
+    params2.valid = true;
     parse1(path1, params1);
     parse2(path2, params2);
     params.webs = params1.webs;

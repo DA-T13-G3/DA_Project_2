@@ -85,7 +85,7 @@ struct params { //has all information from the input files after being parsed
     algorithm alg;
     int regs;
 
-    bool valid;
+    bool valid = false;
 };
 
 /**
@@ -98,7 +98,7 @@ struct params { //has all information from the input files after being parsed
  */
 struct params1 { //struct for storing the parameters of the first input file
     vector<web> webs;
-    bool valid;
+    bool valid = false;
 };
 
 /**
@@ -113,7 +113,7 @@ struct params1 { //struct for storing the parameters of the first input file
 struct params2 { //struct for storing the parameters of the second input file
     algorithm alg;
     int regs;
-    bool valid;
+    bool valid = false;
 };
 
 /**
