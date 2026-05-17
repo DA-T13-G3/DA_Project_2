@@ -24,6 +24,14 @@ void split(Graph<web> *g, params&info);
  * recolored. The process continues until either:
  *   - the graph becomes colorable with the available registers, or
  *   - the maximum number of splits is reached.
+ * Time Complexity: Θ(k · (E + V · L))
+ * 
+ *   k - Actual number of splits performed before coloring succeeds (k ≤ S)
+ *   E - Number of interference edges in the graph
+ *   V - Number of webs (vertices)
+ *   L - Average number of lines in a live range
+
+ 
  *
  * @param g     Pointer to the graph of webs.
  * @param info  Global parameters, including register count and algorithm settings.

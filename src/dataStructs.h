@@ -53,6 +53,7 @@ struct algorithm { //struct for parser to store information about the second inp
  * - start:    program lines where the web begins (lines ending with '+').
  * - end:      program lines where the web ends (lines ending with '-').
  * - lines:    all program points where the variable is live.
+ * - id:       unique identifier for the web.
  *
  * All vectors are sorted after merging, and the interfere() function assumes
  * this ordering.
