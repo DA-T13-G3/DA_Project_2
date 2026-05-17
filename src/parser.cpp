@@ -4,7 +4,16 @@
 using namespace std;
 
 
-
+/**
+ * @brief Removes leading and trailing whitespace characters from a string.
+ * 
+ * This utility trims spaces, tabs ('\t'), carriage returns ('\r'), and newlines ('\n') 
+ * from both ends of the given string. If the string consists entirely of whitespace, 
+ * an empty string is returned.
+ * 
+ * @param s The constant reference to the input string to be trimmed.
+ * @return A new 'string' stripped of leading and trailing whitespace.
+ */
 string trim(const std::string& s) {
     size_t first = s.find_first_not_of(" \t\r\n");
     if (first == std::string::npos) return "";
@@ -12,6 +21,18 @@ string trim(const std::string& s) {
     return s.substr(first, (last - first + 1));
 }
 
+/**
+ * @brief Safely converts a string to an integer for live range processing.
+ * 
+ * Attempts to parse an integer from the string using 'stoi'. If the parsing 
+ * fails due to an exception (e.g., invalid argument or out-of-range), it intercepts 
+ * the error, sets the 'valid' flag of the provided 'params1' structure to 'false', 
+ * and returns an error indicator without crashing the program.
+ * 
+ * @param s The string representing the integer to parse.
+ * @param params Reference to the 'params1' structure whose validity state will be updated on failure.
+ * @return The parsed integer value on success, or -1 if an exception is caught.
+ */
 int myStoi1(string s, params1 &params){
     int i;
     try {
@@ -23,6 +44,17 @@ int myStoi1(string s, params1 &params){
     }
 }
 
+/**
+ * @brief Safely converts a string to an integer for configuration processing.
+ * 
+ * Attempts to parse an integer from the string using 'stoi'. If the parsing 
+ * fails due to an exception, it intercepts the error, sets the 'valid' flag of the 
+ * provided 'params2' structure to 'false', and returns an error indicator without crashing the program.
+ * 
+ * @param s The string representing the integer to parse.
+ * @param params Reference to the 'params2' structure whose validity state will be updated on failure.
+ * @return The parsed integer value on success, or -1 if an exception is caught.
+ */
 int myStoi2(string s, params2 &params){
     int i;
     try {
@@ -34,6 +66,17 @@ int myStoi2(string s, params2 &params){
     }
 }
 
+/**
+ * @brief Resolves and merges overlapping or intersecting live ranges for variables with the same name.
+ * 
+ * This method aggregates all disjoint live ranges (webs) that belong to the same variable name. 
+ * It evaluates intersections between line sets using 'set_intersection'. If two raw webs for 
+ * the same variable overlap at any program point, their lifetime intervals ('lines', 'start', 
+ * and 'end') are unified into a single web. 
+ * 
+ * 
+ * @param params Reference to the global 'params' structure holding the vector of webs to be consolidated.
+ */
 void mergeWebs(params &params) {
     map<string, vector<int>> websMap;
     
@@ -237,6 +280,14 @@ void parse2(string path2, params2 &params){
     params.regs = regs;
 }
 
+/**
+ * @brief Assigns unique sequential string identifiers to all consolidated webs.
+ * 
+ * Iterates through the collection of finalized webs within the parameters structure 
+ * and populates each web's 'id' field with its corresponding position string. 
+ * 
+ * @param params Reference to the global 'params' structure containing the webs to index.
+ */
 void addID(params &params) {
     for (int i = 0; i < params.webs.size(); i++) {
         params.webs[i].id =to_string(i);
