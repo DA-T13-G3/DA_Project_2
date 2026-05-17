@@ -7,6 +7,6 @@ g++  allocationToolTest.cpp allocationTool.cpp parser.cpp  createGraph.cpp  data
 ./allocationToolTest
 */
 int main() {
-    allocationTool( "../input/ranges/basicRange.txt", "../input/registers/registersBasic.txt","../output/output.txt");
+    allocationTool( "../input/ranges/rangesCustom.txt", "../input/registers/registersBasic.txt","output.txt");
     return 0;
 }

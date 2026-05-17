@@ -290,7 +290,7 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
 }
 
 /**
- * @brief Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic.
+ * @brief Applies a greedy graph coloring algorithm with spilling .
  * The time complexity is O(|V|^2) and the space complexity is O(|V|).
  *
  * @details This algorithm attempts to color an undirected graph using a maximum of N colors.
@@ -315,13 +315,15 @@ int graphColoringBasic(Graph<T>* g,unsigned int N) {
  * after execution by checking if their marked as visited.
  */
 template<typename T>
-int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N) {
+int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N, int max_spills) {
     std::vector<Vertex<T>*>stack;
 
 
     vector<Vertex<T>*> allNodes=g->getVertexSet();;
 
     int n_nodes=0;
+
+    int n_spills=0;
     for (auto v:allNodes) {
 
         n_nodes++;
@@ -378,6 +380,7 @@ int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N) {
             if (nodeToSpill!=nullptr) {
                 nodeToSpill->setVisited(true);
                 n_nodes--;
+                n_spills++;
                 for (auto e:nodeToSpill->getAdj()) {
                     auto w=e->getDest();
                     if (!w->isProcessing() && !w->isVisited()) {
@@ -395,6 +398,15 @@ int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N) {
             v->setProcessing(false);
             v->setNum(-1);
         }
+    }
+
+    if (n_spills>max_spills) {
+        printf("SPILLS %d",N);
+        for (auto &v:g->getVertexSet()) {
+            v->setNum(-1);
+            v->setVisited(false);
+        }
+        return  -1;
     }
 
 
