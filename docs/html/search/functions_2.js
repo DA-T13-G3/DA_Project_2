@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['decreasekey_0',['decreaseKey',['../classMutablePriorityQueue.html#a0878839cc1d2dba2b8ab2e589ecc6405',1,'MutablePriorityQueue']]],
-  ['deleteedge_1',['deleteEdge',['../classVertex.html#a622503fe44ef12d5c39bd1043d47865c',1,'Vertex']]],
-  ['deletematrix_2',['deletematrix',['../graph_8h.html#ad56527992afe31a371065e795da57d25',1,'deleteMatrix(int **m, int n):&#160;graph.h'],['../graph_8h.html#af077bc8682a1a1d97e30b08eb1131b19',1,'deleteMatrix(double **m, int n):&#160;graph.h']]]
+  ['clear_5fterminal_0',['clear_terminal',['../menu_8cpp.html#af0e8e5346802ba4161c023d8a3da403d',1,'clear_terminal():&#160;menu.cpp'],['../menu_8h.html#af0e8e5346802ba4161c023d8a3da403d',1,'clear_terminal():&#160;menu.cpp']]],
+  ['cmp_1',['cmp',['../spilling_8cpp.html#a4397f81d5f9fcf88fb8bc908deb21152',1,'spilling.cpp']]],
+  ['create_2',['create',['../createGraph_8cpp.html#a1d2a75240c8e4e9df54c6e98f4aed68d',1,'create(params info):&#160;createGraph.cpp'],['../createGraph_8h.html#a1d2a75240c8e4e9df54c6e98f4aed68d',1,'create(params info):&#160;createGraph.cpp']]]
 ];

@@ -2,6 +2,7 @@
 \hypertarget{graphColoring_8h}{}\label{graphColoring_8h}\index{src/graphColoring.h@{src/graphColoring.h}}
 {\ttfamily \#include "{}graph.\+h"{}}\newline
 {\ttfamily \#include "{}unordered\+\_\+map"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 Include dependency graph for graph\+Coloring.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -11,14 +12,20 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_a8040219e5d2ea7fcd753c709dd729ec7}{graph\+Coloring\+Test\+Suite}} ()
 \item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoring_8h_a8c7284b507a98d26262ecae0983f3b17}{print\+Vertex\+Details}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{v}})
+\begin{DoxyCompactList}\small\item\em Utility function to print all vertices, their states, and their neighbors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoring_8h_a9768274e8ce34ac8f577d33d817a0fcd}{print\+Graph\+Details}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}})
+\item 
 \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_a7b9f780a08a56afcc53925a045f35e0c}{graph\+Coloring\+Basic\+Test\+Suite}} ()
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoring_8h_a3b204e3d86ec888ea914983646f9b751}{graph\+Coloring\+Free}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{v}}, \mbox{\hyperlink{classEdge}{int}} \&\mbox{\hyperlink{classEdge}{biggest\+Color}}, std\+::vector$<$ \mbox{\hyperlink{classEdge}{bool}} $>$ \&\mbox{\hyperlink{classEdge}{used\+Colors}})
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{graphColoring_8h_a0bfafb41416b7e75281f224e7f6b7048}{graph\+Coloring\+Free\+Aux}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{v}}, \mbox{\hyperlink{classEdge}{int}} \&\mbox{\hyperlink{classEdge}{biggest\+Color}}, std\+::vector$<$ \mbox{\hyperlink{classEdge}{bool}} $>$ \&\mbox{\hyperlink{classEdge}{used\+Colors}})
 \begin{DoxyCompactList}\small\item\em Recursive auxiliary function for Depth-\/\+First Search (DFS) graph coloring. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\+V). \end{DoxyCompactList}\item 
-{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_a300fe402922ea8ac9f71d7d424b9292f}{graph\+Coloring\+Free}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}})
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_a7b7e75eba6e79e8286ec39ea8739c18c}{graph\+Coloring\+Free}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{unsigned}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{N}})
 \begin{DoxyCompactList}\small\item\em Colors a graph using a Depth-\/\+First Search (DFS) traversal and a greedy algorithm. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\+V) \end{DoxyCompactList}\item 
 {\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_ae5260482d9e1a2bc501a0a1b95cb0be2}{graph\+Coloring\+Basic}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{unsigned}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{N}})
-\begin{DoxyCompactList}\small\item\em Applies the given greedy graph coloring algorithm but without spilling properly. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\+V) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Applies the given greedy graph coloring algorithm but without spilling properly. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\+V) \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{graphColoring_8h_a941d31eca092b5ab0faa29ae7def12c7}{graph\+Coloring\+Basic\+With\+Spilling}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{unsigned}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{N}})
+\begin{DoxyCompactList}\small\item\em Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -60,12 +67,44 @@ Returns the total number of colors used to color the graph. Returns -\/1 if the 
 \doxysubsubsection{\texorpdfstring{graphColoringBasicTestSuite()}{graphColoringBasicTestSuite()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} graph\+Coloring\+Basic\+Test\+Suite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{graphColoring_8h_a300fe402922ea8ac9f71d7d424b9292f}\label{graphColoring_8h_a300fe402922ea8ac9f71d7d424b9292f} 
+\Hypertarget{graphColoring_8h_a941d31eca092b5ab0faa29ae7def12c7}\label{graphColoring_8h_a941d31eca092b5ab0faa29ae7def12c7} 
+\index{graphColoring.h@{graphColoring.h}!graphColoringBasicWithSpilling@{graphColoringBasicWithSpilling}}
+\index{graphColoringBasicWithSpilling@{graphColoringBasicWithSpilling}!graphColoring.h@{graphColoring.h}}
+\doxysubsubsection{\texorpdfstring{graphColoringBasicWithSpilling()}{graphColoringBasicWithSpilling()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{int}} graph\+Coloring\+Basic\+With\+Spilling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{classEdge}{unsigned}} \mbox{\hyperlink{classEdge}{int}}}]{N }\end{DoxyParamCaption})}
+
+
+
+Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic. The time complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2) and the space complexity is O(\texorpdfstring{$\vert$}{|}\+V\texorpdfstring{$\vert$}{|}). 
+
+This algorithm attempts to color an undirected graph using a maximum of N colors. Unlike the basic approach, this function guarantees completion by spilling nodes when the graph becomes uncolorable. The algorithm is divided into two phases\+:
+\begin{DoxyItemize}
+\item -\/ Phase 1 (Simplification \& Spilling)\+: Iteratively removes nodes with a degree less than N and pushes them onto a stack. If the graph gets blocked (all remaining active nodes have a degree \texorpdfstring{$>$}{>}= N), the algorithm selects the node with the highest current degree, marks it as spilled (visited), and removes it from the active graph to break the deadlock.
+\item -\/ Phase 2 (Coloring)\+: Pops nodes from the stack and assigns the lowest available color (0-\/indexed) that is not currently used by its already-\/colored neighbors.
+\end{DoxyItemize}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type stored within the vertex (\doxylink{classEdge_ab976213419283ed754f42f57b195a288}{e.\+g}., int, std\+::string, web).\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the \doxylink{classGraph}{Graph} object to be colored. The graph must have bidirectional (undirected) edges for the degree calculation to work correctly. \\
+\hline
+{\em N} & The maximum number of allowed colors (the register limit).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the total number of colors successfully used to color the non-\/spilled graph. The number of used colors will not exceed N. Spilled nodes can be identified after execution by checking if their marked as visited. 
+\end{DoxyReturn}
+\Hypertarget{graphColoring_8h_a7b7e75eba6e79e8286ec39ea8739c18c}\label{graphColoring_8h_a7b7e75eba6e79e8286ec39ea8739c18c} 
 \index{graphColoring.h@{graphColoring.h}!graphColoringFree@{graphColoringFree}}
 \index{graphColoringFree@{graphColoringFree}!graphColoring.h@{graphColoring.h}}
-\doxysubsubsection{\texorpdfstring{graphColoringFree()}{graphColoringFree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{graphColoringFree()}{graphColoringFree()}}
 {\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
-\mbox{\hyperlink{classEdge}{int}} graph\+Coloring\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classEdge}{int}} graph\+Coloring\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{classEdge}{unsigned}} \mbox{\hyperlink{classEdge}{int}}}]{N }\end{DoxyParamCaption})}
 
 
 
@@ -88,12 +127,12 @@ Note\+: While this approach is fast and often uses a small number of colors, it 
 \begin{DoxyReturn}{Returns}
 Returns the total number of colors used to color the graph. If the graph is empty, it returns 0. 
 \end{DoxyReturn}
-\Hypertarget{graphColoring_8h_a3b204e3d86ec888ea914983646f9b751}\label{graphColoring_8h_a3b204e3d86ec888ea914983646f9b751} 
-\index{graphColoring.h@{graphColoring.h}!graphColoringFree@{graphColoringFree}}
-\index{graphColoringFree@{graphColoringFree}!graphColoring.h@{graphColoring.h}}
-\doxysubsubsection{\texorpdfstring{graphColoringFree()}{graphColoringFree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\Hypertarget{graphColoring_8h_a0bfafb41416b7e75281f224e7f6b7048}\label{graphColoring_8h_a0bfafb41416b7e75281f224e7f6b7048} 
+\index{graphColoring.h@{graphColoring.h}!graphColoringFreeAux@{graphColoringFreeAux}}
+\index{graphColoringFreeAux@{graphColoringFreeAux}!graphColoring.h@{graphColoring.h}}
+\doxysubsubsection{\texorpdfstring{graphColoringFreeAux()}{graphColoringFreeAux()}}
 {\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
-\mbox{\hyperlink{classEdge}{void}} graph\+Coloring\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{\mbox{\hyperlink{classEdge}{int}} \&}]{biggest\+Color,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classEdge}{bool}} $>$ \&}]{used\+Colors }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classEdge}{void}} graph\+Coloring\+Free\+Aux (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{v,  }\item[{\mbox{\hyperlink{classEdge}{int}} \&}]{biggest\+Color,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classEdge}{bool}} $>$ \&}]{used\+Colors }\end{DoxyParamCaption})}
 
 
 
@@ -121,3 +160,35 @@ This function acts as the recursive engine for the DFS coloring algorithm. For a
 \doxysubsubsection{\texorpdfstring{graphColoringTestSuite()}{graphColoringTestSuite()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} graph\+Coloring\+Test\+Suite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\Hypertarget{graphColoring_8h_a9768274e8ce34ac8f577d33d817a0fcd}\label{graphColoring_8h_a9768274e8ce34ac8f577d33d817a0fcd} 
+\index{graphColoring.h@{graphColoring.h}!printGraphDetails@{printGraphDetails}}
+\index{printGraphDetails@{printGraphDetails}!graphColoring.h@{graphColoring.h}}
+\doxysubsubsection{\texorpdfstring{printGraphDetails()}{printGraphDetails()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} print\+Graph\+Details (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+\Hypertarget{graphColoring_8h_a8c7284b507a98d26262ecae0983f3b17}\label{graphColoring_8h_a8c7284b507a98d26262ecae0983f3b17} 
+\index{graphColoring.h@{graphColoring.h}!printVertexDetails@{printVertexDetails}}
+\index{printVertexDetails@{printVertexDetails}!graphColoring.h@{graphColoring.h}}
+\doxysubsubsection{\texorpdfstring{printVertexDetails()}{printVertexDetails()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} print\+Vertex\+Details (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Utility function to print all vertices, their states, and their neighbors. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type stored within the vertex (\doxylink{classEdge_ab976213419283ed754f42f57b195a288}{e.\+g}., your \textquotesingle{}web\textquotesingle{} struct). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the \doxylink{classGraph}{Graph} object to be printed. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}

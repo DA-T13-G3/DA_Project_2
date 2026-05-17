@@ -1,0 +1,89 @@
+\doxysection{src/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{src/menu.h@{src/menu.h}}
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for menu.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMenu}{Menu}}
+\begin{DoxyCompactList}\small\item\em Handles the interactive console menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_a84b8ce836ab7f170bc57cbf199361b54}{nl}} ()
+\begin{DoxyCompactList}\small\item\em Prints a newline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_af0e8e5346802ba4161c023d8a3da403d}{clear\+\_\+terminal}} ()
+\begin{DoxyCompactList}\small\item\em Clears the terminal screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_ab43b33004fb0c8f4d42f1999c8398a7f}{printf\+\_\+center}} (\mbox{\hyperlink{classEdge}{const}} std\+::string \&\mbox{\hyperlink{classEdge}{s}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{width}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{after}})
+\begin{DoxyCompactList}\small\item\em Prints a centered string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{menu_8h_a6c6cbb6610ad25a8754363f3bd30ad51}{repeat}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{str}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{n}})
+\begin{DoxyCompactList}\small\item\em Repeats a string multiple times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_af0e8e5346802ba4161c023d8a3da403d}\label{menu_8h_af0e8e5346802ba4161c023d8a3da403d} 
+\index{menu.h@{menu.h}!clear\_terminal@{clear\_terminal}}
+\index{clear\_terminal@{clear\_terminal}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{clear\_terminal()}{clear\_terminal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} clear\+\_\+terminal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the terminal screen. 
+
+\Hypertarget{menu_8h_a84b8ce836ab7f170bc57cbf199361b54}\label{menu_8h_a84b8ce836ab7f170bc57cbf199361b54} 
+\index{menu.h@{menu.h}!nl@{nl}}
+\index{nl@{nl}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{nl()}{nl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} nl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a newline. 
+
+\Hypertarget{menu_8h_ab43b33004fb0c8f4d42f1999c8398a7f}\label{menu_8h_ab43b33004fb0c8f4d42f1999c8398a7f} 
+\index{menu.h@{menu.h}!printf\_center@{printf\_center}}
+\index{printf\_center@{printf\_center}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{printf\_center()}{printf\_center()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} printf\+\_\+center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} std\+::string \&}]{s,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{width,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{after = {\ttfamily "{}\textbackslash{}n"{}} }\end{DoxyParamCaption})}
+
+
+
+Prints a centered string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to print \\
+\hline
+{\em width} & Width of the screen \\
+\hline
+{\em after} & String printed after (default newline) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8h_a6c6cbb6610ad25a8754363f3bd30ad51}\label{menu_8h_a6c6cbb6610ad25a8754363f3bd30ad51} 
+\index{menu.h@{menu.h}!repeat@{repeat}}
+\index{repeat@{repeat}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{repeat()}{repeat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} repeat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{str,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Repeats a string multiple times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to repeat \\
+\hline
+{\em n} & Number of repetitions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting concatenated string 
+\end{DoxyReturn}

@@ -9,6 +9,11 @@ Represents a single live web of a variable.
 
 {\ttfamily \#include $<$data\+Structs.\+h$>$}
 
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{structweb_a76c607476f5d867c572a0fa3b148b857}{operator==}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structweb}{web}} \&\mbox{\hyperlink{classEdge}{other}}) \mbox{\hyperlink{classEdge}{const}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,6 +24,8 @@ Represents a single live web of a variable.
 \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{structweb_a02eee1275b09c4dee29d6681fd4dc52d}{end}}
 \item 
 \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}}
+\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{structweb_a7c720472486f1b9de5fd9cf10d18bc80}{id}}
 \end{DoxyCompactItemize}
 
 
@@ -33,9 +40,19 @@ Fields\+:
 \item start\+: program lines where the web begins (lines ending with \textquotesingle{}+\textquotesingle{}).
 \item end\+: program lines where the web ends (lines ending with \textquotesingle{}-\/\textquotesingle{}).
 \item lines\+: all program points where the variable is live.
+\item id\+: unique identifier for the web.
 \end{DoxyItemize}
 
 All vectors are sorted after merging, and the \doxylink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere()} function assumes this ordering. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structweb_a76c607476f5d867c572a0fa3b148b857}\label{structweb_a76c607476f5d867c572a0fa3b148b857} 
+\index{web@{web}!operator==@{operator==}}
+\index{operator==@{operator==}!web@{web}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} web\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structweb}{web}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{structweb_a02eee1275b09c4dee29d6681fd4dc52d}\label{structweb_a02eee1275b09c4dee29d6681fd4dc52d} 
@@ -43,6 +60,12 @@ All vectors are sorted after merging, and the \doxylink{dataStructs_8cpp_a3f5dff
 \index{end@{end}!web@{web}}
 \doxysubsubsection{\texorpdfstring{end}{end}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{vector}}$<$\mbox{\hyperlink{classEdge}{int}}$>$ web\+::end}
+
+\Hypertarget{structweb_a7c720472486f1b9de5fd9cf10d18bc80}\label{structweb_a7c720472486f1b9de5fd9cf10d18bc80} 
+\index{web@{web}!id@{id}}
+\index{id@{id}!web@{web}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} web\+::id}
 
 \Hypertarget{structweb_a867b62405c392c30ae6e5eb1a799af76}\label{structweb_a867b62405c392c30ae6e5eb1a799af76} 
 \index{web@{web}!lines@{lines}}

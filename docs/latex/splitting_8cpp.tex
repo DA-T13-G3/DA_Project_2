@@ -45,8 +45,10 @@ Attempts to color the graph using iterative web splitting.
 This function repeatedly tries to color the graph using the basic greedy coloring algorithm. If coloring fails and the maximum number of allowed splits has not been reached, one web is split (via \doxylink{splitting_8h_abfa40819f7e4912eef5946521fd9083e}{split()}) and the graph is recolored. The process continues until either\+:
 \begin{DoxyItemize}
 \item the graph becomes colorable with the available registers, or
-\item the maximum number of splits is reached.
+\item the maximum number of splits is reached. Time Complexity\+: Θ(k · (E + V · L))
 \end{DoxyItemize}
+
+k -\/ Actual number of splits performed before coloring succeeds (k ≤ S) E -\/ Number of interference edges in the graph V -\/ Number of webs (vertices) L -\/ Average number of lines in a live range
 
 
 \begin{DoxyParams}{Parameters}

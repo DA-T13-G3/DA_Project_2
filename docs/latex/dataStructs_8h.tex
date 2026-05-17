@@ -19,6 +19,10 @@ struct \mbox{\hyperlink{structweb}{web}}
 \begin{DoxyCompactList}\small\item\em Represents a single live web of a variable. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structparams}{params}}
 \begin{DoxyCompactList}\small\item\em Global parameters produced by the parser. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structparams1}{params1}}
+\begin{DoxyCompactList}\small\item\em Global parameters produced by the parser corresponding only to the live ranges input file. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structparams2}{params2}}
+\begin{DoxyCompactList}\small\item\em Global parameters produced by the parser corresponding only to the registers input file. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structassignment}{assignment}}
 \begin{DoxyCompactList}\small\item\em Represents a set of webs that do not interfere with each other. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structresult}{result}}
@@ -29,7 +33,7 @@ struct \mbox{\hyperlink{structorder}{order}}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\+\_\+type}} \{ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7}{basic}}
-, \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5}{splitting}}
+, \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a74be66aeae3e8250eeba8fe2ca6b511e}{splitting\+\_\+}}
 , \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05}{spilling}}
 , \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a49bac7a7222c4b50a308704e96546a5d}{free\+\_\+}}
  \}
@@ -65,8 +69,8 @@ These values correspond directly to the "{}algorithm\+:"{} field in the second i
 basic&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{splitting@{splitting}!dataStructs.h@{dataStructs.h}}\index{dataStructs.h@{dataStructs.h}!splitting@{splitting}}}\Hypertarget{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5}\label{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5} 
-splitting&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{splitting\_@{splitting\_}!dataStructs.h@{dataStructs.h}}\index{dataStructs.h@{dataStructs.h}!splitting\_@{splitting\_}}}\Hypertarget{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a74be66aeae3e8250eeba8fe2ca6b511e}\label{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a74be66aeae3e8250eeba8fe2ca6b511e} 
+splitting\+\_\+&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spilling@{spilling}!dataStructs.h@{dataStructs.h}}\index{dataStructs.h@{dataStructs.h}!spilling@{spilling}}}\Hypertarget{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05}\label{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05} 

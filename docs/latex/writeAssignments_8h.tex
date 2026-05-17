@@ -11,14 +11,29 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{writeAssignments_8h_ad1e782f7642053a8d3a8c27a501c7821}{write}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structresult}{result}} \&\mbox{\hyperlink{classEdge}{res}})
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{writeAssignments_8h_acfe135877a218fdb9b17fb1d9efb0b9c}{write}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structresult}{result}} \&\mbox{\hyperlink{classEdge}{res}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{output\+File}}="{}../output/\mbox{\hyperlink{classEdge_ab976213419283ed754f42f57b195a288}{output.\+txt"{}}})
+\begin{DoxyCompactList}\small\item\em Exports the finalized register allocation results to an output file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{writeAssignments_8h_ad1e782f7642053a8d3a8c27a501c7821}\label{writeAssignments_8h_ad1e782f7642053a8d3a8c27a501c7821} 
+\Hypertarget{writeAssignments_8h_acfe135877a218fdb9b17fb1d9efb0b9c}\label{writeAssignments_8h_acfe135877a218fdb9b17fb1d9efb0b9c} 
 \index{writeAssignments.h@{writeAssignments.h}!write@{write}}
 \index{write@{write}!writeAssignments.h@{writeAssignments.h}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structresult}{result}} \&}]{res }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structresult}{result}} \&}]{res,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{output\+File = {\ttfamily "{}../output/\mbox{\hyperlink{classEdge_ab976213419283ed754f42f57b195a288}{output.\+txt"{}}}} }\end{DoxyParamCaption})}
 
+
+
+Exports the finalized register allocation results to an output file. 
+
+This function writes the contents of an allocation \textquotesingle{}result\textquotesingle{} structure into a clean, human-\/readable text format. It logs the consolidated metrics of all webs, reconstructs their exact lifetime intervals with specific boundary markers, and maps them to their allocated hardware registers or memory slots.
+
+{\bfseries{Output format for the spilling and plitting algorithms\+:}} {\bfseries{Spilling\+:}} The webs spilled by the spilling algorithm will be commited into memory and this allocation will be represented by \textquotesingle{}M(spilled)\+: web\{id\}\textquotesingle{}. {\bfseries{Splitting\+:}} The webs that were split will have their id altered. Ex.\+: web0 becomes \doxylink{classEdge_ab976213419283ed754f42f57b195a288}{web0.\+0} and \doxylink{classEdge_ab976213419283ed754f42f57b195a288}{web0.\+1}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & The constant reference to the global allocation report payload. \\
+\hline
+{\em output\+File} & The file path string indicating where the compilation report should be saved. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,87 @@
+\doxysection{src/menu.cpp File Reference}
+\hypertarget{menu_8cpp}{}\label{menu_8cpp}\index{src/menu.cpp@{src/menu.cpp}}
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for menu.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8cpp_a84b8ce836ab7f170bc57cbf199361b54}{nl}} ()
+\begin{DoxyCompactList}\small\item\em Prints a newline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8cpp_af0e8e5346802ba4161c023d8a3da403d}{clear\+\_\+terminal}} ()
+\begin{DoxyCompactList}\small\item\em Clears the terminal screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{menu_8cpp_a6c6cbb6610ad25a8754363f3bd30ad51}{repeat}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{str}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{n}})
+\begin{DoxyCompactList}\small\item\em Repeats a string multiple times. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8cpp_a75609da95e4e263387c5b51e4e29d1cb}{printf\+\_\+center}} (\mbox{\hyperlink{classEdge}{const}} std\+::string \&\mbox{\hyperlink{classEdge}{s}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{width}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{after}}="{}\textbackslash{}n"{})
+\begin{DoxyCompactList}\small\item\em Prints a centered string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{menu_8cpp_a7fb20e16199540d9b5aae135193b72c6}{print\+\_\+range}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structweb}{web}} \&w)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8cpp_af0e8e5346802ba4161c023d8a3da403d}\label{menu_8cpp_af0e8e5346802ba4161c023d8a3da403d} 
+\index{menu.cpp@{menu.cpp}!clear\_terminal@{clear\_terminal}}
+\index{clear\_terminal@{clear\_terminal}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{clear\_terminal()}{clear\_terminal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} clear\+\_\+terminal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the terminal screen. 
+
+\Hypertarget{menu_8cpp_a84b8ce836ab7f170bc57cbf199361b54}\label{menu_8cpp_a84b8ce836ab7f170bc57cbf199361b54} 
+\index{menu.cpp@{menu.cpp}!nl@{nl}}
+\index{nl@{nl}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{nl()}{nl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} nl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a newline. 
+
+\Hypertarget{menu_8cpp_a7fb20e16199540d9b5aae135193b72c6}\label{menu_8cpp_a7fb20e16199540d9b5aae135193b72c6} 
+\index{menu.cpp@{menu.cpp}!print\_range@{print\_range}}
+\index{print\_range@{print\_range}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_range()}{print\_range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} print\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{structweb}{web}} \&}]{w }\end{DoxyParamCaption})}
+
+\Hypertarget{menu_8cpp_a75609da95e4e263387c5b51e4e29d1cb}\label{menu_8cpp_a75609da95e4e263387c5b51e4e29d1cb} 
+\index{menu.cpp@{menu.cpp}!printf\_center@{printf\_center}}
+\index{printf\_center@{printf\_center}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{printf\_center()}{printf\_center()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} printf\+\_\+center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} std\+::string \&}]{s,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{width,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{after = {\ttfamily "{}\textbackslash{}n"{}} }\end{DoxyParamCaption})}
+
+
+
+Prints a centered string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to print \\
+\hline
+{\em width} & Width of the screen \\
+\hline
+{\em after} & String printed after (default newline) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8cpp_a6c6cbb6610ad25a8754363f3bd30ad51}\label{menu_8cpp_a6c6cbb6610ad25a8754363f3bd30ad51} 
+\index{menu.cpp@{menu.cpp}!repeat@{repeat}}
+\index{repeat@{repeat}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{repeat()}{repeat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} repeat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{str,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Repeats a string multiple times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to repeat \\
+\hline
+{\em n} & Number of repetitions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting concatenated string 
+\end{DoxyReturn}

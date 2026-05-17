@@ -1,0 +1,172 @@
+\doxysection{Menu Class Reference}
+\hypertarget{classMenu}{}\label{classMenu}\index{Menu@{Menu}}
+
+
+Handles the interactive console menu.  
+
+
+
+
+{\ttfamily \#include $<$menu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classMenu_acb4740bc621360ecf8e880ebb25f791e}{run}} ()
+\begin{DoxyCompactList}\small\item\em Starts the main menu loop. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_aaa3a4c657342b09e379888692517c09a}{load\+\_\+data\+\_\+ranges}} ()
+\begin{DoxyCompactList}\small\item\em Loads input data from input file 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a797b386c7bad27d10670ce0f7fd102d0}{load\+\_\+data\+\_\+algorithm}} ()
+\begin{DoxyCompactList}\small\item\em Loads input data from input file 2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a8980740bd17fdb160a6285178cc4842e}{print\+\_\+live\+Ranges}} ()
+\begin{DoxyCompactList}\small\item\em Displays the list of variable live ranges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a2b758a8d940e0c0bcd9b67423b4edc28}{print\+\_\+algorithm}} ()
+\begin{DoxyCompactList}\small\item\em Displays the algorithm parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a7adecdaa98b1249ddc14451c1c9cb1fd}{select\+\_\+output}} ()
+\begin{DoxyCompactList}\small\item\em Allows for selection of output file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{classMenu_a0f3696c69fd4873f416a4288a2b03683}{get\+Params}} ()
+\begin{DoxyCompactList}\small\item\em Accessor to retrieve the fully consolidated and parsed runtime parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classMenu_aa6c7c91e442530a5bb0613b3a3423977}{get\+Output}} ()
+\begin{DoxyCompactList}\small\item\em Accessor to retrieve the verified target output directory file path destination. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{Func}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a3ed9a0acac5ec759c5e25ab5b108faa3}{basic\+\_\+view\+\_\+page}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{title}}, \mbox{\hyperlink{classEdge}{Func}} \mbox{\hyperlink{classEdge}{print\+\_\+data}})
+\begin{DoxyCompactList}\small\item\em Generic page with custom content. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classMenu_a408b0cd4865b109f4c8a64c15a7398de}{list\+\_\+view\+\_\+page}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{title}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \&\mbox{\hyperlink{classEdge}{data}}, \mbox{\hyperlink{classEdge}{string}}(\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{print\+\_\+data}})(\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{T}} \&))
+\begin{DoxyCompactList}\small\item\em Displays a list-\/based page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the interactive console menu. 
+
+Manages user interaction and navigation between different views, including data loading, visualization, and allocation execution. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMenu_a3ed9a0acac5ec759c5e25ab5b108faa3}\label{classMenu_a3ed9a0acac5ec759c5e25ab5b108faa3} 
+\index{Menu@{Menu}!basic\_view\_page@{basic\_view\_page}}
+\index{basic\_view\_page@{basic\_view\_page}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{basic\_view\_page()}{basic\_view\_page()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{Func}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} Menu\+::basic\+\_\+view\+\_\+page (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{title,  }\item[{\mbox{\hyperlink{classEdge}{Func}}}]{print\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Generic page with custom content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Page title \\
+\hline
+{\em print\+\_\+data} & Function that prints the content \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenu_aa6c7c91e442530a5bb0613b3a3423977}\label{classMenu_aa6c7c91e442530a5bb0613b3a3423977} 
+\index{Menu@{Menu}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} Menu\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accessor to retrieve the verified target output directory file path destination. 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the target output file. 
+\end{DoxyReturn}
+\Hypertarget{classMenu_a0f3696c69fd4873f416a4288a2b03683}\label{classMenu_a0f3696c69fd4873f416a4288a2b03683} 
+\index{Menu@{Menu}!getParams@{getParams}}
+\index{getParams@{getParams}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getParams()}{getParams()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} Menu\+::get\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accessor to retrieve the fully consolidated and parsed runtime parameters. 
+
+\begin{DoxyReturn}{Returns}
+The final \textquotesingle{}params\textquotesingle{} execution payload structure. 
+\end{DoxyReturn}
+\Hypertarget{classMenu_a408b0cd4865b109f4c8a64c15a7398de}\label{classMenu_a408b0cd4865b109f4c8a64c15a7398de} 
+\index{Menu@{Menu}!list\_view\_page@{list\_view\_page}}
+\index{list\_view\_page@{list\_view\_page}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{list\_view\_page()}{list\_view\_page()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{typename}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} Menu\+::list\+\_\+view\+\_\+page (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{title,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \&}]{data,  }\item[{\mbox{\hyperlink{classEdge}{string}}(\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{T}} \&)}]{print\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Displays a list-\/based page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Page title \\
+\hline
+{\em data} & Vector of elements \\
+\hline
+{\em print\+\_\+data} & Function that converts elements to string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenu_a797b386c7bad27d10670ce0f7fd102d0}\label{classMenu_a797b386c7bad27d10670ce0f7fd102d0} 
+\index{Menu@{Menu}!load\_data\_algorithm@{load\_data\_algorithm}}
+\index{load\_data\_algorithm@{load\_data\_algorithm}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{load\_data\_algorithm()}{load\_data\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Menu\+::load\+\_\+data\+\_\+algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads input data from input file 2. 
+
+\Hypertarget{classMenu_aaa3a4c657342b09e379888692517c09a}\label{classMenu_aaa3a4c657342b09e379888692517c09a} 
+\index{Menu@{Menu}!load\_data\_ranges@{load\_data\_ranges}}
+\index{load\_data\_ranges@{load\_data\_ranges}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{load\_data\_ranges()}{load\_data\_ranges()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Menu\+::load\+\_\+data\+\_\+ranges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads input data from input file 1. 
+
+\Hypertarget{classMenu_a2b758a8d940e0c0bcd9b67423b4edc28}\label{classMenu_a2b758a8d940e0c0bcd9b67423b4edc28} 
+\index{Menu@{Menu}!print\_algorithm@{print\_algorithm}}
+\index{print\_algorithm@{print\_algorithm}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_algorithm()}{print\_algorithm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Menu\+::print\+\_\+algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the algorithm parameters. 
+
+\Hypertarget{classMenu_a8980740bd17fdb160a6285178cc4842e}\label{classMenu_a8980740bd17fdb160a6285178cc4842e} 
+\index{Menu@{Menu}!print\_liveRanges@{print\_liveRanges}}
+\index{print\_liveRanges@{print\_liveRanges}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{print\_liveRanges()}{print\_liveRanges()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Menu\+::print\+\_\+live\+Ranges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the list of variable live ranges. 
+
+\Hypertarget{classMenu_acb4740bc621360ecf8e880ebb25f791e}\label{classMenu_acb4740bc621360ecf8e880ebb25f791e} 
+\index{Menu@{Menu}!run@{run}}
+\index{run@{run}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Menu\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the main menu loop. 
+
+\Hypertarget{classMenu_a7adecdaa98b1249ddc14451c1c9cb1fd}\label{classMenu_a7adecdaa98b1249ddc14451c1c9cb1fd} 
+\index{Menu@{Menu}!select\_output@{select\_output}}
+\index{select\_output@{select\_output}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{select\_output()}{select\_output()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Menu\+::select\+\_\+output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Allows for selection of output file. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{menu_8h}{menu.\+h}}\item 
+src/\mbox{\hyperlink{menu_8cpp}{menu.\+cpp}}\end{DoxyCompactItemize}

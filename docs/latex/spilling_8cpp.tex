@@ -1,0 +1,146 @@
+\doxysection{src/spilling.cpp File Reference}
+\hypertarget{spilling_8cpp}{}\label{spilling_8cpp}\index{src/spilling.cpp@{src/spilling.cpp}}
+{\ttfamily \#include "{}spilling.\+h"{}}\newline
+Include dependency graph for spilling.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{spilling_8cpp_a4397f81d5f9fcf88fb8bc908deb21152}{cmp}} (\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{a}}, \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{b}})
+\begin{DoxyCompactList}\small\item\em Comparator function to sort vertices in descending order of their indegree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{spilling_8cpp_a36e9857fbc682d8c805d92f35e716f4d}{increment\+Grid}} (\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \&\mbox{\hyperlink{classEdge}{grid}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{spilled}})
+\begin{DoxyCompactList}\small\item\em Generates the next lexicographical binary combination (grid) for spilling tracking. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{spilling_8cpp_ae74c014e1649f61b46847a6b0269a815}{attempt}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{structparams}{params}} info, \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classEdge}{candidates}}, \mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$ \mbox{\hyperlink{classEdge}{coloring}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{spilled}})
+\begin{DoxyCompactList}\small\item\em Evaluates whether any combination of a specific spill count yields a valid coloring. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{spilling_8cpp_a0afd19877e83459263365b4c5c5a49be}{final\+Spill}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{structparams}{params}} info, \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classEdge}{candidates}}, \mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$ \mbox{\hyperlink{classEdge}{coloring}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{spilled}})
+\begin{DoxyCompactList}\small\item\em FInds and applies the absolute best subset configuration for the chosen spill count. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{struct}} \mbox{\hyperlink{structresult}{result}} \mbox{\hyperlink{spilling_8cpp_a40e9a7b209116170256a716219e95182}{spill}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{structparams}{params}} info, \mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$ \mbox{\hyperlink{classEdge}{coloring}})
+\begin{DoxyCompactList}\small\item\em Builds a result struct while spilling a certain amount of webs into memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{spilling_8cpp_ae74c014e1649f61b46847a6b0269a815}\label{spilling_8cpp_ae74c014e1649f61b46847a6b0269a815} 
+\index{spilling.cpp@{spilling.cpp}!attempt@{attempt}}
+\index{attempt@{attempt}!spilling.cpp@{spilling.cpp}}
+\doxysubsubsection{\texorpdfstring{attempt()}{attempt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} attempt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{structparams}{params}}}]{info,  }\item[{\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*} $>$}]{candidates,  }\item[{\mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$}]{coloring,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{spilled }\end{DoxyParamCaption})}
+
+
+
+Evaluates whether any combination of a specific spill count yields a valid coloring. 
+
+Iterates through combinations generated by \textquotesingle{}increment\+Grid\textquotesingle{} for a set number of spills. Temporarily flags the chosen candidates as \textquotesingle{}visited\textquotesingle{} (ignored) and attempts to color the remaining subgraph. It returns true as soon as a working subset is identified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the interference graph. \\
+\hline
+{\em info} & Struct holding algorithm settings, limits, and user choices. \\
+\hline
+{\em candidates} & List of the highest-\/degree vertices considered for spilling. \\
+\hline
+{\em coloring} & Function that will execute the coloring of the graph. \\
+\hline
+{\em spilled} & The number of nodes to spill during this test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if at least one combination allows the remaining graph to fit within the register limit, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{spilling_8cpp_a4397f81d5f9fcf88fb8bc908deb21152}\label{spilling_8cpp_a4397f81d5f9fcf88fb8bc908deb21152} 
+\index{spilling.cpp@{spilling.cpp}!cmp@{cmp}}
+\index{cmp@{cmp}!spilling.cpp@{spilling.cpp}}
+\doxysubsubsection{\texorpdfstring{cmp()}{cmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} cmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{a,  }\item[{\mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparator function to sort vertices in descending order of their indegree. 
+
+Used to prioritize high-\/degree vertices as the primary candidates for register spilling, following Chaitin\textquotesingle{}s heuristic where spilling high-\/degree nodes eliminates the most interference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Pointer to the first vertex. \\
+\hline
+{\em b} & Pointer to the second vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if vertex a has a strictly greater indegree than vertex b, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{spilling_8cpp_a0afd19877e83459263365b4c5c5a49be}\label{spilling_8cpp_a0afd19877e83459263365b4c5c5a49be} 
+\index{spilling.cpp@{spilling.cpp}!finalSpill@{finalSpill}}
+\index{finalSpill@{finalSpill}!spilling.cpp@{spilling.cpp}}
+\doxysubsubsection{\texorpdfstring{finalSpill()}{finalSpill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} final\+Spill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{structparams}{params}}}]{info,  }\item[{\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classVertex}{Vertex}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*} $>$}]{candidates,  }\item[{\mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$}]{coloring,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{spilled }\end{DoxyParamCaption})}
+
+
+
+FInds and applies the absolute best subset configuration for the chosen spill count. 
+
+Once the optimal spill number is computed via binary search, this function runs through multiple different combinations to locate the one that minimizes the overall number of colors used (\textquotesingle{}best\+Num\textquotesingle{}). It commits this optimized configuration back onto the graph and executes the final coloring.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the interference graph. \\
+\hline
+{\em info} & Struct holding algorithm settings, limits, and user choices. \\
+\hline
+{\em candidates} & List of the highest-\/degree vertices considered for spilling. \\
+\hline
+{\em coloring} & Function that will execute the coloring of the graph. \\
+\hline
+{\em spilled} & The calculated number of spills determined to be necessary and sufficient. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{spilling_8cpp_a36e9857fbc682d8c805d92f35e716f4d}\label{spilling_8cpp_a36e9857fbc682d8c805d92f35e716f4d} 
+\index{spilling.cpp@{spilling.cpp}!incrementGrid@{incrementGrid}}
+\index{incrementGrid@{incrementGrid}!spilling.cpp@{spilling.cpp}}
+\doxysubsubsection{\texorpdfstring{incrementGrid()}{incrementGrid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} increment\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \&}]{grid,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{spilled }\end{DoxyParamCaption})}
+
+
+
+Generates the next lexicographical binary combination (grid) for spilling tracking. 
+
+Acts as a combinatorial generator mimicking a bitmask. Given an array representing nodes where \textquotesingle{}1\textquotesingle{} means "{}spilled"{} and \textquotesingle{}0\textquotesingle{} means "{}not spilled"{}, this function shifts the active bits to cycle through all possible combinations of selecting exactly {\ttfamily spilled} elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & Reference to a binary vector tracking which candidates are selected to be spilled. \\
+\hline
+{\em spilled} & The exact number of variables that must be marked as spilled simultaneously. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all combinations have been exhausted, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{spilling_8cpp_a40e9a7b209116170256a716219e95182}\label{spilling_8cpp_a40e9a7b209116170256a716219e95182} 
+\index{spilling.cpp@{spilling.cpp}!spill@{spill}}
+\index{spill@{spill}!spilling.cpp@{spilling.cpp}}
+\doxysubsubsection{\texorpdfstring{spill()}{spill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{struct}} \mbox{\hyperlink{structresult}{result}} spill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{structparams}{params}}}]{info,  }\item[{\mbox{\hyperlink{classEdge}{function}}$<$ \mbox{\hyperlink{classEdge}{int}}(\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{structweb}{web}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{int}})$>$}]{coloring }\end{DoxyParamCaption})}
+
+
+
+Builds a result struct while spilling a certain amount of webs into memory. 
+
+This method extracts the graph\textquotesingle{}s vertices, isolates a strategic subset of size \textquotesingle{}X\textquotesingle{} containing the highest-\/degree candidates, and runs a binary search over the range of possible spill numbers. The search uses \doxylink{spilling_8cpp_ae74c014e1649f61b46847a6b0269a815}{attempt()} to find the smallest number of spills needed. Finally, it invokes \doxylink{spilling_8cpp_a0afd19877e83459263365b4c5c5a49be}{final\+Spill()} to commit the highest-\/efficiency combination and calls \doxylink{buildResult_8cpp_ae4a17a1faabc9d379ff778a1541406e8}{build()} to construct the final allocation report.
+
+Details on the Heuristics Applied To make this function run in a practical timeframe, it tries to spill only a certain fixed number of combinations of webs, which significantly decreases its time complexity. It starts by trying to spill the nodes with the biggest degrees, as these are the ones most likely to increase the number of necessary registers, and then moves on to spilling nodes with lower degrees if that doesn\textquotesingle{}t work. This compromise trades unnecessary precision for a very significant increase in speed, which is why it was chosen.
+
+{\bfseries{Time Complexity\+:}} O(Wlog(\+W) + I) where \textquotesingle{}W\textquotesingle{} is the number of webs and \textquotesingle{}I\textquotesingle{} is the total amount of interferences between webs
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the interference graph to process. \\
+\hline
+{\em info} & Struct holding algorithm settings, limits, and user choices. \\
+\hline
+{\em coloring} & Function that will execute the coloring of the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result structure stating whether allocation succeeded and mapping variables to registers. 
+\end{DoxyReturn}

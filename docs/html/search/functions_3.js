@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['edge_0',['Edge',['../classEdge.html#ab976213419283ed754f42f57b195a288',1,'Edge']]],
-  ['empty_1',['empty',['../classMutablePriorityQueue.html#a2edbb1f4a6fa3ff735700dfcebebe8d4',1,'MutablePriorityQueue']]],
-  ['extractmin_2',['extractMin',['../classMutablePriorityQueue.html#a3880874d7364279ac0d6d31302b28853',1,'MutablePriorityQueue']]]
+  ['decreasekey_0',['decreaseKey',['../classMutablePriorityQueue.html#a0878839cc1d2dba2b8ab2e589ecc6405',1,'MutablePriorityQueue']]],
+  ['deleteedge_1',['deleteEdge',['../classVertex.html#a622503fe44ef12d5c39bd1043d47865c',1,'Vertex']]],
+  ['deletematrix_2',['deletematrix',['../graph_8h.html#ad56527992afe31a371065e795da57d25',1,'deleteMatrix(int **m, int n):&#160;graph.h'],['../graph_8h.html#af077bc8682a1a1d97e30b08eb1131b19',1,'deleteMatrix(double **m, int n):&#160;graph.h']]]
 ];

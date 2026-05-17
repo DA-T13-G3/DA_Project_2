@@ -7,53 +7,204 @@ Include dependency graph for parser.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{parser_8cpp_a113ec9c37ab9ea29f1883ca79f7b7344}{trim}} (\mbox{\hyperlink{classEdge}{const}} std\+::string \&\mbox{\hyperlink{classEdge}{s}})
-\item 
-\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{parser_8cpp_aef1861d1369face8bbcf22df8c7a06dc}{my\+Stoi}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{s}}, \mbox{\hyperlink{structparams}{params}} \&\mbox{\hyperlink{structparams}{params}})
-\item 
+\begin{DoxyCompactList}\small\item\em Removes leading and trailing whitespace characters from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{parser_8cpp_a60a0216f067c7745726163a390bd9f97}{my\+Stoi1}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{s}}, \mbox{\hyperlink{structparams1}{params1}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Safely converts a string to an integer for live range processing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{parser_8cpp_a75fa3dcd210470b5b3e06f43c895b7ef}{my\+Stoi2}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{s}}, \mbox{\hyperlink{structparams2}{params2}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Safely converts a string to an integer for configuration processing. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_ac1c18255324c0c59380f092569c4a9b7}{merge\+Webs}} (\mbox{\hyperlink{structparams}{params}} \&\mbox{\hyperlink{structparams}{params}})
-\item 
-\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_a1836e32cb80495a3b4ff7d87c83107cf}{parse1}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{structparams}{params}} \&\mbox{\hyperlink{structparams}{params}})
-\item 
-\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_a7b1df45ccc4176c0e31eae665cfb52a4}{parse2}} (\mbox{\hyperlink{classEdge}{string}} path, \mbox{\hyperlink{structparams}{params}} \&\mbox{\hyperlink{structparams}{params}})
-\item 
-\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8cpp_ac81b9a4ed8175fefa9664c09c58c96b6}{parse}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path2}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Resolves and merges overlapping or intersecting live ranges for variables with the same name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_abcb7431d859c840da62f370726f7dd75}{parse1}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{structparams1}{params1}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Parses the input file containing the live ranges for the variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_ae3aa3be83224dfddd0ae25fca2d51f50}{parse2}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path2}}, \mbox{\hyperlink{structparams2}{params2}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Parses the input file containing the register number and algorithm type and value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8cpp_a95c27c06fa23a640d478165bd515262e}{add\+ID}} (\mbox{\hyperlink{structparams}{params}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Assigns unique sequential string identifiers to all consolidated webs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8cpp_abbcb421f1d73d20c6d01fa2b7c7d59a2}{parse}} (\mbox{\hyperlink{structparams1}{params1}} \&\mbox{\hyperlink{structparams1}{params1}}, \mbox{\hyperlink{structparams2}{params2}} \&\mbox{\hyperlink{structparams2}{params2}})
+\begin{DoxyCompactList}\small\item\em Creates a params structure with all the data extracted from two input files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8cpp_a4d2b9fc9a95636c0a925df036887f7cc}{parse}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{path2}})
+\begin{DoxyCompactList}\small\item\em Creates a params structure with all the data extracted from two input files. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{parser_8cpp_a95c27c06fa23a640d478165bd515262e}\label{parser_8cpp_a95c27c06fa23a640d478165bd515262e} 
+\index{parser.cpp@{parser.cpp}!addID@{addID}}
+\index{addID@{addID}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{addID()}{addID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} add\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparams}{params}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Assigns unique sequential string identifiers to all consolidated webs. 
+
+Iterates through the collection of finalized webs within the parameters structure and populates each web\textquotesingle{}s \textquotesingle{}id\textquotesingle{} field with its corresponding position string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Reference to the global \textquotesingle{}params\textquotesingle{} structure containing the webs to index. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{parser_8cpp_ac1c18255324c0c59380f092569c4a9b7}\label{parser_8cpp_ac1c18255324c0c59380f092569c4a9b7} 
 \index{parser.cpp@{parser.cpp}!mergeWebs@{mergeWebs}}
 \index{mergeWebs@{mergeWebs}!parser.cpp@{parser.cpp}}
 \doxysubsubsection{\texorpdfstring{mergeWebs()}{mergeWebs()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} merge\+Webs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparams}{params}} \&}]{params }\end{DoxyParamCaption})}
 
-\Hypertarget{parser_8cpp_aef1861d1369face8bbcf22df8c7a06dc}\label{parser_8cpp_aef1861d1369face8bbcf22df8c7a06dc} 
-\index{parser.cpp@{parser.cpp}!myStoi@{myStoi}}
-\index{myStoi@{myStoi}!parser.cpp@{parser.cpp}}
-\doxysubsubsection{\texorpdfstring{myStoi()}{myStoi()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} my\+Stoi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{s,  }\item[{\mbox{\hyperlink{structparams}{params}} \&}]{params }\end{DoxyParamCaption})}
 
-\Hypertarget{parser_8cpp_ac81b9a4ed8175fefa9664c09c58c96b6}\label{parser_8cpp_ac81b9a4ed8175fefa9664c09c58c96b6} 
+
+Resolves and merges overlapping or intersecting live ranges for variables with the same name. 
+
+This method aggregates all disjoint live ranges (webs) that belong to the same variable name. It evaluates intersections between line sets using \textquotesingle{}set\+\_\+intersection\textquotesingle{}. If two raw webs for the same variable overlap at any program point, their lifetime intervals (\textquotesingle{}lines\textquotesingle{}, \textquotesingle{}start\textquotesingle{}, and \textquotesingle{}end\textquotesingle{}) are unified into a single web.
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Reference to the global \textquotesingle{}params\textquotesingle{} structure holding the vector of webs to be consolidated. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{parser_8cpp_a60a0216f067c7745726163a390bd9f97}\label{parser_8cpp_a60a0216f067c7745726163a390bd9f97} 
+\index{parser.cpp@{parser.cpp}!myStoi1@{myStoi1}}
+\index{myStoi1@{myStoi1}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{myStoi1()}{myStoi1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} my\+Stoi1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{s,  }\item[{\mbox{\hyperlink{structparams1}{params1}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Safely converts a string to an integer for live range processing. 
+
+Attempts to parse an integer from the string using \textquotesingle{}stoi\textquotesingle{}. If the parsing fails due to an exception (\doxylink{classEdge_ab976213419283ed754f42f57b195a288}{e.\+g}., invalid argument or out-\/of-\/range), it intercepts the error, sets the \textquotesingle{}valid\textquotesingle{} flag of the provided \textquotesingle{}\doxylink{structparams1}{params1}\textquotesingle{} structure to \textquotesingle{}false\textquotesingle{}, and returns an error indicator without crashing the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string representing the integer to parse. \\
+\hline
+{\em params} & Reference to the \textquotesingle{}\doxylink{structparams1}{params1}\textquotesingle{} structure whose validity state will be updated on failure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parsed integer value on success, or -\/1 if an exception is caught. 
+\end{DoxyReturn}
+\Hypertarget{parser_8cpp_a75fa3dcd210470b5b3e06f43c895b7ef}\label{parser_8cpp_a75fa3dcd210470b5b3e06f43c895b7ef} 
+\index{parser.cpp@{parser.cpp}!myStoi2@{myStoi2}}
+\index{myStoi2@{myStoi2}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{myStoi2()}{myStoi2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} my\+Stoi2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{s,  }\item[{\mbox{\hyperlink{structparams2}{params2}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Safely converts a string to an integer for configuration processing. 
+
+Attempts to parse an integer from the string using \textquotesingle{}stoi\textquotesingle{}. If the parsing fails due to an exception, it intercepts the error, sets the \textquotesingle{}valid\textquotesingle{} flag of the provided \textquotesingle{}\doxylink{structparams2}{params2}\textquotesingle{} structure to \textquotesingle{}false\textquotesingle{}, and returns an error indicator without crashing the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string representing the integer to parse. \\
+\hline
+{\em params} & Reference to the \textquotesingle{}\doxylink{structparams2}{params2}\textquotesingle{} structure whose validity state will be updated on failure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parsed integer value on success, or -\/1 if an exception is caught. 
+\end{DoxyReturn}
+\Hypertarget{parser_8cpp_a4d2b9fc9a95636c0a925df036887f7cc}\label{parser_8cpp_a4d2b9fc9a95636c0a925df036887f7cc} 
 \index{parser.cpp@{parser.cpp}!parse@{parse}}
 \index{parse@{parse}!parser.cpp@{parser.cpp}}
-\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path1,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{path2 }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{path1,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{path2 }\end{DoxyParamCaption})}
 
-\Hypertarget{parser_8cpp_a1836e32cb80495a3b4ff7d87c83107cf}\label{parser_8cpp_a1836e32cb80495a3b4ff7d87c83107cf} 
+
+
+Creates a params structure with all the data extracted from two input files. 
+
+This function calls upon parse1 and parse2 to parse their respective types of files and then organizes the live ranges of each variable into webs, gives them an id and then merges the \doxylink{structparams1}{params1} and \doxylink{structparams2}{params2} resulting from the earlier function calls into a single unified params structure with all the data from them. If even a single one of the two params this function receives has its validity set to false, the validity of the resulting params structure will also be false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & Relative path to the live ranges text file. \\
+\hline
+{\em path2} & Relative path to the allocator configuration text file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure containing all information necessary for the main algorithm. 
+\end{DoxyReturn}
+\Hypertarget{parser_8cpp_abbcb421f1d73d20c6d01fa2b7c7d59a2}\label{parser_8cpp_abbcb421f1d73d20c6d01fa2b7c7d59a2} 
+\index{parser.cpp@{parser.cpp}!parse@{parse}}
+\index{parse@{parse}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparams1}{params1}} \&}]{params1,  }\item[{\mbox{\hyperlink{structparams2}{params2}} \&}]{params2 }\end{DoxyParamCaption})}
+
+
+
+Creates a params structure with all the data extracted from two input files. 
+
+This function organizes the live ranges of each variable into webs, gives them an id and then merges both \doxylink{structparams1}{params1} and \doxylink{structparams2}{params2} into a single unified params structure with all the data from them. If even a single one of the two params this function receives has its validity set to false, the validity of the resulting params structure will also be false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structparams1}{params1}} & Reference to the \doxylink{structparams1}{params1} output structure where extracted webs and their validity state are stored. \\
+\hline
+{\em \doxylink{structparams2}{params2}} & Reference to the \doxylink{structparams2}{params2} output structure where extracted data and their validity state are stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure containing all information necessary for the main algorithm. 
+\end{DoxyReturn}
+\Hypertarget{parser_8cpp_abcb7431d859c840da62f370726f7dd75}\label{parser_8cpp_abcb7431d859c840da62f370726f7dd75} 
 \index{parser.cpp@{parser.cpp}!parse1@{parse1}}
 \index{parse1@{parse1}!parser.cpp@{parser.cpp}}
 \doxysubsubsection{\texorpdfstring{parse1()}{parse1()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path1,  }\item[{\mbox{\hyperlink{structparams}{params}} \&}]{params }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path1,  }\item[{\mbox{\hyperlink{structparams1}{params1}} \&}]{params }\end{DoxyParamCaption})}
 
-\Hypertarget{parser_8cpp_a7b1df45ccc4176c0e31eae665cfb52a4}\label{parser_8cpp_a7b1df45ccc4176c0e31eae665cfb52a4} 
+
+
+Parses the input file containing the live ranges for the variables. 
+
+This function reads the file specified by {\ttfamily path1}, filters out comments and empty lines, and extracts live range information for each variable into a \doxylink{structparams1}{params1} structure. It identifies definition points (marked with \textquotesingle{}+\textquotesingle{}) and end-\/of-\/life points (marked with \textquotesingle{}-\/\textquotesingle{}). If file opening fails or string-\/to-\/integer conversion errors occur, the validation flag within the parameters structure is set to false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & Relative path to the live ranges text file. \\
+\hline
+{\em params} & Reference to the \doxylink{structparams1}{params1} output structure where extracted webs and validity state are stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{parser_8cpp_ae3aa3be83224dfddd0ae25fca2d51f50}\label{parser_8cpp_ae3aa3be83224dfddd0ae25fca2d51f50} 
 \index{parser.cpp@{parser.cpp}!parse2@{parse2}}
 \index{parse2@{parse2}!parser.cpp@{parser.cpp}}
 \doxysubsubsection{\texorpdfstring{parse2()}{parse2()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path,  }\item[{\mbox{\hyperlink{structparams}{params}} \&}]{params }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path2,  }\item[{\mbox{\hyperlink{structparams2}{params2}} \&}]{params }\end{DoxyParamCaption})}
 
+
+
+Parses the input file containing the register number and algorithm type and value. 
+
+This function reads the file specified by {\ttfamily path2}, filters out comments and empty lines, and extracts information regarding the number of available registers and the type of algorithm to be used while coloring the resulting graph, as well as its value into a \doxylink{structparams2}{params2} structure. If file opening fails or string-\/to-\/integer conversion errors occur, and if no valid algorithm type and respective value are detected, the validation flag within the parameters structure is set to false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path2} & Relative path to the allocator configuration file. \\
+\hline
+{\em params} & Reference to the \doxylink{structparams2}{params2} output structure where extracted data and validity state are stored. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{parser_8cpp_a113ec9c37ab9ea29f1883ca79f7b7344}\label{parser_8cpp_a113ec9c37ab9ea29f1883ca79f7b7344} 
 \index{parser.cpp@{parser.cpp}!trim@{trim}}
 \index{trim@{trim}!parser.cpp@{parser.cpp}}
 \doxysubsubsection{\texorpdfstring{trim()}{trim()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} trim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} std\+::string \&}]{s }\end{DoxyParamCaption})}
 
+
+
+Removes leading and trailing whitespace characters from a string. 
+
+This utility trims spaces, tabs (\textquotesingle{}\textbackslash{}t\textquotesingle{}), carriage returns (\textquotesingle{}\textbackslash{}r\textquotesingle{}), and newlines (\textquotesingle{}~\newline
+\textquotesingle{}) from both ends of the given string. If the string consists entirely of whitespace, an empty string is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The constant reference to the input string to be trimmed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \textquotesingle{}string\textquotesingle{} stripped of leading and trailing whitespace. 
+\end{DoxyReturn}

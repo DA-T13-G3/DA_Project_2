@@ -1,0 +1,136 @@
+\doxysection{menu.\+h}
+\hypertarget{menu_8h_source}{}\label{menu_8h_source}\index{src/menu.h@{src/menu.h}}
+\mbox{\hyperlink{menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ gustavobastos\ on\ 28/03/26.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ DA\_PROJECT\_1\_MENU\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ DA\_PROJECT\_1\_MENU\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8h}{parser.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a84b8ce836ab7f170bc57cbf199361b54}{nl}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_af0e8e5346802ba4161c023d8a3da403d}{clear\_terminal}}()\ ;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_ab43b33004fb0c8f4d42f1999c8398a7f}{printf\_center}}(\textcolor{keyword}{const}\ std::string\ \&\ \mbox{\hyperlink{classEdge}{s}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{width}},\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classEdge}{after}});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{menu_8h_a6c6cbb6610ad25a8754363f3bd30ad51}{repeat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{str}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{n}})\ ;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ \ }\mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ screen\_width=100;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{string}\ bar=\ \mbox{\hyperlink{menu_8h_a6c6cbb6610ad25a8754363f3bd30ad51}{repeat}}(\textcolor{stringliteral}{"{}-\/"{}},screen\_width-\/1)+\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structparams1}{params1}}\ params1\_data;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structparams2}{params2}}\ params2\_data;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{structparams}{params}}\ params\_data;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{string}\ output\_path\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ no\_params1=\textcolor{keyword}{true};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ no\_params2=\textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ no\_output\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMenu_acb4740bc621360ecf8e880ebb25f791e}{run}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_aaa3a4c657342b09e379888692517c09a}{load\_data\_ranges}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a797b386c7bad27d10670ce0f7fd102d0}{load\_data\_algorithm}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a8980740bd17fdb160a6285178cc4842e}{print\_liveRanges}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a2b758a8d940e0c0bcd9b67423b4edc28}{print\_algorithm}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a7adecdaa98b1249ddc14451c1c9cb1fd}{select\_output}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{structparams}{params}}\ \mbox{\hyperlink{classMenu_a0f3696c69fd4873f416a4288a2b03683}{getParams}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classMenu_aa6c7c91e442530a5bb0613b3a3423977}{getOutput}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a3ed9a0acac5ec759c5e25ab5b108faa3}{basic\_view\_page}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classEdge}{title}},\mbox{\hyperlink{classEdge}{Func}}\ \mbox{\hyperlink{classEdge}{print\_data}})\ ;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a408b0cd4865b109f4c8a64c15a7398de}{list\_view\_page}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classEdge}{title}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{vector<\ T>}}\&\mbox{\hyperlink{classEdge}{data}},\textcolor{keywordtype}{string}(*\mbox{\hyperlink{classEdge}{print\_data}})(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{T}}\&));}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ printn\_c(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{str}})\ ;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_c(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{str}})\ ;}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a3ed9a0acac5ec759c5e25ab5b108faa3}{Menu::basic\_view\_page}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classEdge}{title}},\mbox{\hyperlink{classEdge}{Func}}\ \mbox{\hyperlink{classEdge}{print\_data}})\ \{}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{line}};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{input}};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{error}}=\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEdge}{exit}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{classEdge}{exit}})\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8h_af0e8e5346802ba4161c023d8a3da403d}{clear\_terminal}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ printn\_c(bar);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ printn\_c(\mbox{\hyperlink{classEdge}{title}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ printn\_c(bar);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{printf}}(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classEdge}{error}}.c\_str());}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{menu_8h_a84b8ce836ab7f170bc57cbf199361b54}{nl}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{print\_data}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ print\_c(\textcolor{stringliteral}{"{}Press\ 0\ to\ go\ back\ to\ menu:\ "{}});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{getline}}(std::cin,\mbox{\hyperlink{classEdge}{line}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEdge}{line}}.size()<=1)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{input}}=\mbox{\hyperlink{classEdge}{atoi}}(\mbox{\hyperlink{classEdge}{line}}.c\_str());}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEdge}{line}}!=\textcolor{stringliteral}{"{}0"{}}\ \mbox{\hyperlink{classEdge}{and}}\ \mbox{\hyperlink{classEdge}{input}}==0)\ \{}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{error}}=\textcolor{stringliteral}{"{}Error:\ Please\ enter\ a\ valid\ input\(\backslash\)n"{}};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{input}}=7;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{error}}=\textcolor{stringliteral}{"{}Error:\ Please\ enter\ a\ valid\ input\(\backslash\)n"{}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{input}}=7;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{error}}=\textcolor{stringliteral}{"{}Error:\ Please\ enter\ a\ valid\ input\(\backslash\)n"{}};}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEdge}{input}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{exit}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a408b0cd4865b109f4c8a64c15a7398de}{Menu::list\_view\_page}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{classEdge}{title}},\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{vector<\ T>}}\&\mbox{\hyperlink{classEdge}{data}},\textcolor{keywordtype}{string}(*\mbox{\hyperlink{classEdge}{print\_data}})(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{T}}\&))\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{classEdge}{basic\_view\_page<>}}(\mbox{\hyperlink{classEdge}{title}},[\&]()\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{i}}=0;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{T}}\&\ \mbox{\hyperlink{classEdge}{d}}\ :\mbox{\hyperlink{classEdge}{data}})\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{printf}}((\textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t"{}}+\mbox{\hyperlink{classEdge}{to\_string}}(\mbox{\hyperlink{classEdge}{i}})+\textcolor{stringliteral}{"{}\ -\/\ "{}}+\ \mbox{\hyperlink{classEdge}{print\_data}}(\mbox{\hyperlink{classEdge}{d}})+\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}}).\mbox{\hyperlink{classEdge}{c\_str}}());}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{i}}++;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ );}
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DA\_PROJECT\_1\_MENU\_H}}
+
+\end{DoxyCode}

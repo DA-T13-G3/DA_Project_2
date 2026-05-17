@@ -81,24 +81,38 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">parser.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="parser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="dataStructs_8h.html">dataStructs.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_struct" href="structparams.html">params</a> <a class="code hl_function" href="parser_8h.html#ac81b9a4ed8175fefa9664c09c58c96b6">parse</a>(<span class="keywordtype">string</span> <a class="code hl_class" href="classEdge.html">path1</a>, <span class="keywordtype">string</span> <a class="code hl_class" href="classEdge.html">path2</a>);</div>
+<a href="parser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DA_PROJECT_2_PARSER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DA_PROJECT_2_PARSER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="dataStructs_8h.html">dataStructs.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="parser_8h.html#abcb7431d859c840da62f370726f7dd75">parse1</a>(<span class="keywordtype">string</span> <a class="code hl_class" href="classEdge.html">path1</a>, <a class="code hl_struct" href="structparams1.html">params1</a> &amp;<a class="code hl_struct" href="structparams.html">params</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="parser_8h.html#ae3aa3be83224dfddd0ae25fca2d51f50">parse2</a>(<span class="keywordtype">string</span> <a class="code hl_class" href="classEdge.html">path2</a>, <a class="code hl_struct" href="structparams2.html">params2</a> &amp;<a class="code hl_struct" href="structparams.html">params</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><a class="code hl_struct" href="structparams.html">params</a> <a class="code hl_function" href="parser_8h.html#abbcb421f1d73d20c6d01fa2b7c7d59a2">parse</a>(<a class="code hl_struct" href="structparams1.html">params1</a> &amp;<a class="code hl_struct" href="structparams1.html">params1</a>, <a class="code hl_struct" href="structparams2.html">params2</a> &amp;<a class="code hl_struct" href="structparams2.html">params2</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><a class="code hl_struct" href="structparams.html">params</a> <a class="code hl_function" href="parser_8h.html#abbcb421f1d73d20c6d01fa2b7c7d59a2">parse</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_class" href="classEdge.html">path1</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_class" href="classEdge.html">path2</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassEdge_html"><div class="ttname"><a href="classEdge.html">Edge</a></div><div class="ttdef"><b>Definition</b> graph.h:77</div></div>
 <div class="ttc" id="adataStructs_8h_html"><div class="ttname"><a href="dataStructs_8h.html">dataStructs.h</a></div></div>
-<div class="ttc" id="aparser_8h_html_ac81b9a4ed8175fefa9664c09c58c96b6"><div class="ttname"><a href="parser_8h.html#ac81b9a4ed8175fefa9664c09c58c96b6">parse</a></div><div class="ttdeci">params parse(string path1, string path2)</div><div class="ttdef"><b>Definition</b> parser.cpp:227</div></div>
-<div class="ttc" id="astructparams_html"><div class="ttname"><a href="structparams.html">params</a></div><div class="ttdoc">Global parameters produced by the parser.</div><div class="ttdef"><b>Definition</b> dataStructs.h:77</div></div>
+<div class="ttc" id="aparser_8h_html_abbcb421f1d73d20c6d01fa2b7c7d59a2"><div class="ttname"><a href="parser_8h.html#abbcb421f1d73d20c6d01fa2b7c7d59a2">parse</a></div><div class="ttdeci">params parse(params1 &amp;params1, params2 &amp;params2)</div><div class="ttdoc">Creates a params structure with all the data extracted from two input files.</div><div class="ttdef"><b>Definition</b> parser.cpp:297</div></div>
+<div class="ttc" id="aparser_8h_html_abcb7431d859c840da62f370726f7dd75"><div class="ttname"><a href="parser_8h.html#abcb7431d859c840da62f370726f7dd75">parse1</a></div><div class="ttdeci">void parse1(string path1, params1 &amp;params)</div><div class="ttdoc">Parses the input file containing the live ranges for the variables.</div><div class="ttdef"><b>Definition</b> parser.cpp:172</div></div>
+<div class="ttc" id="aparser_8h_html_ae3aa3be83224dfddd0ae25fca2d51f50"><div class="ttname"><a href="parser_8h.html#ae3aa3be83224dfddd0ae25fca2d51f50">parse2</a></div><div class="ttdeci">void parse2(string path2, params2 &amp;params)</div><div class="ttdoc">Parses the input file containing the register number and algorithm type and value.</div><div class="ttdef"><b>Definition</b> parser.cpp:218</div></div>
+<div class="ttc" id="astructparams1_html"><div class="ttname"><a href="structparams1.html">params1</a></div><div class="ttdoc">Global parameters produced by the parser corresponding only to the live ranges input file.</div><div class="ttdef"><b>Definition</b> dataStructs.h:100</div></div>
+<div class="ttc" id="astructparams2_html"><div class="ttname"><a href="structparams2.html">params2</a></div><div class="ttdoc">Global parameters produced by the parser corresponding only to the registers input file.</div><div class="ttdef"><b>Definition</b> dataStructs.h:114</div></div>
+<div class="ttc" id="astructparams_html"><div class="ttname"><a href="structparams.html">params</a></div><div class="ttdoc">Global parameters produced by the parser.</div><div class="ttdef"><b>Definition</b> dataStructs.h:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

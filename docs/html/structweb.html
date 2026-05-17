@@ -70,6 +70,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structweb-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">web Struct Reference</div></div>
@@ -81,6 +82,11 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="dataStructs_8h_source.html">dataStructs.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a76c607476f5d867c572a0fa3b148b857" id="r_a76c607476f5d867c572a0fa3b148b857"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html#a76c607476f5d867c572a0fa3b148b857">operator==</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="structweb.html">web</a> &amp;<a class="el" href="classEdge.html">other</a>) <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="separator:a76c607476f5d867c572a0fa3b148b857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aae1381e6198593bfe82a70489c5da8be" id="r_aae1381e6198593bfe82a70489c5da8be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html#aae1381e6198593bfe82a70489c5da8be">var_name</a></td></tr>
@@ -91,18 +97,48 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a02eee1275b09c4dee29d6681fd4dc52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a867b62405c392c30ae6e5eb1a799af76" id="r_a867b62405c392c30ae6e5eb1a799af76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">vector</a>&lt; <a class="el" href="classEdge.html">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html#a867b62405c392c30ae6e5eb1a799af76">lines</a></td></tr>
 <tr class="separator:a867b62405c392c30ae6e5eb1a799af76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c720472486f1b9de5fd9cf10d18bc80" id="r_a7c720472486f1b9de5fd9cf10d18bc80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structweb.html#a7c720472486f1b9de5fd9cf10d18bc80">id</a></td></tr>
+<tr class="separator:a7c720472486f1b9de5fd9cf10d18bc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a single live web of a variable. </p>
-<p>A web is the combination of one or more live ranges belonging to the same variable. The parser initially creates one web per live-range line in the input file. After parsing, <a class="el" href="parser_8cpp.html#ac1c18255324c0c59380f092569c4a9b7">mergeWebs()</a> merges all overlapping live ranges of the same variable into a single web.</p>
+<p>A web is the combination of one or more live ranges belonging to the same variable. The parser initially creates one web per live-range line in the input file. After parsing, <a class="el" href="parser_8cpp.html#ac1c18255324c0c59380f092569c4a9b7" title="Resolves and merges overlapping or intersecting live ranges for variables with the same name.">mergeWebs()</a> merges all overlapping live ranges of the same variable into a single web.</p>
 <p>Fields:</p><ul>
 <li>var_name: name of the variable.</li>
 <li>start: program lines where the web begins (lines ending with '+').</li>
 <li>end: program lines where the web ends (lines ending with '-').</li>
 <li>lines: all program points where the variable is live.</li>
+<li>id: unique identifier for the web.</li>
 </ul>
 <p>All vectors are sorted after merging, and the <a class="el" href="dataStructs_8cpp.html#a3f5dffb50eb977e07687c21b4f4130d8" title="Determines whether two webs interfere.">interfere()</a> function assumes this ordering. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a76c607476f5d867c572a0fa3b148b857" name="a76c607476f5d867c572a0fa3b148b857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c607476f5d867c572a0fa3b148b857">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> web::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="structweb.html">web</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a02eee1275b09c4dee29d6681fd4dc52d" name="a02eee1275b09c4dee29d6681fd4dc52d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02eee1275b09c4dee29d6681fd4dc52d">&#9670;&#160;</a></span>end</h2>
 
@@ -111,6 +147,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classEdge.html">vector</a>&lt;<a class="el" href="classEdge.html">int</a>&gt; web::end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c720472486f1b9de5fd9cf10d18bc80" name="a7c720472486f1b9de5fd9cf10d18bc80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c720472486f1b9de5fd9cf10d18bc80">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">string</a> web::id</td>
         </tr>
       </table>
 </div><div class="memdoc">

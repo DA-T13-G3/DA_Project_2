@@ -80,6 +80,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="graph_8h_source.html">graph.h</a>&quot;</code><br />
 <code>#include &quot;unordered_map&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for graphColoring.h:</div>
 <div class="dyncontent">
@@ -97,20 +98,31 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a8040219e5d2ea7fcd753c709dd729ec7" id="r_a8040219e5d2ea7fcd753c709dd729ec7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a8040219e5d2ea7fcd753c709dd729ec7">graphColoringTestSuite</a> ()</td></tr>
 <tr class="separator:a8040219e5d2ea7fcd753c709dd729ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7284b507a98d26262ecae0983f3b17" id="r_a8c7284b507a98d26262ecae0983f3b17"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
+<tr class="memitem:a8c7284b507a98d26262ecae0983f3b17"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a8c7284b507a98d26262ecae0983f3b17">printVertexDetails</a> (<a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">v</a>)</td></tr>
+<tr class="memdesc:a8c7284b507a98d26262ecae0983f3b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function to print all vertices, their states, and their neighbors.  <br /></td></tr>
+<tr class="separator:a8c7284b507a98d26262ecae0983f3b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9768274e8ce34ac8f577d33d817a0fcd" id="r_a9768274e8ce34ac8f577d33d817a0fcd"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
+<tr class="memitem:a9768274e8ce34ac8f577d33d817a0fcd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a9768274e8ce34ac8f577d33d817a0fcd">printGraphDetails</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">g</a>)</td></tr>
+<tr class="separator:a9768274e8ce34ac8f577d33d817a0fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9f780a08a56afcc53925a045f35e0c" id="r_a7b9f780a08a56afcc53925a045f35e0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a7b9f780a08a56afcc53925a045f35e0c">graphColoringBasicTestSuite</a> ()</td></tr>
 <tr class="separator:a7b9f780a08a56afcc53925a045f35e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b204e3d86ec888ea914983646f9b751" id="r_a3b204e3d86ec888ea914983646f9b751"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
-<tr class="memitem:a3b204e3d86ec888ea914983646f9b751"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a3b204e3d86ec888ea914983646f9b751">graphColoringFree</a> (<a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">v</a>, <a class="el" href="classEdge.html">int</a> &amp;<a class="el" href="classEdge.html">biggestColor</a>, std::vector&lt; <a class="el" href="classEdge.html">bool</a> &gt; &amp;<a class="el" href="classEdge.html">usedColors</a>)</td></tr>
-<tr class="memdesc:a3b204e3d86ec888ea914983646f9b751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive auxiliary function for Depth-First Search (DFS) graph coloring. The time complexity is O(|V|^2) and the space complexity is O(V).  <br /></td></tr>
-<tr class="separator:a3b204e3d86ec888ea914983646f9b751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a300fe402922ea8ac9f71d7d424b9292f" id="r_a300fe402922ea8ac9f71d7d424b9292f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
-<tr class="memitem:a300fe402922ea8ac9f71d7d424b9292f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a300fe402922ea8ac9f71d7d424b9292f">graphColoringFree</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">g</a>)</td></tr>
-<tr class="memdesc:a300fe402922ea8ac9f71d7d424b9292f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colors a graph using a Depth-First Search (DFS) traversal and a greedy algorithm. The time complexity is O(|V|^2) and the space complexity is O(V)  <br /></td></tr>
-<tr class="separator:a300fe402922ea8ac9f71d7d424b9292f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfafb41416b7e75281f224e7f6b7048" id="r_a0bfafb41416b7e75281f224e7f6b7048"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
+<tr class="memitem:a0bfafb41416b7e75281f224e7f6b7048"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a0bfafb41416b7e75281f224e7f6b7048">graphColoringFreeAux</a> (<a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">v</a>, <a class="el" href="classEdge.html">int</a> &amp;<a class="el" href="classEdge.html">biggestColor</a>, std::vector&lt; <a class="el" href="classEdge.html">bool</a> &gt; &amp;<a class="el" href="classEdge.html">usedColors</a>)</td></tr>
+<tr class="memdesc:a0bfafb41416b7e75281f224e7f6b7048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive auxiliary function for Depth-First Search (DFS) graph coloring. The time complexity is O(|V|^2) and the space complexity is O(V).  <br /></td></tr>
+<tr class="separator:a0bfafb41416b7e75281f224e7f6b7048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7e75eba6e79e8286ec39ea8739c18c" id="r_a7b7e75eba6e79e8286ec39ea8739c18c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
+<tr class="memitem:a7b7e75eba6e79e8286ec39ea8739c18c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a7b7e75eba6e79e8286ec39ea8739c18c">graphColoringFree</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">g</a>, <a class="el" href="classEdge.html">unsigned</a> <a class="el" href="classEdge.html">int</a> <a class="el" href="classEdge.html">N</a>)</td></tr>
+<tr class="memdesc:a7b7e75eba6e79e8286ec39ea8739c18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colors a graph using a Depth-First Search (DFS) traversal and a greedy algorithm. The time complexity is O(|V|^2) and the space complexity is O(V)  <br /></td></tr>
+<tr class="separator:a7b7e75eba6e79e8286ec39ea8739c18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5260482d9e1a2bc501a0a1b95cb0be2" id="r_ae5260482d9e1a2bc501a0a1b95cb0be2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
 <tr class="memitem:ae5260482d9e1a2bc501a0a1b95cb0be2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#ae5260482d9e1a2bc501a0a1b95cb0be2">graphColoringBasic</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">g</a>, <a class="el" href="classEdge.html">unsigned</a> <a class="el" href="classEdge.html">int</a> <a class="el" href="classEdge.html">N</a>)</td></tr>
 <tr class="memdesc:ae5260482d9e1a2bc501a0a1b95cb0be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the given greedy graph coloring algorithm but without spilling properly. The time complexity is O(|V|^2) and the space complexity is O(V)  <br /></td></tr>
 <tr class="separator:ae5260482d9e1a2bc501a0a1b95cb0be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941d31eca092b5ab0faa29ae7def12c7" id="r_a941d31eca092b5ab0faa29ae7def12c7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </td></tr>
+<tr class="memitem:a941d31eca092b5ab0faa29ae7def12c7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="graphColoring_8h.html#a941d31eca092b5ab0faa29ae7def12c7">graphColoringBasicWithSpilling</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *<a class="el" href="classEdge.html">g</a>, <a class="el" href="classEdge.html">unsigned</a> <a class="el" href="classEdge.html">int</a> <a class="el" href="classEdge.html">N</a>)</td></tr>
+<tr class="memdesc:a941d31eca092b5ab0faa29ae7def12c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic. The time complexity is O(|V|^2) and the space complexity is O(|V|).  <br /></td></tr>
+<tr class="separator:a941d31eca092b5ab0faa29ae7def12c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae5260482d9e1a2bc501a0a1b95cb0be2" name="ae5260482d9e1a2bc501a0a1b95cb0be2"></a>
@@ -180,8 +192,58 @@ template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href=
 
 </div>
 </div>
-<a id="a300fe402922ea8ac9f71d7d424b9292f" name="a300fe402922ea8ac9f71d7d424b9292f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a300fe402922ea8ac9f71d7d424b9292f">&#9670;&#160;</a></span>graphColoringFree() <span class="overload">[1/2]</span></h2>
+<a id="a941d31eca092b5ab0faa29ae7def12c7" name="a941d31eca092b5ab0faa29ae7def12c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941d31eca092b5ab0faa29ae7def12c7">&#9670;&#160;</a></span>graphColoringBasicWithSpilling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">int</a> graphColoringBasicWithSpilling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">unsigned</a> <a class="el" href="classEdge.html">int</a>&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a greedy graph coloring algorithm with a pessimistic spilling heuristic. The time complexity is O(|V|^2) and the space complexity is O(|V|). </p>
+<p>This algorithm attempts to color an undirected graph using a maximum of N colors. Unlike the basic approach, this function guarantees completion by spilling nodes when the graph becomes uncolorable. The algorithm is divided into two phases:</p><ul>
+<li>- Phase 1 (Simplification &amp; Spilling): Iteratively removes nodes with a degree less than N and pushes them onto a stack. If the graph gets blocked (all remaining active nodes have a degree &gt;= N), the algorithm selects the node with the highest current degree, marks it as spilled (visited), and removes it from the active graph to break the deadlock.</li>
+<li>- Phase 2 (Coloring): Pops nodes from the stack and assigns the lowest available color (0-indexed) that is not currently used by its already-colored neighbors.</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The data type stored within the vertex (<a class="el" href="classEdge.html#ab976213419283ed754f42f57b195a288">e.g</a>., int, std::string, web).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the <a class="el" href="classGraph.html">Graph</a> object to be colored. The graph must have bidirectional (undirected) edges for the degree calculation to work correctly. </td></tr>
+    <tr><td class="paramname">N</td><td>The maximum number of allowed colors (the register limit).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the total number of colors successfully used to color the non-spilled graph. The number of used colors will not exceed N. Spilled nodes can be identified after execution by checking if their marked as visited. </dd></dl>
+
+</div>
+</div>
+<a id="a7b7e75eba6e79e8286ec39ea8739c18c" name="a7b7e75eba6e79e8286ec39ea8739c18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7e75eba6e79e8286ec39ea8739c18c">&#9670;&#160;</a></span>graphColoringFree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,8 +254,18 @@ template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href=
           <td class="memname"><a class="el" href="classEdge.html">int</a> graphColoringFree </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">unsigned</a> <a class="el" href="classEdge.html">int</a>&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,8 +289,8 @@ template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href=
 
 </div>
 </div>
-<a id="a3b204e3d86ec888ea914983646f9b751" name="a3b204e3d86ec888ea914983646f9b751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b204e3d86ec888ea914983646f9b751">&#9670;&#160;</a></span>graphColoringFree() <span class="overload">[2/2]</span></h2>
+<a id="a0bfafb41416b7e75281f224e7f6b7048" name="a0bfafb41416b7e75281f224e7f6b7048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bfafb41416b7e75281f224e7f6b7048">&#9670;&#160;</a></span>graphColoringFreeAux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +298,7 @@ template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href=
 template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classEdge.html">void</a> graphColoringFree </td>
+          <td class="memname"><a class="el" href="classEdge.html">void</a> graphColoringFreeAux </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -284,6 +356,63 @@ template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href=
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9768274e8ce34ac8f577d33d817a0fcd" name="a9768274e8ce34ac8f577d33d817a0fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9768274e8ce34ac8f577d33d817a0fcd">&#9670;&#160;</a></span>printGraphDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">void</a> printGraphDetails </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c7284b507a98d26262ecae0983f3b17" name="a8c7284b507a98d26262ecae0983f3b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7284b507a98d26262ecae0983f3b17">&#9670;&#160;</a></span>printVertexDetails()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">typename</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">void</a> printVertexDetails </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Utility function to print all vertices, their states, and their neighbors. </p>
+<ul>
+<li><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The data type stored within the vertex (<a class="el" href="classEdge.html#ab976213419283ed754f42f57b195a288">e.g</a>., your 'web' struct). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the <a class="el" href="classGraph.html">Graph</a> object to be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
 
 </div>
 </div>

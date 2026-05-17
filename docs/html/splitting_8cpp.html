@@ -162,8 +162,9 @@ Functions</h2></td></tr>
 <p>Attempts to color the graph using iterative web splitting. </p>
 <p>This function repeatedly tries to color the graph using the basic greedy coloring algorithm. If coloring fails and the maximum number of allowed splits has not been reached, one web is split (via <a class="el" href="splitting_8h.html#abfa40819f7e4912eef5946521fd9083e" title="Splits a web into two smaller webs.">split()</a>) and the graph is recolored. The process continues until either:</p><ul>
 <li>the graph becomes colorable with the available registers, or</li>
-<li>the maximum number of splits is reached.</li>
+<li>the maximum number of splits is reached. Time Complexity: Θ(k · (E + V · L))</li>
 </ul>
+<p>k - Actual number of splits performed before coloring succeeds (k ≤ S) E - Number of interference edges in the graph V - Number of webs (vertices) L - Average number of lines in a live range</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">g</td><td>Pointer to the graph of webs. </td></tr>

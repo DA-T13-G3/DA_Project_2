@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mutablepriorityqueue_0',['MutablePriorityQueue',['../classMutablePriorityQueue.html',1,'']]]
+  ['menu_0',['Menu',['../classMenu.html',1,'']]],
+  ['mutablepriorityqueue_1',['MutablePriorityQueue',['../classMutablePriorityQueue.html',1,'']]]
 ];

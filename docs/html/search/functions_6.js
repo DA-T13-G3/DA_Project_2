@@ -1,8 +1,26 @@
 var searchData=
 [
-  ['insert_0',['insert',['../classMutablePriorityQueue.html#a058fc182052af82e10cc3719e448b62d',1,'MutablePriorityQueue']]],
-  ['interfere_1',['interfere',['../dataStructs_8cpp.html#a3f5dffb50eb977e07687c21b4f4130d8',1,'interfere(web a, web b):&#160;dataStructs.cpp'],['../dataStructs_8h.html#a3f5dffb50eb977e07687c21b4f4130d8',1,'interfere(web a, web b):&#160;dataStructs.cpp']]],
-  ['isprocessing_2',['isProcessing',['../classVertex.html#aaa41dfa4ce1a19b4e529cc6cdc23b764',1,'Vertex']]],
-  ['isselected_3',['isSelected',['../classEdge.html#a2d36af60fa3dea16824bec12e5f68c58',1,'Edge']]],
-  ['isvisited_4',['isVisited',['../classVertex.html#aa2bb17f6ebd98a67f8da1f689b22fadc',1,'Vertex']]]
+  ['getadj_0',['getAdj',['../classVertex.html#a0010a7d0b7db1bb81dd2ebb1ffae650a',1,'Vertex']]],
+  ['getdest_1',['getDest',['../classEdge.html#a9a2de066dff8513dd788d553fc1d0c81',1,'Edge']]],
+  ['getdist_2',['getDist',['../classVertex.html#a01e90e3cdb2ee11dd3b1d593c8207382',1,'Vertex']]],
+  ['getflow_3',['getFlow',['../classEdge.html#a75458cfc838ca5aee5c34cb9f03b5647',1,'Edge']]],
+  ['getincoming_4',['getIncoming',['../classVertex.html#a361d7d0459d37aead6401d6af9f81f0a',1,'Vertex']]],
+  ['getindegree_5',['getIndegree',['../classVertex.html#a25642875df28caa2195bad5a9ae44683',1,'Vertex']]],
+  ['getinfo_6',['getInfo',['../classVertex.html#a48eae2f7af2362634adab02b7b2dbec6',1,'Vertex']]],
+  ['getlow_7',['getLow',['../classVertex.html#a3b8e12b4d9805979321212dd6db05961',1,'Vertex']]],
+  ['getnum_8',['getNum',['../classVertex.html#ab2916c006fa35b918910a2232095e785',1,'Vertex']]],
+  ['getnumvertex_9',['getNumVertex',['../classGraph.html#a0853eac15cdf0f06d63f4b8a7820ec71',1,'Graph']]],
+  ['getorig_10',['getOrig',['../classEdge.html#a40fc1470c5339203defca19b67c2535b',1,'Edge']]],
+  ['getoutput_11',['getOutput',['../classMenu.html#aa6c7c91e442530a5bb0613b3a3423977',1,'Menu']]],
+  ['getparams_12',['getParams',['../classMenu.html#a0f3696c69fd4873f416a4288a2b03683',1,'Menu']]],
+  ['getpath_13',['getPath',['../classVertex.html#a15e4ff95fba2bb5970a6551137ceb950',1,'Vertex']]],
+  ['getreverse_14',['getReverse',['../classEdge.html#af0a900f3006e47b9f363df7429298eeb',1,'Edge']]],
+  ['getvertexset_15',['getVertexSet',['../classGraph.html#a41624b03fcb6bd29e4df574a1ec58541',1,'Graph']]],
+  ['getweight_16',['getWeight',['../classEdge.html#a3df378e283d6c8be5be4170ac8d7f4e8',1,'Edge']]],
+  ['graphcoloringbasic_17',['graphColoringBasic',['../graphColoring_8h.html#ae5260482d9e1a2bc501a0a1b95cb0be2',1,'graphColoring.h']]],
+  ['graphcoloringbasictestsuite_18',['graphColoringBasicTestSuite',['../graphColoring_8h.html#a7b9f780a08a56afcc53925a045f35e0c',1,'graphColoring.h']]],
+  ['graphcoloringbasicwithspilling_19',['graphColoringBasicWithSpilling',['../graphColoring_8h.html#a941d31eca092b5ab0faa29ae7def12c7',1,'graphColoring.h']]],
+  ['graphcoloringfree_20',['graphColoringFree',['../graphColoring_8h.html#a7b7e75eba6e79e8286ec39ea8739c18c',1,'graphColoring.h']]],
+  ['graphcoloringfreeaux_21',['graphColoringFreeAux',['../graphColoring_8h.html#a0bfafb41416b7e75281f224e7f6b7048',1,'graphColoring.h']]],
+  ['graphcoloringtestsuite_22',['graphcoloringtestsuite',['../graphColoring_8h.html#a8040219e5d2ea7fcd753c709dd729ec7',1,'graphColoringTestSuite():&#160;graphColoringFreeTest.cpp'],['../graphColoringFreeTest_8cpp.html#a8040219e5d2ea7fcd753c709dd729ec7',1,'graphColoringTestSuite():&#160;graphColoringFreeTest.cpp']]]
 ];

@@ -18,14 +18,96 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8h_ac81b9a4ed8175fefa9664c09c58c96b6}{parse}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path2}})
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8h_abcb7431d859c840da62f370726f7dd75}{parse1}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{structparams1}{params1}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Parses the input file containing the live ranges for the variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{parser_8h_ae3aa3be83224dfddd0ae25fca2d51f50}{parse2}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{path2}}, \mbox{\hyperlink{structparams2}{params2}} \&\mbox{\hyperlink{structparams}{params}})
+\begin{DoxyCompactList}\small\item\em Parses the input file containing the register number and algorithm type and value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8h_abbcb421f1d73d20c6d01fa2b7c7d59a2}{parse}} (\mbox{\hyperlink{structparams1}{params1}} \&\mbox{\hyperlink{structparams1}{params1}}, \mbox{\hyperlink{structparams2}{params2}} \&\mbox{\hyperlink{structparams2}{params2}})
+\begin{DoxyCompactList}\small\item\em Creates a params structure with all the data extracted from two input files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structparams}{params}} \mbox{\hyperlink{parser_8h_a4d2b9fc9a95636c0a925df036887f7cc}{parse}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{path1}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{path2}})
+\begin{DoxyCompactList}\small\item\em Creates a params structure with all the data extracted from two input files. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{parser_8h_ac81b9a4ed8175fefa9664c09c58c96b6}\label{parser_8h_ac81b9a4ed8175fefa9664c09c58c96b6} 
+\Hypertarget{parser_8h_a4d2b9fc9a95636c0a925df036887f7cc}\label{parser_8h_a4d2b9fc9a95636c0a925df036887f7cc} 
 \index{parser.h@{parser.h}!parse@{parse}}
 \index{parse@{parse}!parser.h@{parser.h}}
-\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path1,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{path2 }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{path1,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{path2 }\end{DoxyParamCaption})}
 
+
+
+Creates a params structure with all the data extracted from two input files. 
+
+This function calls upon parse1 and parse2 to parse their respective types of files and then organizes the live ranges of each variable into webs, gives them an id and then merges the \doxylink{structparams1}{params1} and \doxylink{structparams2}{params2} resulting from the earlier function calls into a single unified params structure with all the data from them. If even a single one of the two params this function receives has its validity set to false, the validity of the resulting params structure will also be false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & Relative path to the live ranges text file. \\
+\hline
+{\em path2} & Relative path to the allocator configuration text file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure containing all information necessary for the main algorithm. 
+\end{DoxyReturn}
+\Hypertarget{parser_8h_abbcb421f1d73d20c6d01fa2b7c7d59a2}\label{parser_8h_abbcb421f1d73d20c6d01fa2b7c7d59a2} 
+\index{parser.h@{parser.h}!parse@{parse}}
+\index{parse@{parse}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structparams}{params}} parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structparams1}{params1}} \&}]{params1,  }\item[{\mbox{\hyperlink{structparams2}{params2}} \&}]{params2 }\end{DoxyParamCaption})}
+
+
+
+Creates a params structure with all the data extracted from two input files. 
+
+This function organizes the live ranges of each variable into webs, gives them an id and then merges both \doxylink{structparams1}{params1} and \doxylink{structparams2}{params2} into a single unified params structure with all the data from them. If even a single one of the two params this function receives has its validity set to false, the validity of the resulting params structure will also be false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structparams1}{params1}} & Reference to the \doxylink{structparams1}{params1} output structure where extracted webs and their validity state are stored. \\
+\hline
+{\em \doxylink{structparams2}{params2}} & Reference to the \doxylink{structparams2}{params2} output structure where extracted data and their validity state are stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure containing all information necessary for the main algorithm. 
+\end{DoxyReturn}
+\Hypertarget{parser_8h_abcb7431d859c840da62f370726f7dd75}\label{parser_8h_abcb7431d859c840da62f370726f7dd75} 
+\index{parser.h@{parser.h}!parse1@{parse1}}
+\index{parse1@{parse1}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{parse1()}{parse1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path1,  }\item[{\mbox{\hyperlink{structparams1}{params1}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Parses the input file containing the live ranges for the variables. 
+
+This function reads the file specified by {\ttfamily path1}, filters out comments and empty lines, and extracts live range information for each variable into a \doxylink{structparams1}{params1} structure. It identifies definition points (marked with \textquotesingle{}+\textquotesingle{}) and end-\/of-\/life points (marked with \textquotesingle{}-\/\textquotesingle{}). If file opening fails or string-\/to-\/integer conversion errors occur, the validation flag within the parameters structure is set to false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & Relative path to the live ranges text file. \\
+\hline
+{\em params} & Reference to the \doxylink{structparams1}{params1} output structure where extracted webs and validity state are stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{parser_8h_ae3aa3be83224dfddd0ae25fca2d51f50}\label{parser_8h_ae3aa3be83224dfddd0ae25fca2d51f50} 
+\index{parser.h@{parser.h}!parse2@{parse2}}
+\index{parse2@{parse2}!parser.h@{parser.h}}
+\doxysubsubsection{\texorpdfstring{parse2()}{parse2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} parse2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{path2,  }\item[{\mbox{\hyperlink{structparams2}{params2}} \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Parses the input file containing the register number and algorithm type and value. 
+
+This function reads the file specified by {\ttfamily path2}, filters out comments and empty lines, and extracts information regarding the number of available registers and the type of algorithm to be used while coloring the resulting graph, as well as its value into a \doxylink{structparams2}{params2} structure. If file opening fails or string-\/to-\/integer conversion errors occur, and if no valid algorithm type and respective value are detected, the validation flag within the parameters structure is set to false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path2} & Relative path to the allocator configuration file. \\
+\hline
+{\em params} & Reference to the \doxylink{structparams2}{params2} output structure where extracted data and validity state are stored. \\
+\hline
+\end{DoxyParams}

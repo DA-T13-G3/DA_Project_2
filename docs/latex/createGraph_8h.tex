@@ -24,7 +24,7 @@ This graph shows which files directly or indirectly include this file\+:
 
 Builds the graph from the set of webs. 
 
-This function constructs a graph where each web corresponds to a vertex. For every pair of webs, an interference edge is added if their live ranges overlap according to \textquotesingle{}\doxylink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere()}\textquotesingle{}. The resulting graph is the input for the register allocation algorithms.
+This function constructs a graph where each web corresponds to a vertex. For every pair of webs, an interference edge is added if their live ranges overlap according to \textquotesingle{}\doxylink{dataStructs_8cpp_a3f5dffb50eb977e07687c21b4f4130d8}{interfere()}\textquotesingle{}. The resulting graph is the input for the register allocation algorithms. Time complexity\+: O(\+N\texorpdfstring{$^\wedge$}{\string^}2 \texorpdfstring{$\ast$}{*} L)
 
 
 \begin{DoxyParams}{Parameters}

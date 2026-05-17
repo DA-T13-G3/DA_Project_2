@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['datastructs_2ecpp_0',['dataStructs.cpp',['../dataStructs_8cpp.html',1,'']]],
-  ['datastructs_2eh_1',['dataStructs.h',['../dataStructs_8h.html',1,'']]]
+  ['buildresult_2ecpp_0',['buildResult.cpp',['../buildResult_8cpp.html',1,'']]],
+  ['buildresult_2eh_1',['buildResult.h',['../buildResult_8h.html',1,'']]]
 ];

@@ -15,7 +15,7 @@
 \DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00023\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\_type}}\ \{}
 \DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a94c3facd4fc52de1d46fd692ac82aff7}{basic}},}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207ac876fd1e549c222e723a44cac90775d5}{splitting}},}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a74be66aeae3e8250eeba8fe2ca6b511e}{splitting\_}},}
 \DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a760cff7aa26a25ea0db8b3d1a8760b05}{spilling}},}
 \DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207a49bac7a7222c4b50a308704e96546a5d}{free\_}}}
 \DoxyCodeLine{00028\ \};}
@@ -23,36 +23,55 @@
 \DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{dataStructs_8h_a97844550821cdaf0272cfa8db3a2e207}{alg\_type}}\ \mbox{\hyperlink{structalgorithm_a05de2abf197f17ee493f89719c43f9ff}{type}};}
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structalgorithm_a7795ec980d36e0af62f640a7fb39353d}{val}};}
 \DoxyCodeLine{00042\ \};}
-\DoxyCodeLine{00060\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structweb}{web}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ information\ about\ each\ web}}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structweb_aae1381e6198593bfe82a70489c5da8be}{var\_name}};}
-\DoxyCodeLine{00062\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_ae12c9c3b1a342c53d722a0589edc58f4}{start}};}
-\DoxyCodeLine{00063\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_a02eee1275b09c4dee29d6681fd4dc52d}{end}};}
-\DoxyCodeLine{00064\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}};}
-\DoxyCodeLine{00065\ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00077\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparams}{params}}\ \{\ \textcolor{comment}{//has\ all\ information\ from\ the\ input\ files\ after\ being\ parsed}}
-\DoxyCodeLine{00078\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structparams_ab7e5c4c5ef9a6e934122bf355ed08afd}{webs}};}
-\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structalgorithm}{algorithm}}\ \mbox{\hyperlink{structparams_a82b733a09f5e98ab0089a1b664c2f02e}{alg}};}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structparams_a7ac7b5b8806c2f6444f53d20f43d00aa}{regs}};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structparams_a6610139b3a98ee2a7b1ac7ba76025ebe}{valid}};}
-\DoxyCodeLine{00083\ \};}
-\DoxyCodeLine{00090\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structassignment}{assignment}}\ \{\ \textcolor{comment}{//webs\ that\ dont\ interfere\ with\ eachother}}
-\DoxyCodeLine{00091\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structassignment_ab82c1b672f9b83db1af06472853f1b41}{webs}};}
-\DoxyCodeLine{00092\ \};}
-\DoxyCodeLine{00102\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structresult}{result}}\ \{\ \textcolor{comment}{//final\ result\ of\ the\ algorithm}}
-\DoxyCodeLine{00103\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structresult_a5719c21aa4c153a637821b9b8d884334}{webs}};}
-\DoxyCodeLine{00104\ \ \ \ \ vector<assignment>\ \mbox{\hyperlink{structresult_a6e87b9a6b06eac084df5756e1efeecf2}{assignments}};}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structresult_ab9e89d8ca1650c07555d3d198813b43b}{regs}};}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9}{possible}};}
-\DoxyCodeLine{00107\ \};}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structorder}{order}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ the\ order\ of\ webs}}
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structorder_a4cce33c16ea49fa7458332ba0d0340f1}{index}};}
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{structweb}{web}}\ \mbox{\hyperlink{structorder_a0b97e36d33c1e0c30aa15cc240c03be8}{w}};}
-\DoxyCodeLine{00112\ \};}
-\DoxyCodeLine{00126\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dataStructs_8h_a3f5dffb50eb977e07687c21b4f4130d8}{interfere}}(\mbox{\hyperlink{structweb}{web}}\ a,\ \mbox{\hyperlink{structweb}{web}}\ b);}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structweb}{web}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ information\ about\ each\ web}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structweb_aae1381e6198593bfe82a70489c5da8be}{var\_name}};}
+\DoxyCodeLine{00063\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_ae12c9c3b1a342c53d722a0589edc58f4}{start}};}
+\DoxyCodeLine{00064\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_a02eee1275b09c4dee29d6681fd4dc52d}{end}};}
+\DoxyCodeLine{00065\ \ \ \ \ vector<int>\ \mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structweb_a7c720472486f1b9de5fd9cf10d18bc80}{id}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structweb_a76c607476f5d867c572a0fa3b148b857}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structweb}{web}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structweb_aae1381e6198593bfe82a70489c5da8be}{var\_name}}\ ==\ other.\mbox{\hyperlink{structweb_aae1381e6198593bfe82a70489c5da8be}{var\_name}}\ \&\&\ \mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}}\ ==\ other.\mbox{\hyperlink{structweb_a867b62405c392c30ae6e5eb1a799af76}{lines}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ }
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparams}{params}}\ \{\ \textcolor{comment}{//has\ all\ information\ from\ the\ input\ files\ after\ being\ parsed}}
+\DoxyCodeLine{00085\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structparams_ab7e5c4c5ef9a6e934122bf355ed08afd}{webs}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{structalgorithm}{algorithm}}\ \mbox{\hyperlink{structparams_a82b733a09f5e98ab0089a1b664c2f02e}{alg}};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structparams_a7ac7b5b8806c2f6444f53d20f43d00aa}{regs}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structparams_a6610139b3a98ee2a7b1ac7ba76025ebe}{valid}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparams1}{params1}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ the\ parameters\ of\ the\ first\ input\ file}}
+\DoxyCodeLine{00101\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structparams1_ae42325adea986cd587bd85a22c9f4228}{webs}};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structparams1_ae5f6fad038fb0596fb80e9aab551b478}{valid}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structparams2}{params2}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ the\ parameters\ of\ the\ second\ input\ file}}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{structalgorithm}{algorithm}}\ \mbox{\hyperlink{structparams2_a914b5280f32cf0cfda8ec52d441e439c}{alg}};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structparams2_a776f6228c3e66143accea8517a772791}{regs}};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structparams2_aab04eb9c8679eb27274f93a68949542b}{valid}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structassignment}{assignment}}\ \{\ \textcolor{comment}{//webs\ that\ dont\ interfere\ with\ eachother}}
+\DoxyCodeLine{00127\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structassignment_ab82c1b672f9b83db1af06472853f1b41}{webs}};}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00138\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structresult}{result}}\ \{\ \textcolor{comment}{//final\ result\ of\ the\ algorithm}}
+\DoxyCodeLine{00139\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structresult_a5719c21aa4c153a637821b9b8d884334}{webs}};}
+\DoxyCodeLine{00140\ \ \ \ \ vector<assignment>\ \mbox{\hyperlink{structresult_a6e87b9a6b06eac084df5756e1efeecf2}{assignments}};}
+\DoxyCodeLine{00141\ \ \ \ \ vector<web>\ \mbox{\hyperlink{structresult_a9261607db7d3f6d29265e22285293824}{spilledWebs}};}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structresult_ab9e89d8ca1650c07555d3d198813b43b}{regs}};}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structresult_adfd6a5c1cd9e4299731e118bbb2c79f9}{possible}};}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structorder}{order}}\ \{\ \textcolor{comment}{//struct\ for\ storing\ the\ order\ of\ webs}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structorder_a4cce33c16ea49fa7458332ba0d0340f1}{index}};}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{structweb}{web}}\ \mbox{\hyperlink{structorder_a0b97e36d33c1e0c30aa15cc240c03be8}{w}};}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dataStructs_8h_a3f5dffb50eb977e07687c21b4f4130d8}{interfere}}(\mbox{\hyperlink{structweb}{web}}\ a,\ \mbox{\hyperlink{structweb}{web}}\ b);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
