@@ -18,6 +18,5 @@
  * total physical registers utilized, and a boolean flag indicating if allocation succeeded.
  */
 struct result build(Graph<web>* g, const params& info);
-struct result build(Graph<web>* g,const params& info);
 
 #endif
