@@ -144,6 +144,10 @@ void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, fu
         if (bestOrder[i] == 1) candidates[i]->setVisited(true);
     }
     coloring(g, info.regs);
+    for (auto &v : g->getVertexSet()) v->setVisited(false);
+    for (int i = 0; i < (int)bestOrder.size(); i++){
+        if (bestOrder[i] == 1) candidates[i]->setVisited(true);
+    }
 }
 
 struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)> coloring){
