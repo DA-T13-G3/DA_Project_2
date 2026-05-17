@@ -27,6 +27,9 @@
  * This compromise trades unnecessary precision for a very significant increase in speed, which is why
  * it was chosen.
  * 
+ * **Time Complexity:**
+ * O(Wlog(W) + I) where 'W' is the number of webs and 'I' is the total amount of interferences between webs
+ * 
  * @param g Pointer to the interference graph to process.
  * @param info Struct holding algorithm settings, limits, and user choices.
  * @param coloring Function that will execute the coloring of the graph.
