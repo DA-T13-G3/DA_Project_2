@@ -6,9 +6,16 @@
 
 #include <cstdlib>
 
+/**
+ * @brief Prints a newline.
+ */
 void nl() {
     printf("\n");
 }
+
+/**
+ * @brief Clears the terminal screen.
+ */
 void clear_terminal() {
     std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n";
     std::cout << "\033[2J\033[H";
@@ -17,6 +24,13 @@ void clear_terminal() {
 
 }
 
+/**
+ * @brief Repeats a string multiple times.
+ *
+ * @param str String to repeat
+ * @param n Number of repetitions
+ * @return Resulting concatenated string
+ */
 string repeat(const string &str, int n) {
     std::string p;
     for (unsigned int i = 0; i < n; i++) {
@@ -25,6 +39,13 @@ string repeat(const string &str, int n) {
     return p;
 }
 
+/**
+ * @brief Prints a centered string.
+ *
+ * @param s String to print
+ * @param width Width of the screen
+ * @param after String printed after (default newline)
+ */
 void printf_center(const std::string & s, int width,const string& after="\n") {
 
     int padding = (width - s.size()) / 2;
