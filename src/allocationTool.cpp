@@ -48,7 +48,7 @@ int allocationTool(  params& info, const string& outputFile) {
             res=build(g,info);
             break;
         case spilling:
-            graphColoringBasicWithSpilling(g,info.regs);
+            graphColoringBasicWithSpilling(g,info.regs,info.alg.val);
             res=build(g,info);
             break;
         case splitting_:

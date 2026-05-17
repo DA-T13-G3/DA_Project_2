@@ -152,7 +152,14 @@ void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, fu
 
 struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)> coloring){
 
-    printf("total regs: %d",info.regs);
+
+  /*
+   if (graphColoringBasic(g, info.regs) != -1){
+        struct result res = build(g, info);
+        return res;
+    }*/
+
+   // printf("total regs: %d",info.regs);
 
     vector<Vertex<web> *> vSet = g->getVertexSet();
     sort(vSet.begin(), vSet.end(), cmp);
