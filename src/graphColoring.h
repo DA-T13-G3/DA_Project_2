@@ -401,7 +401,7 @@ int graphColoringBasicWithSpilling(Graph<T>* g,unsigned int N, int max_spills) {
     }
 
     if (n_spills>max_spills) {
-        printf("SPILLS %d",N);
+        //printf("SPILLS %d",N);
         for (auto &v:g->getVertexSet()) {
             v->setNum(-1);
             v->setVisited(false);

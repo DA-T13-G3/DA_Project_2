@@ -158,7 +158,7 @@ struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)
         return res;
     }*/
 
-    printf("total regs: %d",info.regs);
+   // printf("total regs: %d",info.regs);
 
     vector<Vertex<web> *> vSet = g->getVertexSet();
     sort(vSet.begin(), vSet.end(), cmp);
