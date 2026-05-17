@@ -80,7 +80,8 @@ struct web { //struct for storing information about each web
  * - regs: number of available registers.
  * - valid: set to false if any parsing error occurs.
  */
-struct params { //has all information from the input files after being parsed
+
+struct params {
     vector<web> webs;
     algorithm alg;
     int regs;

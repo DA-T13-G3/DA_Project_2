@@ -152,25 +152,20 @@ void finalSpill(Graph<web>* g, params info, vector<Vertex<web> *> candidates, fu
 
 struct result spill(Graph<web>* g, params info, function<int(Graph<web>* g, int)> coloring){
 
-  /*
-   if (graphColoringBasic(g, info.regs) != -1){
-        struct result res = build(g, info);
-        return res;
-    }*/
-
     printf("total regs: %d",info.regs);
 
     vector<Vertex<web> *> vSet = g->getVertexSet();
     sort(vSet.begin(), vSet.end(), cmp);
 
-    // X is the number of 'best' candidates the program will use to try to find the optimal spill. The more candidates, the better the result, but also the longer the program will take to run (exponentially in the number of candidates). It is recommended to set it to a value between 15 and 25.
-    int X = 20; 
+    int X;
+    int calculatedX = (int)floor(log2((int)info.webs.size()));
+    X = ((int)info.webs.size() < 20) ? (int)info.webs.size() : ((calculatedX < 20) ? 20 : calculatedX);
     vector<Vertex<web> *> candidates;
     for(int i = 0; i < (int)vSet.size() && i < X; i++) {
         candidates.push_back(vSet[i]);
     }
 
-    int maxPossible = min((int)candidates.size(), info.alg.val);
+    int maxPossible = min((int)candidates.size(), X);
     vector<int> allSpills(maxPossible + 1);
     for (int i = 0; i < (int)allSpills.size(); i++) allSpills[i] = i;
 
